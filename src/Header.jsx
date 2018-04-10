@@ -1,5 +1,4 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 
 const Header = () => {
   return (
@@ -22,7 +21,5 @@ const Header = () => {
     </header>
   );
 };
-
-ReactDOM.render(<Header/>, document.getElementById('app'));
 
 export default Header;
