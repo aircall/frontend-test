@@ -1,0 +1,75 @@
+{
+  "env": {
+    "browser": true,
+    "jest": true
+  },
+  "globals": {
+    "APP": true,
+    "ENV": true,
+    "VERSION": true,
+    "LAST_UPDATE": true
+  },
+  "extends": "airbnb",
+  "parser": "babel-eslint",
+  "rules": {
+    "jsx-a11y/label-has-for": "off",
+    "object-curly-newline": "off",
+    "implicit-arrow-linebreak": "off",
+    "function-paren-newline": "off",
+    "react/jsx-one-expression-per-line": "off",
+    "react/destructuring-assignment": "off",
+    "arrow-body-style": "off",
+    "no-plusplus": ["error", {
+      "allowForLoopAfterthoughts": true
+    }],
+    "max-len": [
+      "warn",
+      150,
+      2,
+      {
+        "ignoreUrls": true,
+        "ignoreComments": false,
+        "ignoreRegExpLiterals": true,
+        "ignoreStrings": true,
+        "ignoreTemplateLiterals": true
+      }
+    ],
+    "no-underscore-dangle": [
+      "error", {
+        "allowAfterThis": true
+      }
+    ],
+    "no-prototype-builtins": "off",
+    "react/jsx-filename-extension": [
+      1,
+      {
+        "extensions": [".jsx"]
+      }
+    ],
+    "react/forbid-prop-types": ["off"],
+    "import/extensions": ["off"],
+    "import/no-unresolved": ["off"],
+    "import/prefer-default-export": ["off"],
+    "import/no-extraneous-dependencies": ["off"],
+    "comma-dangle": ["error", "only-multiline"],
+    "jsx-a11y/no-static-element-interactions": ["off"],
+    "no-unused-expressions": ["off"],
+    "react/no-string-refs": ["off"],
+    "no-class-assign": ["off"],
+    "class-methods-use-this": ["off"],
+    "consistent-return": ["off"],
+    "brace-style": ["off", "stroustrup"],
+    "no-trailing-spaces": [
+      "off",
+      {
+        "skipBlankLines": true
+      }
+    ],
+    "react/no-unused-prop-types": [
+      2,
+      {
+        "skipShapeProps": true
+      }
+    ]
+  }
+}

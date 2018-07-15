@@ -1,0 +1,42 @@
+.activity {
+  position: relative;
+  display: block;
+  padding: 20px;
+  margin-bottom: 15px;
+  transition: background-color 0.3s ease-in;
+  border: 1px solid #EEEEED;
+  background-color: #FFFFFF;
+  border-radius: 14px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.4rem;
+  color: #000;
+}
+
+.activity:hover {
+  background-color: #FDFDFC;
+}
+
+.activity:last-child {
+  margin-bottom: 0;
+}
+
+.activity__time {
+  position: absolute;
+  top: 50%;
+  right: -1px;
+  padding: 5px 10px;
+  transform: translateY(-50%);
+  border: 1px solid #EEEEED;
+  border-top-left-radius: 6px;
+  border-bottom-left-radius: 6px;
+  font-size: 1.2rem;
+  color: #BABABA;
+}
+
+.activity__status {
+  display: block;
+  margin-top: 5px;
+  font-size: 1rem;
+  color: #B9B9B9;
+}

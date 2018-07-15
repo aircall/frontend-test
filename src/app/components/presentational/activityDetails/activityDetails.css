@@ -1,0 +1,108 @@
+.activityDetails {
+  padding: 1.5rem;
+  text-align: center;
+}
+
+.activityDetails__from {
+  margin: 1rem 0;
+  font-size: 2.4rem;
+  font-weight: 600;
+}
+
+.activityDetails__status {
+  font-size: 1.4rem;
+  text-align: center;
+}
+
+.activityDetails__toggle {
+  width: 5.5rem;
+  margin: 4.5rem auto 0;
+}
+
+.toggle,
+.toggle:active {
+  position: absolute;
+  top: -5000px;
+  height: 0;
+  width: 0;
+  opacity: 0;
+  border: none;
+  outline: none;
+}
+
+.toggleLabel {
+  display: block;
+  position: relative;
+  padding: 1rem;
+  margin-bottom: 2rem;
+  font-size: 1.2rem;
+  line-height: 1.6rem;
+  transition: box-shadow .25s ease-in-out;
+  width: 100%;
+  height: 2.6rem;
+  border-radius: 1.8rem;
+  background: #f8f8f8;
+  cursor: pointer;
+}
+
+.toggleLabel:before {
+  content: '';
+  display: block;
+  position: absolute;
+  z-index: 1;
+  line-height: 2.4rem;
+  text-indent: 4rem;
+  transition: left .25s ease-in-out, box-shadow .25s ease-in-out;
+  height: 2.6rem;
+  width: 2.6rem;
+  border-radius: 100%;
+  top: 0;
+  left: 0;
+  right: auto;
+  background: white;
+  box-shadow: 0 0.3rem 0.3rem rgba(0, 0, 0, .2), 0 0 0 0.2rem #dddddd;
+}
+
+.toggleLabel:after {
+  content: attr(data-off);
+  display: block;
+  position: absolute;
+  z-index: 0;
+  top: 0;
+  left: -31.5rem;
+  padding: 0;
+  height: 100%;
+  width: 30rem;
+  transition: left .25s ease-in-out, width .25s ease-in-out;
+  text-align: right;
+  line-height: 2.6rem;
+  color: #bfbfbf;
+  white-space: nowrap;
+}
+
+.toggle:checked+.toggleLabel {
+  box-shadow: inset 0 0 0 2rem rgba(19, 191, 17, 1), 0 0 0 0.2rem rgba(19, 191, 17, 1);
+}
+
+.toggle:checked+.toggleLabel:before {
+  left: calc(100% - 2.6rem);
+  box-shadow: 0 0 0 0.2rem transparent, 0 0.3rem 0.3rem rgba(0, 0, 0, .3);
+}
+
+.toggle:checked+.toggleLabel:after {
+  content: attr(data-on);
+  left: 6.5rem;
+  width: 2.6rem;
+}
+
+#archive+.toggleLabel {
+  box-shadow: inset 0 0 0 0 rgba(19, 191, 17, 1), 0 0 0 0.2rem #dddddd;
+}
+
+#archive:checked+.toggleLabel {
+  box-shadow: inset 0 0 0 1.8rem rgba(19, 191, 17, 1), 0 0 0 0.2rem rgba(19, 191, 17, 1);
+}
+
+#archive:checked+.toggleLabel:after {
+  color: rgba(19, 191, 17, 1);
+}
