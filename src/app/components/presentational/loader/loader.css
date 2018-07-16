@@ -1,0 +1,9 @@
+.loader {
+  text-align: center;
+}
+
+.loader svg {
+  margin: 0 auto;
+  width: 60px;
+  height: 60px;
+}
