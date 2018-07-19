@@ -1,0 +1,17 @@
+.activity-date-row {
+    display: flex;
+    flex-direction: row;
+}
+.activity-date-row_header {
+    padding: 10px;
+    min-width: 45px;
+    max-width: 45px;
+    text-align: center;
+    justify-content: center;
+    color: #a3a3a3;
+    line-height: 20px;
+}
+.activity-date-row_activities {
+    padding: 0 10px;
+    width: 100%;
+}
