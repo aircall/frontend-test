@@ -1,0 +1,9 @@
+.activity-direction {
+    font-size: 20px;
+}
+.activity-direction.missed {
+    color: #ee4819;
+}
+.activity-direction.answered {
+    color: #27c51f;
+}

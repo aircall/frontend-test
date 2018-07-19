@@ -1,0 +1,12 @@
+.loader {
+  padding: 20px 0;
+}
+
+.loader svg {
+  margin: 0 auto;
+  display: flex;
+}
+
+.loader svg path {
+  fill: #27c51f;
+}
