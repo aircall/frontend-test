@@ -1,0 +1,19 @@
+.activity-list {
+  overflow-y: auto;
+}
+
+.activity-list a {
+  text-decoration: none;
+  border-bottom: 1px solid gray;
+  display: block;
+}
+
+.activity-group-header {
+  width: 100%;
+  height: 26px;
+
+  border-bottom: 1px solid gray;
+
+  text-align: center;
+  line-height: 26px;
+}

@@ -1,0 +1,9 @@
+.activity-details {
+  margin-left: 50px;
+}
+
+.activity-time,
+.activity-duration {
+  height: 26px;
+  line-height: 26px;
+}
