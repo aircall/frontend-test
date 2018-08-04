@@ -1,9 +1,13 @@
-html, body, h1, h2, h3, ul, li {
+html, body, h1, h2, h3, ul, li, p {
   margin: 0;
   padding: 0;
   border: 0;
   font: inherit;
   font-size: 100%;
+}
+
+p {
+  font-size: 12px;
 }
 
 body {

@@ -1,0 +1,51 @@
+.activity-item {
+  display: flex;
+  flex-direction: row;
+  height: 50px;
+  color: black;
+}
+
+.activity-item-type {
+  position: relative;
+  width: 50px;
+}
+
+.activity-item-type::after {
+  content: "";
+  border-radius: 50%;
+  width: 10px;
+  height: 10px;
+  position: absolute;
+  top: 20px;
+  left: 20px;
+}
+
+.activity-item-type.missed::after {
+  background-color: red;
+}
+
+.activity-item-type.answered::after {
+  background-color: green;
+}
+
+.activity-item-type.voicemail::after {
+  background-color: blue;
+}
+
+.activity-item-details {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.activity-item-details p {
+  flex-basis: 50%;
+  align-items: center;
+  display: flex;
+}
+
+.activity-item-time {
+  width: 40px;
+  display: flex;
+  align-items: center;
+}
