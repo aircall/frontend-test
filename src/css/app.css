@@ -23,3 +23,19 @@
   padding: 20px;
 }
 
+/* Flexbox */
+.flex {
+  display: flex;
+}
+.horizontal {
+  flex-direction: row;
+}
+.vertical {
+  flex-direction: column;
+}
+.space-around {
+  justify-content: space-around;
+}
+.center {
+  justify-content: center;
+}

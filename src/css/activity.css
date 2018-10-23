@@ -1,0 +1,70 @@
+#activity {
+  list-style-type: none;
+  position: block;
+  background-color: #FFFFFF;
+}
+
+a {
+  color: black;
+}
+
+#activity > a {
+  border: 1px solid #E3E3E3;
+  border-radius: 10px;
+  padding: 1em;
+  margin-bottom: 1em;
+  flex: 1;
+}
+
+#activity > a:hover {
+  text-decoration: none;
+  background-color: #F3F3F3;
+}
+
+#activity a div:nth-child(2) {
+  padding-left: 2em;
+}
+
+#activity a div:last-child {
+  margin-left: auto;
+  align-items: center;
+}
+
+#archive-icon {
+  color: green;
+  margin: auto;
+  padding: 0 0 1em 1em;
+  cursor: pointer;
+}
+
+#archive-icon:hover {
+  color: #0156B3;
+}
+
+/* stolen from bootstrap btn-danger :) */
+#reset-btn {
+  color: #fff;
+  background-color: #D9534F;
+  border-color: #D43F3A;
+  display: inline-block;
+  padding: 6px 12px;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.42857143;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  touch-action: manipulation;
+  cursor: pointer;
+  -ms-touch-action: manipulation;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  background-image: none;
+  border: 1px solid transparent;
+  border-radius: 4px;
+}
+#reset-btn:hover {
+  background-color: #C82F2B;
+}
