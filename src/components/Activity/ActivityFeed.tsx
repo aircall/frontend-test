@@ -40,6 +40,9 @@ const activityResources = createResource(indexActivities);
 const cache = createCache();
 
 export default () => {
+  // React will retry to display activities until they are fethed.
+  // If they are not ready yet, activityResources will throw a Promise,
+  // which will be caught in React.Suspense
   const activitiesResponse = activityResources.read(cache);
 
   if (activitiesResponse.error) {

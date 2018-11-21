@@ -49,6 +49,13 @@ const Wrapper = styled.div`
 
 const ActivityFeed = React.lazy(() => import("./Activity/ActivityFeed"));
 
+// React.Suspense will display fallback until both:
+// 1. ActivityFeed's import is downloaded (React.lazy)
+// 2. ActivityFeed's activities API data is downloaded (activityResources.read)
+// fallback would usually be a spinner
+
+// Sadly, the rest of the React.Suspense API doesn't look ready yet:
+// React.Suspense max-duration, React.Timeout, react unstable async mode
 export default () => (
   <React.Suspense fallback={<></>}>
     <Wrapper>
