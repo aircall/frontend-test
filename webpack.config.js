@@ -29,13 +29,7 @@ module.exports = {
         test: /\.(js|jsx)$/,
         exclude: /node_modules/,
         use: {
-          loader: 'babel-loader',
-          query: {
-            plugins:[
-              'transform-object-rest-spread',
-              'transform-class-properties'
-            ]
-          }
+          loader: 'babel-loader'
         },
       }
     ]

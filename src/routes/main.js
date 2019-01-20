@@ -1,8 +1,8 @@
 import React from 'react';
 import { HashRouter as Router, Redirect, Route } from 'react-router-dom';
 
-import { ActivitiesList } from '../containers/ActivitiesList/ActivitiesList';
-import { ActivityDetail } from '../containers/ActivityDetail/ActivityDetail';
+import ActivitiesList from '../containers/ActivitiesList/ActivitiesList';
+import ActivityDetail from '../containers/ActivityDetail/ActivityDetail';
 import styles from '../style.css';
 import Header from '../components/Header/Header';
 

@@ -69,7 +69,7 @@ const mapDispatchToProps = (dispatch, ownProps) => ({
   setArchived: (isArchived) => dispatch(ActivitiesCreators.updateArchivedState(+ownProps.match.params.id, isArchived))
 });
 
-ActivityDetail = connect(
+export default connect(
   mapStateToProps,
   mapDispatchToProps
 )(ActivityDetail);

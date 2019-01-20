@@ -63,7 +63,11 @@ export class ActivitiesList extends React.PureComponent {
   renderItems = (activities) => {
     const areAllArchived = !this.props.activities.find(item => !item.isArchived);
     const children = [
-      <button className={styles.archiveAllButton} onClick={() => this.setArchiveAll(!areAllArchived)}>
+      <button
+        key="archive-button"
+        className={styles.archiveAllButton}
+        onClick={() => this.setArchiveAll(!areAllArchived)}
+      >
         <i className="fas fa-archive"/>
         {areAllArchived ? 'Unarchive all calls' : 'Archive all calls'}
       </button>
@@ -105,7 +109,7 @@ const mapDispatchToProps = (dispatch) => ({
   setArchived: (id, isArchived) => dispatch(ActivitiesCreators.updateArchivedState(id, isArchived))
 });
 
-ActivitiesList = connect(
+export default connect(
   mapStateToProps,
   mapDispatchToProps
 )(ActivitiesList);
