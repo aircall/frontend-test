@@ -1,14 +1,24 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { Provider } from 'react-redux';
 
-import Header from './Header.jsx';
+import configureStore from './store';
+import Header from './components/Header/Header.jsx';
+
+import styles from './style.css';
+
+const store = configureStore();
 
 const App = () => {
   return (
-    <div className='container'>
-      <Header/>
-      <div className="container-view">Some activities should be here</div>
-    </div>
+    <Provider store={store}>
+      <div className={styles.container}>
+        <Header/>
+        <div className={styles.containerView}>
+          Empty Store, waiting for a reducer
+        </div>
+      </div>
+    </Provider>
   );
 };
 
