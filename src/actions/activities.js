@@ -7,7 +7,9 @@ export const { Types: ActivitiesTypes, Creators: ActivitiesCreators } = createAc
     addItem: ['item'],
     fetch: () => (dispatch) => {
       return ActivitiesApi.fetch()
-        .then(activities => dispatch(ActivitiesCreators.setList(activities)));
+        .then(activities => dispatch(ActivitiesCreators.setList(
+          activities.sort((a, b) => new Date(a.date) - new Date(b.date))
+        )));
     },
     getById: (id) => (dispatch) => {
       return ActivitiesApi.getById(id)

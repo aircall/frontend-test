@@ -1,0 +1,20 @@
+.link {
+    text-decoration: none;
+}
+
+.container {
+    border: 1px solid #e2e2e2;
+    border-radius: 20px;
+    padding: 20px;
+    margin-bottom: 15px;
+    color: black;
+}
+
+.container i {
+    margin-right: 15px;
+}
+
+.time {
+    float: right;
+    color: #d1d1d1;
+}

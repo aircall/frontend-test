@@ -1,0 +1,31 @@
+.container {
+    height: 100%;
+    width: 100%;
+}
+
+.loader, .error {
+    width: 100%;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.error button {
+    margin-left: 10px;
+}
+
+.archiveAllButton {
+    text-align: left;
+    background-color: transparent;
+    padding: 10px;
+    width: 100%;
+    border-radius: 20px;
+    cursor: pointer;
+    margin-bottom: 10px;
+}
+
+.archiveAllButton i {
+    margin-left: 10px;
+    margin-right: 15px;
+}

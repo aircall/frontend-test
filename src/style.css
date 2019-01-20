@@ -19,7 +19,9 @@
   box-shadow: 0 0 5px 0 rgba(0, 0, 0, .9);
 }
 
-#app .containerView {
+.containerView {
   padding: 20px;
+  height: 546px;
+  max-height: 546px;
+  overflow-y: auto;
 }
-

@@ -1,0 +1,35 @@
+.link {
+    text-decoration: none;
+}
+
+.container {
+    padding: 20px;
+    text-align: center;
+}
+
+.container i {
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+
+.time {
+    color: #d1d1d1;
+    margin-bottom: 25px;
+    font-size: 16px;
+}
+
+.infoContainer {
+    display: flex;
+    justify-content: space-between;
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 25px;
+}
+
+.archiveButton {
+    background-color: transparent;
+    padding: 15px;
+    width: 100%;
+    border-radius: 30px;
+    cursor: pointer;
+}

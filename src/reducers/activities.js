@@ -18,8 +18,8 @@ export const addItem = (
   state = INITIAL_STATE,
   action
 ) => {
-  const existingIndex = state.list.find(item => item.id === action.item.id);
-  return existingIndex ?
+  const existingIndex = state.list.findIndex(item => item.id === action.item.id);
+  return existingIndex > -1 ?
     dotProp.set(state, `list.${existingIndex}`, action.item) :
     dotProp.merge(state, 'list', [action.item]);
 };
