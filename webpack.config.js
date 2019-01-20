@@ -31,7 +31,10 @@ module.exports = {
         use: {
           loader: 'babel-loader',
           query: {
-            plugins:[ 'transform-object-rest-spread' ]
+            plugins:[
+              'transform-object-rest-spread',
+              'transform-class-properties'
+            ]
           }
         },
       }
