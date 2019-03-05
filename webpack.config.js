@@ -1,6 +1,17 @@
 const HtmlWebPackPlugin = require('html-webpack-plugin');
+var path = require('path');
 
 module.exports = {
+  entry: './src/index.js',
+  output: {
+    path: path.resolve(__dirname, 'public'),
+    filename: 'index_bundle.js',
+    publicPath: '/'
+  },
+  devServer: {
+    historyApiFallback: true,
+    port: 8080
+  },
   module: {
     rules: [
       {
@@ -22,6 +33,20 @@ module.exports = {
         use: {
           loader: 'babel-loader'
         }
+      },
+      {
+        test: /\.svg$/,
+        use: [
+          {
+            loader: "babel-loader"
+          },
+          {
+            loader: "react-svg-loader",
+            options: {
+              jsx: true // true outputs JSX tags
+            }
+          }
+        ]
       }
     ]
   },

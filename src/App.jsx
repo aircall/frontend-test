@@ -1,17 +1,52 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
+import React, { Component } from 'react';
+import Header from './components/Common/Header.jsx';
+import Footer from './components/Common/Footer.jsx';
+import ActivityFeed from './Pages/Activity/ActivityFeedContainer.jsx';
+import ActivityDetail from './Pages/Activity/ActivityDetailContainer.jsx';
+import { clearInterval } from 'timers';
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
-import Header from './Header.jsx';
+class App extends Component {
+  constructor(props) {
+    super(props);
 
-const App = () => {
-  return (
-    <div className='container'>
-      <Header/>
-      <div className="container-view">Some activities should be here</div>
-    </div>
-  );
+    this.state = {
+      timer: null,
+      showDetail: false,
+    }
+  }
+
+  componentDidMount() {
+    const { getActivities } = this.props;
+    getActivities();
+
+    let timer = setInterval(getActivities, 60000);
+    this.setState({ timer });
+  }
+
+  componentWillUnmount() {
+    const { timer } = this.state;
+    clearInterval(timer);
+  }
+
+  render() {
+    const { activity } = this.props;
+    const { activities } = activity;
+    
+    return (
+      <Router>
+        <div className='container'>
+          <Header />
+          <div className="container-view">
+            <Route path="/" exact render={props => <ActivityFeed {...props} /> } />
+            <Route path="/:id" render={props => <ActivityDetail {...props} activities={activities} /> } />
+          </div>
+          <Footer activities={activities} />
+        </div>
+      </Router>
+      
+    );
+  }
 };
-
-ReactDOM.render(<App/>, document.getElementById('app'));
 
 export default App;

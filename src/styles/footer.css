@@ -1,0 +1,113 @@
+footer {
+    position: relative;
+    height: 40px;
+    box-shadow: 0 -1px 0 rgba(0, 0, 0, 0.1);
+}
+
+footer button {
+    background: #fff;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    z-index: 1;
+    position: relative;
+}
+
+footer button:after {
+    content: '';
+    position: absolute;
+    top: -10px; bottom: -10px;
+    left: -10px; right: -10px;
+}
+
+footer button.active {
+    border-bottom: 3px solid #26cc26;
+}
+
+footer button:nth-child(2) {
+    margin-right: 100px;
+}
+
+
+footer nav {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 10px;
+    position: relative;
+}
+
+.activity-button {
+    position: relative;
+}
+
+.activity-button .badge {
+    right: 3px;
+    top: -5px;
+}
+
+.status-button {
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 100px;
+    width: 20px;
+    height: 20px;
+    position: relative;
+}
+
+.status-type {
+    background: #26cc26;
+    border-radius: 100px;
+    border: #26cc26;
+    width: 10px;
+    height: 10px;
+    position: absolute;
+    left: 4px;
+    top: 4px;
+}
+
+.call-button {
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    padding: 5px;
+    border-radius: 100%;
+    position: absolute;
+    top: -10px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+
+.call-button .call-button__inner {
+    width: 55px;
+    height: 55px;
+    border-radius: 100%;
+    background: #26cc26;
+    position: relative;
+}
+
+.call-button svg {
+    fill: #fff;
+    position: center;
+    align-items: center;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.keyboard-icon {
+    display: grid;
+    grid-template-columns: repeat(3, 20%);
+    grid-template-rows: repeat(3, 1fr);
+    grid-row-gap: 15%;
+    justify-items: center;
+    justify-content: center;
+    align-items: center;
+    padding-top: 15px;
+}
+
+.keyboard-icon .keyboard-hole {
+    width: 6px;
+    height: 6px;
+    background: #fff;
+    border-radius: 100%;
+}
+

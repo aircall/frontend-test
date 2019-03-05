@@ -10,10 +10,12 @@
 }
 
 #app .container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   width: 376px;
   height: 666px;
   z-index: 100;
-
   background: white;
   border-radius: 3px;
   box-shadow: 0 0 5px 0 rgba(0, 0, 0, .9);
@@ -21,5 +23,22 @@
 
 #app .container-view {
   padding: 20px;
+  color: #000;
+  overflow: auto;
+  height: 100%;
+}
+
+.vertical-divider {
+  transform: rotate(90deg) translate(-50%, -50%);
+  position: absolute;
+}
+
+.vertical-divider span {
+  margin-left: 1px;
+}
+
+button {
+  cursor: pointer;
+  outline: none;
 }
 

@@ -1,0 +1,146 @@
+.activity-divider {
+    border-top: 1px dotted grey;
+    font-size: 10px;
+    position: relative;
+}
+
+.activity-divider span {
+    color: rgb(191, 190, 190);
+    letter-spacing: 1px;
+    background: #fff;
+    position: absolute;
+    top: 0px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 10px;
+}
+
+.activity-list li {
+    list-style-type: none;
+    position: relative;
+    cursor: pointer;
+}
+
+.activity-list li::after {
+    content: '';
+    position: absolute;
+    top: -10px; bottom: -10px;
+    left: -10px; right: -10px;
+}
+
+.activity-detail-button {
+    background: #fff;
+    width: 100%;
+    height: 50px;
+    border-radius: 6px;
+    margin: 15px auto;
+    cursor: pointer;
+    display: flex;
+    position: relative;
+}
+
+
+.call-type-icon {
+    width: 20px;
+    position: absolute;
+}
+
+.activity-from-to {
+    text-align: left;
+    margin-left: 40px;
+    width: 200px;
+}
+
+.activity-to {
+    font-weight: 400;
+    color: rgb(182, 182, 182);
+}
+
+.activity-to-name {
+    font-weight: 600;
+    margin-left: 2px;
+}
+
+
+
+.activity-detail-button .vertical-divider {
+    margin-left: 30px;
+    right: 90px;
+    top: 50%;
+}
+
+.activity-time-section {
+    margin-left: 50px;
+    margin-top: 5px;
+    color: rgb(182, 182, 182);
+}
+
+.activity-meridian {
+    border: 1px solid rgb(182, 182, 182);
+    padding: 1px;
+    border-radius: 2px;
+    margin-left: 5px;
+}
+
+.activity-filter-nav {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 10px;
+    position: relative;
+}
+
+.activity-filter-nav .vertical-divider.left {
+    right: 85px;
+    top: 13px;
+}
+
+.activity-filter-nav .vertical-divider.right {
+    right: 32px;
+    top: 13px;
+}
+
+.activity-filter-nav button {
+    background: #fff;
+    border: none;
+    outline: none;
+}
+
+.activity-filter-nav button.active {
+    border-bottom: 3px solid #26cc26;
+    widows: 10px;
+}
+
+.activity-archive-button {
+    background: #fff;
+    border: 1px solid rgb(182, 182, 182);
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    border-radius: 4px;
+    width: 100%;
+    height: 50px;
+    margin-bottom: 20px;
+    border-top: none;
+}
+
+.activity-archive-text {
+    margin-left: 10px;
+    font-weight: 600;
+}
+
+.activity-detail-body {
+    margin-bottom: 50px;
+}
+
+.activity-detail-body li {
+    list-style-type: none;
+    margin-bottom: 15px;
+}
+
+.activity-detail-body .activity-archive-button {
+    width: 100%;
+}
+
+.home-nav {
+    margin-bottom: 50px;
+}
