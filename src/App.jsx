@@ -18,7 +18,7 @@ const App = () => {
           <Header />
           <div className="container-view">
             <Route path='/' exact component={CallLogs} />
-            <Route path='/:id' exact component={CallDetails} />
+            <Route path='/call/:id' exact component={CallDetails} />
           </div>
         </div>
       </Router>
