@@ -1,5 +1,5 @@
-import { takeLatest, call, put } from 'redux-saga/effects';
-import { GET_All_CALLS } from '../constants/actionTypes'
+import { call, put } from 'redux-saga/effects';
+import { UPDATE_CALL_LOG_STATE } from '../actions/actionTypes';
 
 //* function that makes api request and returns a promise for response
 function fetchCalls() {
@@ -9,14 +9,14 @@ function fetchCalls() {
     .catch(err => err);
 }
 
-//* worker saga: makes the api call when watcher saga sees the action.
-function* getAllCalls(action) {
+//* getCallsSaga: makes the api call when watcher saga sees the action.
+export function* getCallsSaga(action) {
   try {
     const response = yield call(fetchCalls);
     const calls = response.message;
 
-    // * Dispatch a success action to the store with the new dog.
-    yield put({type: GET_All_CALLS, calls});
+    // * Dispatch a success action to the store with the calls.
+    yield put({type: UPDATE_CALL_LOG_STATE, calls});
   } catch (err) {
     // * Dispatch a failure action to the store with the error
     throw new Error('There was an error');
