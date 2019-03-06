@@ -7,8 +7,8 @@ import { Provider } from 'react-redux';
 import store from './store/store';
 // * import components
 import Header from './components/Header/Header.jsx';
-import CallLog from './containers/CallLog/CallLog.jsx';
-import CallDetails from './containers/CallLog/CallLog.jsx';
+import CallLogs from './containers/CallLogs/CallLogs.jsx';
+import CallDetails from './containers/CallDetails/CallDetails.jsx';
 
 const App = () => {
   return (
@@ -17,7 +17,7 @@ const App = () => {
         <div className='container'>
           <Header />
           <div className="container-view">
-            <Route path='/' exact component={CallLog} />
+            <Route path='/' exact component={CallLogs} />
             <Route path='/:id' exact component={CallDetails} />
           </div>
         </div>
