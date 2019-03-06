@@ -1,5 +1,5 @@
-import { INITIATE_GET_CALLS_SAGA } from '../constants/actionTypes';
+import { INITIATE_GET_CALLS_SAGA } from './actionTypes';
 
-export const getAllCalls = (calls) => ({
+export const getAllCalls = () => ({
   type: INITIATE_GET_CALLS_SAGA
 });

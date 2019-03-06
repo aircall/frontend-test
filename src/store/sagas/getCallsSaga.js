@@ -12,11 +12,9 @@ function fetchCalls() {
 //* getCallsSaga: makes the api call when watcher saga sees the action.
 export function* getCallsSaga(action) {
   try {
-    const response = yield call(fetchCalls);
-    const calls = response.message;
-
+    const calls = yield call(fetchCalls);
     // * Dispatch a success action to the store with the calls.
-    yield put({type: UPDATE_CALL_LOG_STATE, calls});
+    yield put({type: UPDATE_CALL_LOG_STATE, payload: calls});
   } catch (err) {
     // * Dispatch a failure action to the store with the error
     throw new Error('There was an error');
