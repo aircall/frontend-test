@@ -1,11 +1,13 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
-import { withRouter, Redirect } from "react-router-dom"
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { withRouter, Link, Redirect } from "react-router-dom"
 import useFetch from 'utils/use_fetch'
 import postData from 'utils/post_data'
 import Loading from 'ui_elements/loading'
 import format from 'date-fns/format'
+import { gray33, gray87 } from 'ui_elements/colors'
 import { basePath } from 'paths'
 import { didMissCall, parseDuration } from 'utils/helpers'
 import CallLogIcon from '../call_log/call_log_icon'
@@ -16,6 +18,16 @@ const IconContainer = styled.div`
   font-size: 20px;
   flex: 1;
   margin: 8px 0;
+  height: 100%;
+`
+
+const StyledBackButton = styled(FontAwesomeIcon)`
+  margin: 8px 0;
+  font-size: 20px;
+  color: ${gray33};
+  &:hover {
+    color: ${gray87};
+  }
 `
 
 const CallDetail = ({ history, match: { params: { id } } }) => {
@@ -38,6 +50,9 @@ const CallDetail = ({ history, match: { params: { id } } }) => {
 
   return (
     <StyledCallDetail>
+      <Link to="/">
+        <StyledBackButton icon="long-arrow-alt-left" />
+      </Link>
       <StyledCallDetail.From>{data.from}</StyledCallDetail.From>
       {data.to && (
         <StyledCallDetail.To>{actionMessage} {data.to}</StyledCallDetail.To>
@@ -57,12 +72,14 @@ const CallDetail = ({ history, match: { params: { id } } }) => {
           Archive
         </StyledCallDetail.ArchiveButton>
       )}
-     
     </StyledCallDetail>
   )
 }
 
 CallDetail.propTypes = {
+  history: PropTypes.shape({
+    push: PropTypes.func.isRequired,
+  }).isRequired, // from react-router
   match: PropTypes.shape({
     params: PropTypes.shape({
       id: PropTypes.string,

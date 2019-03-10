@@ -7,12 +7,24 @@ import {
   faPhoneSlash,
   faSpinner,
   faEnvelope,
+  faLongArrowAltLeft,
+  faCog,
+  faUser,
 } from '@fortawesome/free-solid-svg-icons'
 import './css/body.css'
 import './css/app.css'
 import './css/header.css'
 import App from './App.jsx'
 
-library.add(faArchive, faPhone, faPhoneSlash, faSpinner, faEnvelope)
+library.add(
+  faArchive,
+  faPhone,
+  faPhoneSlash,
+  faSpinner,
+  faEnvelope,
+  faLongArrowAltLeft,
+  faCog,
+  faUser,
+)
 
 ReactDOM.render(<App/>, document.getElementById('app'))

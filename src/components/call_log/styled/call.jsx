@@ -1,4 +1,3 @@
-import React from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import styled from 'styled-components'
 import { gray15, gray33, gray87 } from 'ui_elements/colors'
@@ -8,6 +7,7 @@ const Call = styled.div`
   align-items: center;
   min-height: 30px;
   border: 1px solid ${gray15};
+  background-color: white;
   border-radius: 10px;
   padding: 16px;
   cursor: pointer;

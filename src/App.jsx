@@ -1,9 +1,10 @@
 import React from 'react'
-import { BrowserRouter as Router, Switch, Redirect, Route, Link, withRouter } from "react-router-dom"
+import { BrowserRouter as Router, Switch, Redirect, Route, Link } from "react-router-dom"
 import Header from './Header.jsx'
 import { basePath, callDetailPath } from './paths'
 import CallLog from 'components/call_log'
 import CallDetail from 'components/call_detail'
+import Footer from 'components/footer'
 
 const App = () => {
   return (
@@ -17,6 +18,7 @@ const App = () => {
           <Route path={callDetailPath} component={CallDetail} />
           <Redirect to={basePath} />
         </Switch>
+        <Footer />
       </div>
     </Router>
   )

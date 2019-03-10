@@ -72,6 +72,7 @@ const ArchiveButton = styled.button`
   &:hover {
     border: 1px solid ${gray87};
   }
+  cursor: pointer;
 `
 
 StyledCallDetail.ContactInfo = ContactInfo

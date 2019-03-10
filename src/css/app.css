@@ -13,13 +13,15 @@
   width: 376px;
   height: 666px;
   z-index: 100;
-  overflow-y: auto;
-  background: white;
+  overflow-y: hidden;
+  background: rgb(250, 250, 250);
   border-radius: 3px;
   box-shadow: 0 0 5px 0 rgba(0, 0, 0, .9);
+  position: relative;
+  display: flex;
+  flex-direction: column;
 }
 
 #app .container-view {
   padding: 20px;
 }
-

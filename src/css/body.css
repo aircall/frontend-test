@@ -3,13 +3,13 @@ html, body, h1, h2, h3, ul, li {
   padding: 0;
   border: 0;
   font: inherit;
-  font-size: 100%;
+  font-size: 12px;
 }
 
 body {
   background: #233142;
-  font-family: "Helvetica Neueue", arial, sans-serif;
-  font-size: 13px;
+  font-family: "Helvetica Neue", arial, sans-serif;
   color: #222;
   line-height: 22px;
+  font-size: 100%;
 }

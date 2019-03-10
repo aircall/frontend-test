@@ -4,6 +4,6 @@ export const parseDuration = duration => {
   const roundedValue = Math.floor(duration / 60)
 
   if(roundedValue < 1) return `${duration} seconds`
-  if(roundedValue === 1) return `${duration} minute`
+  if(roundedValue === 1) return `${roundedValue} minute`
   return `${roundedValue} minutes`
 }

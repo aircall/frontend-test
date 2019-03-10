@@ -31,6 +31,7 @@ CallLogItem.propTypes = {
   call: PropTypes.shape({
     id: PropTypes.number,
     call_type: PropTypes.string,
+    created_at: PropTypes.string,
     from: PropTypes.string,
     to: PropTypes.string,
   }).isRequired,
