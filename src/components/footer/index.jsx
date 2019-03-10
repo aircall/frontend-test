@@ -34,14 +34,12 @@ const StyledSmallIcon = styled(FontAwesomeIcon)`
   }
 `
 
-const Footer = () => {
-  return (
-    <StyledFooter>
-      <StyledSmallIcon icon="user" />
-      <StyledBigIcon icon="phone" />
-      <StyledSmallIcon icon="cog" />
-    </StyledFooter>
-  )
-}
+const Footer = () => (
+  <StyledFooter>
+    <StyledSmallIcon icon="user" />
+    <StyledBigIcon icon="phone" />
+    <StyledSmallIcon icon="cog" />
+  </StyledFooter>
+)
 
 export default Footer

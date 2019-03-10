@@ -20,15 +20,12 @@ const StyledDay = styled.div`
   margin-bottom: 8px;
 `
 
-const CallList = ({ day, calls }) => {
-
-  return (
-    <StyledList>
-      <StyledDay> {format(day, 'MMMM DD, YYYY')} </StyledDay>
-      {calls.map(call => <CallLogItem key={call.id} call={call} />)}
-    </StyledList>
-  )
-}
+const CallList = ({ day, calls }) => (
+  <StyledList>
+    <StyledDay> {format(day, 'MMMM DD, YYYY')} </StyledDay>
+    {calls.map(call => <CallLogItem key={call.id} call={call} />)}
+  </StyledList>
+)
 
 CallList.propTypes = {
   day: PropTypes.string.isRequired,
