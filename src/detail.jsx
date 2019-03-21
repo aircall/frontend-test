@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import moment from "moment";
 
+import "./css/detail.css";
+
 class Detail extends Component {
     archiveActivity = () => {
         this.props.archiveActivity(this.props.activity.id);

@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import moment from "moment";
 
+import "./css/feed.css";
+
 class Feed extends Component {
     componentDidMount() {
         this.props.fetchActivities();
