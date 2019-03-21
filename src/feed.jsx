@@ -27,10 +27,7 @@ class Feed extends Component {
         return description;
     }
 
-    selectCall = (id) => () => {
-        console.log('id: ', id);
-        this.props.fetchActivity(id);
-    }
+    selectCall = (id) => () => this.props.fetchActivity(id);
 
     render() {
         const {
