@@ -12,12 +12,20 @@
     "build": "webpack --mode production"
   },
   "dependencies": {
+    "moment": "^2.24.0",
     "react": "^16.3.1",
-    "react-dom": "^16.3.1"
+    "react-dom": "^16.3.1",
+    "react-redux": "^6.0.1",
+    "react-router-dom": "^5.0.0",
+    "redux": "^4.0.1",
+    "redux-devtools-extension": "^2.13.8",
+    "redux-saga": "^1.0.2"
   },
   "devDependencies": {
     "babel-core": "6.26.*",
     "babel-loader": "7.1.*",
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
     "babel-preset-env": "1.7.0",
     "babel-preset-react": "6.24.*",
     "css-loader": "2.1.*",

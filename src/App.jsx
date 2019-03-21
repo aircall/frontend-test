@@ -1,17 +1,46 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
+import React from "react";
+import { Router, Route } from "react-router-dom";
+import { connect } from "react-redux";
+import history from "./history";
+import Header from "./header";
+import Feed from "./feed";
+import Detail from "./detail";
+import actions from "./store/actions";
 
-import Header from './Header.jsx';
+const App = ({
+  activities,
+  fetchActivities,
+  fetchActivity,
+  archiveActivity,
+  activitiesLoading,
+  activity
+}) => (
+  <div className="container">
+    <Header/>
+    <Router history={history}>
+      <Route exact path="/" render={props => (
+        <Feed
+          fetchActivities={fetchActivities}
+          fetchActivity={fetchActivity}
+          activitiesLoading={activitiesLoading}
+          activities={activities}
+          {...props}
+        />
+      )} />
+      <Route path="/call/:id" render={props => (
+        <Detail
+          activity={activity}
+          archiveActivity={archiveActivity}
+          {...props}
+        />
+      )} />
+    </Router>
+  </div>
+);
 
-const App = () => {
-  return (
-    <div className='container'>
-      <Header/>
-      <div className="container-view">Some activities should be here</div>
-    </div>
-  );
+const mapState = (state) => state;
+const mapDispatch = {
+  ...actions
 };
 
-ReactDOM.render(<App/>, document.getElementById('app'));
-
-export default App;
+export default connect(mapState, mapDispatch)(App);

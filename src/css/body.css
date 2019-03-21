@@ -1,4 +1,4 @@
-html, body, h1, h2, h3, ul, li {
+html, body, ul, li {
   margin: 0;
   padding: 0;
   border: 0;
@@ -12,4 +12,125 @@ body {
   font-size: 13px;
   color: #333333;
   line-height: 1;
+}
+
+.activities-container {
+  width: 100%;
+  height: 100%;
+}
+
+.loading-message {
+  margin-top: 200px;
+  text-align: center;
+}
+
+.activities-header {
+  text-align: center;
+  border-bottom: 2px solid #000;
+}
+
+.activity-item {
+  display: flex;
+  height: 70px;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #000;
+  padding: 0 1em;
+  cursor: pointer;
+}
+
+.activity-item:hover {
+  background: #f2f2f2;
+}
+
+.call-direction {
+  display: flex;
+  justify-content: center;
+  flex: 0.1;
+}
+
+.call-info {
+  display: flex;
+  flex-direction: column;
+  flex: 0.6;
+}
+
+.call-date {
+  display: flex;
+  flex: 0.2;
+}
+
+.up-arrow {
+  width: 0;
+  height: 0;
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-bottom: 8px solid green;
+  margin-bottom: 0.4em;
+}
+
+.down-arrow {
+  width: 0;
+  height: 0;
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-top: 8px solid red;
+  margin-top: 0.4em;
+}
+
+/* Details CSS */
+
+.call-detail-container {
+  width: 100%;
+  height: 100%;
+}
+
+.call-detail-header {
+  text-align: center;
+  border-bottom: 2px solid #000;
+}
+
+.call-detail-info {
+  display: flex;
+  height: 20px;
+  margin: 1em 2em;
+  width: 100%;
+}
+
+.detail-label {
+  font-weight: bold;
+  margin-right: 1em;
+}
+
+.detail-value {
+  text-transform: capitalize;
+}
+
+.call-actions {
+  display: flex;
+  justify-content: space-evenly;
+  margin-top: 2em;
+}
+
+.archive-call {
+  padding: 1em 1.5em;
+  font-size: 1.1em;
+  background: orange;
+  opacity: 0.9;
+}
+
+.archive-call:hover {
+  opacity: 1;
+}
+
+.go-back {
+  padding: 1em 1.5em;
+  font-size: 1.1em;
+  background: #233142;
+  color: #f2f2f2;
+  opacity: 0.9;
+}
+
+.go-back:hover {
+  opacity: 1;
 }
