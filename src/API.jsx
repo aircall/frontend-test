@@ -1,5 +1,4 @@
 export default class API {
-  constructor() {}
   getActivities() {
     return fetch("https://aircall-job.herokuapp.com/activities")
       .then(res => res.json())
@@ -10,5 +9,4 @@ export default class API {
       .then(res => res.json())
       .catch(err => ({ error: "Details not found." }));
   }
-  archiveCall(id) {}
 }
