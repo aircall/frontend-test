@@ -3,7 +3,7 @@ import Redirect from "react-router-dom";
 
 export default class ArchiveCall extends React.Component {
   constructor(props) {
-    super();
+    super(props);
     this.archiveCall = this.archiveCall.bind(this);
   }
 
