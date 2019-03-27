@@ -1,0 +1,56 @@
+.activity-feed-wrap {
+  height: 550px;
+  overflow-y: scroll;
+}
+
+.feed-item {
+  display: flex;
+  flex-direction: column;
+  margin-top: 10px;
+}
+
+.feed-item-date {
+  align-self: center;
+  color: #aba9a9;
+  font-family: helvetica;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+.feed-item-details-wrap {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid #bdbbbb;
+  border-radius: 5px;
+  padding: 10px;
+  margin: 15px;
+}
+
+.feed-item-details {
+  display: flex;
+  flex-direction: column;
+}
+
+.item-details-from {
+  font-size: 1.4em;
+  font-weight: 600;
+}
+
+.item-details-to {
+  color: #aba9a9;
+  font-weight: 400;
+}
+
+.feed-item > a {
+  text-decoration: none;
+  color: black;
+}
+
+.missed {
+  -webkit-text-fill-color: #ec5353;
+}
+
+.received {
+  -webkit-text-fill-color: #2a9644;
+}
