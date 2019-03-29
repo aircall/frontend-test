@@ -1,0 +1,105 @@
+header {
+  height: 50px;
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);
+  background:white;
+}
+
+header .title{
+  background: url('./../../assets/images/header/icon_logo.svg') no-repeat;
+  background-size: 1.6em;
+  background-position: 0 center;
+  line-height: 1.2em;
+  display:flex;
+  flex: 1;
+  align-items: center;
+  height: 3.2em;
+  margin-left: 1em;
+  padding-left: 2em;
+  font-size: 1.2em;
+  font-weight: 300;
+}
+
+header nav{
+  display: flex;
+  justify-content: flex-start;
+  align-items: baseline;
+  align-self: flex-end;
+  background:#fafaf9;
+  border-top:1px solid #efefee
+}
+header nav button {
+  outline: none;
+  text-decoration: none;
+  background: transparent;
+  border:none;
+  height: 100%;
+  background: url('./../../assets/images/header/dot_line.svg') no-repeat;
+  background-size: 10%;
+  background-position: right center;
+  padding:0 1.4em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  white-space: nowrap;
+}
+
+header nav button.icon{
+    padding: 0em;
+    width:60%;
+}
+header nav button.icon img {
+  width:50%;
+}
+
+header nav li:last-child button {
+  background: none;
+}
+
+
+header nav ol {
+  list-style: none;
+  display: flex;
+  flex-direction : row;
+  justify-content: center;
+  margin:0;
+  padding:0;
+}
+header nav li {
+  display:flex;
+  align-items: center;
+  height: 3.3em;
+}
+header nav li:first-child:before{
+  /* background: url('./../../assets/images/header/icon_wave_radius_border.svg') no-repeat;
+  background-size: 15%;
+  background-position: 0 center; */
+  content:url('./../../assets/images/header/icon_wave_radius_border.svg');
+  display:block;
+  border-top: 2px solid #FFF;
+  height: 49px;
+  width: 53px;
+  position: relative;
+  top: 1px;
+}
+
+
+
+header nav li.current button{
+  border-bottom:3px solid #fc5624;
+  font-weight: bold;
+  color:#4f4f4f;
+}
+
+.align-left{
+  flex: none;
+  width: 30%;
+}
+
+.align-right{
+
+}
+
+.subMenu{
+  background:#333;
+  padding:8px;
+}

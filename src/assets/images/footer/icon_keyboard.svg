@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg version="1.1" id="Calque_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 73.7 74.7" style="enable-background:new 0 0 73.7 74.7;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#FFFFFF;stroke:#F0F0EF;}
+	.st1{fill:#4AC422;}
+	.st2{fill:#FFFFFF;}
+</style>
+<circle class="st0" cx="36.2" cy="36.6" r="33.6"/>
+<circle class="st1" cx="36.1" cy="37.1" r="28.7"/>
+<g>
+	<circle class="st2" cx="27.8" cy="28.2" r="3.1"/>
+	<circle class="st2" cx="36.8" cy="28.2" r="3.1"/>
+	<circle class="st2" cx="45.8" cy="28.2" r="3.1"/>
+	<circle class="st2" cx="45.8" cy="37.2" r="3.1"/>
+	<circle class="st2" cx="36.8" cy="37.2" r="3.1"/>
+	<circle class="st2" cx="27.8" cy="37.2" r="3.1"/>
+	<circle class="st2" cx="27.8" cy="46.2" r="3.1"/>
+	<circle class="st2" cx="36.8" cy="46.2" r="3.1"/>
+	<circle class="st2" cx="45.8" cy="46.2" r="3.1"/>
+</g>
+</svg>

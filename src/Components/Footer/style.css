@@ -1,0 +1,79 @@
+footer{
+  height:100%!important;
+  padding: 8px;
+  position: relative;
+}
+
+.footerMenu{
+  display:flex;
+  justify-content:space-between;
+  padding:0;
+  margin:0;
+  line-height: 1.2em;
+  align-content: center;
+  align-items: stretch;
+  list-style: none;
+  height: 15%;
+}
+
+
+.footerMenu .badge{
+  position:absolute;
+  background: red;
+  color:white;
+  border: 1px solid red;
+  padding: 3px 6px;
+  line-height: 1.2em;
+  font-size: 0.80em;
+  border-radius: 2em;
+  right:0;
+  top:-5px;
+}
+
+.footerMenu .current{
+
+}
+
+.footerMenu li {
+  display:flex;
+  line-height: 1.2em;
+  justify-content:space-between;
+  align-self: center;
+  text-align: center;
+  position: relative;
+}
+
+.footerMenu li img{
+  display:flex;
+  line-height: 1.2em;
+  height:30px;
+  widtht:30px;
+
+}
+
+.footerMenu .calls{
+
+}
+
+.footerMenu .contacts{
+
+}
+
+.footerMenu .phoneKey{
+
+}
+
+.footerMenu .phoneKey img {
+  height:8em;
+  position: relative;
+  top: -25px;
+
+}
+
+.footerMenu .settings{
+
+}
+
+.footerMenu .action{
+
+}

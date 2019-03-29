@@ -1,0 +1,107 @@
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#app, .containrer-app {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+}
+
+#app .container {
+  width: 376px;
+  height: 666px;
+  z-index: 100;
+  overflow:hidden;
+  background: white;
+  border-radius: 3px;
+  box-shadow: 0 0 5px 0 rgba(0, 0, 0, .9);
+}
+
+#app .blur .activitiesList{
+  /* Blur and de-color */
+  -webkit-filter: blur(5px) grayscale(50%);
+
+  /* Recede */
+  -webkit-transform: scale(0.9);
+}
+
+#app .container-view {
+  padding: 20px;
+}
+
+/* LAYOUT lite : with small and pure flex lite */
+.flex-center{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.flex-layout-row{
+  flex-direction: row;
+}
+
+.flex-1{
+  flex: 1;
+}
+
+
+/* Animation Fade-In */
+@-webkit-keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+.fade-in {
+	-webkit-animation: fadeIn .5s ease-in 1 forwards;
+  animation: fadeIn .5s ease-in 1 forwards;
+  opacity: 0;
+}
+
+/* MASK */
+.mask{
+  background: rgba(0, 0, 0, .3);
+  /* Embiggen */
+  transform: scale(1); /* prefix me */
+
+  /* Hidden */
+  z-index: 150;
+}
+
+/* BUTTONS */
+.button-success,
+  .button-error,
+  .button-warning,
+  .button-secondary {
+      color: white;
+      border-radius: 4px;
+      text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+  }
+
+  .button-success {
+      background: rgb(28, 184, 65); /* this is a green */
+  }
+
+  .button-error {
+      background: rgb(202, 60, 60); /* this is a maroon */
+  }
+
+  .button-warning {
+      background: rgb(223, 117, 20); /* this is an orange */
+  }
+
+  .button-secondary {
+      background: rgb(66, 184, 221); /* this is a light blue */
+  }

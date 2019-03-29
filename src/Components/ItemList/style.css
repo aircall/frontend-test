@@ -1,0 +1,108 @@
+
+.activitiesBox .list .emptyList{
+  display:flex;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  text-align: center;
+  height: 460px;
+  width:100%;
+  margin:-15px 0 0 0;
+  font-size: 2em;
+  line-height: 1.2em;
+}
+
+.activitiesBox .list{
+  list-style: none;
+  margin: 0;
+  padding:12px 0 0 0;
+  overflow-y: auto;
+  height:100%;
+  display: block;
+}
+
+
+.itemlist{
+
+}
+
+.itemlist .callDate{
+  display:flex;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  text-align: center;
+  background-size: 2%;
+  background-repeat: repeat-x;
+  background-image: url('./../../assets/images/listCalls/bkg_lines.svg');
+  line-height: 1.2em;
+  background-position: center;
+  text-shadow: 3px 0px 3px #FFF;
+}
+
+.itemlist .callDate span{
+  display: inline-block;
+  line-height: 1.2em;
+  background-color: white;
+  padding:0 8px;
+  color:#bbbbba;
+  text-transform: uppercase;
+  font-size: 0.78em;
+}
+.itemlist .callItem{
+display:flex;
+background:white;
+justify-content: space-between;
+align-content: center;
+align-items: center;
+border: 2px solid #ebebea;
+border-radius: 3px;
+
+margin: 4px 8px 20px 8px;
+padding:12px;
+position:relative;
+background: #fff;
+box-shadow: 0 6px 8px rgba(102,119,136,.03), 0 1px 2px rgba(102,119,136,.3);
+}
+
+.itemlist .callItem .iconCall{
+  height:30px;
+  width:30px;
+}
+
+.itemlist .callItem .iconCall img{
+
+}
+
+.itemlist .callItem .infosCall{
+
+}
+
+
+.itemlist .callItem .infosCall .toCall{
+ line-height: 1.2em;
+ font-weight: bold;
+ color:#4f4f4f;
+ font-size: 1.3em;
+ text-align: center;
+ padding-bottom: 5px
+}
+
+.itemlist .callItem .infosCall .fromCall{
+  color:#ababab;
+  font-weight: 300;
+  font-size: 1em;
+  text-align: center;
+}
+
+.itemlist .callItem .infosCall .timeCall{
+  position:relative;
+}
+
+.itemlist .callItem .infosCall .timeCall .hourCall{
+text-align: center;
+}
+
+.itemlist .callItem .infosCall .timeCall .hourAmPmCall{
+position:absolute;
+}

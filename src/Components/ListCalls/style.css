@@ -1,0 +1,6 @@
+.activitiesCallsList{
+  background:#fdfdfc;
+  overflow-y: auto;
+  overflow-x: hidden;
+  height:70%;
+}
