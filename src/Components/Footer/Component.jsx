@@ -27,20 +27,20 @@ class Footer extends Component {
       <footer>
         <ul className="footerMenu">
           <li className="calls current">
-            <img src={icoCalls} />
+            <img alt="" src={icoCalls} />
             <Badge count={missedCalls} />
           </li>
           <li className="contacts">
-            <img src={icoContacts} />
+            <img alt="" src={icoContacts} />
           </li>
           <li className="phoneKey">
-            <img src={icoKeyboard} />
+            <img alt="" src={icoKeyboard} />
           </li>
           <li className="settings">
-            <img src={icoSettings} />
+            <img alt="" src={icoSettings} />
           </li>
           <li className="action">
-            <img src={icoAction} />
+            <img alt="" src={icoAction} />
           </li>
         </ul>
       </footer>

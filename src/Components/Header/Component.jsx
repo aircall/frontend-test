@@ -30,9 +30,9 @@ class Header extends Component {
 
           <nav className="flex-1 align-right">
             <ol>
-              <li
-                className={currentNav === 'inbox' ? 'current' : ''}
-                onClick={this.handleChangeNav('inbox')}>
+              <li className={currentNav === 'inbox' ? 'current' : ''}
+                onClick={this.handleChangeNav('inbox')}
+              >
                 <button>Inbox</button>
               </li>
               <li className={currentNav === 'all' ? 'current' : ''}>
@@ -40,7 +40,7 @@ class Header extends Component {
               </li>
               <li>
                 <button className="icon">
-                  <img src={icoSettings} />
+                  <img alt="" src={icoSettings} />
                 </button>
               </li>
             </ol>
@@ -49,22 +49,25 @@ class Header extends Component {
 
         <div className="subMenu">
           {currentNav === 'inbox' && this.props.data.activities.length > 0 && (
-            <button
-              className="button-success pure-button"
-              onClick={this.archiveAll}>
+            <button className="button-success pure-button"
+              onClick={this.archiveAll}
+            >
               ARCHIVE ALL
             </button>
           )}
-          {currentNav === 'inbox' &&
-            this.props.data.activities.length === 0 && (
-              <button class="pure-button pure-button-disabled">
-                👍 All Archived !
-              </button>
-            )}
+          {currentNav === 'inbox' && this.props.data.activities.length === 0 && (
+            <button class="pure-button pure-button-disabled">
+              <span role="img" aria-labelledby="like">
+                👍
+              </span>
+              {' : '}
+              All Archived !
+            </button>
+          )}
           {currentNav === 'all' && (
-            <button
-              className="button-secondary pure-button"
-              onClick={this.resetAll}>
+            <button className="button-secondary pure-button"
+              onClick={this.resetAll}
+            >
               RESET ALL
             </button>
           )}

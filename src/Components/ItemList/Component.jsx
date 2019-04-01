@@ -22,20 +22,18 @@ class ActivityList extends Component {
       activitiesList.map(activity => {
         const { id } = activity
         return (
-          <li
-            key={id}
+          <li key={id}
             id={`${id}`}
             className="itemlist"
-            onClick={this.activityHandleClicked(id)}>
+            onClick={this.activityHandleClicked(id)}
+          >
             <div className="callDate">
               <span>{moment(activity.created_at).format('MMMM, DD YYYY')}</span>
             </div>
             <div className="callItem">
               <div className="iconCall">
-                <img
-                  src={
-                    activity.call_type === 'answered' ? icoOutbound : icoInbound
-                  }
+                <img alt=""
+                  src={activity.call_type === 'answered' ? icoOutbound : icoInbound}
                 />
               </div>
               <div className="infosCall">
