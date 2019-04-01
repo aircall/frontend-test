@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import Footer from './Component.js';
+import Footer from './Component.jsx';
 
 
 const mapStateToProps =  ({ data, isLoading, currentNav}) => ({

@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import { fetchActivities } from '../../Services/Activities/api';
 
-import Activities from './Component.js';
+import Activities from './Component.jsx';
 
 
 const mapStateToProps =  ({ data, isLoading }) => ({

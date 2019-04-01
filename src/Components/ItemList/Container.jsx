@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import { fetchActivity, archivesActivity } from '../../Services/Activities/api';
 
-import ItemList from './Component.js';
+import ItemList from './Component.jsx';
 
 
 const mapStateToProps =  ({ data, isLoading }) => ({
