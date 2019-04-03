@@ -1,1 +1,1 @@
-export const hostAPI = "https://aircall-job.herokuapp.com";
+export const hostAPI = 'https://aircall-job.herokuapp.com'

@@ -36,17 +36,13 @@ class DetailsCall extends Component {
           <div className="modalBox-Container">
             <ul className="details">
               {activity.to && <li className="fullNameTo">{activity.to}</li>}
-              {activity.created_at && (
-                <li className="date">
-                  {moment(activity.created_at).format('llll')}
-                </li>
-              )}
+              {activity.created_at && <li className="date">{moment(activity.created_at).format('llll')}</li>}
               {activity.from && (
                 <li className="text">
                   <span role="img" aria-labelledby="phone">
                     📞
                   </span>{' '}
-                  : <b>{activity.from}</b>
+                  <b>{activity.from}</b>
                 </li>
               )}
               {activity.via && (
@@ -54,16 +50,10 @@ class DetailsCall extends Component {
                   <em>{activity.via}</em>
                 </li>
               )}
-              {activity.call_type && (
-                <li className="text">{activity.call_type}</li>
-              )}
-              {activity.duration && (
-                <li className="text">{activity.duration / 60} min.</li>
-              )}
+              {activity.call_type && <li className="text">{activity.call_type}</li>}
+              {activity.duration && <li className="text">{activity.duration / 60} min.</li>}
               {activity.direction && (
-                <li className="text">
-                  {activity.direction === 'outbound' ? 'Outbound' : 'Inbound'}
-                </li>
+                <li className="text">{activity.direction === 'outbound' ? 'Outbound' : 'Inbound'}</li>
               )}
               <li className="text">
                 <b>{activity.is_archived ? 'Archived' : 'Not Archived'}</b>
@@ -73,9 +63,7 @@ class DetailsCall extends Component {
 
           {!activity.is_archived && (
             <div className="modalBox-Footer">
-              <button className="pure-button pure-button-primary"
-                onClick={this.handleUpdateDetails(activity.id)}
-              >
+              <button className="pure-button pure-button-primary" onClick={this.handleUpdateDetails(activity.id)}>
                 Archive Now !
               </button>
             </div>

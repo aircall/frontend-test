@@ -1,9 +1,5 @@
 import { connect } from 'react-redux'
-import {
-  fetchActivities,
-  archiveActivities,
-  resetActivities
-} from '../../Services/Activities/api'
+import { fetchActivities, archiveActivities, resetActivities } from '../../Services/Activities/api'
 
 import Header from './Component.jsx'
 

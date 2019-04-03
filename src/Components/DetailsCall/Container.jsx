@@ -1,8 +1,5 @@
 import { connect } from 'react-redux'
-import {
-  archivesActivity,
-  fetchActivities
-} from '../../Services/Activities/api'
+import { archivesActivity, fetchActivities } from '../../Services/Activities/api'
 
 import { closeDetails } from '../../Services/OpenDetails/actions'
 

@@ -18,8 +18,7 @@ class Footer extends Component {
     let missedCalls = 0
     if (activities.length > 0) {
       missedCalls = [...activities].filter(
-        activity =>
-          activity.call_type === 'missed' || activity.call_type === 'voicemail'
+        activity => activity.call_type === 'missed' || activity.call_type === 'voicemail'
       ).length
     }
 

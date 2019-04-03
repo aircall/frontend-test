@@ -1,18 +1,24 @@
 {
-    "extends": [
-        "react-app",
-        "plugin:prettier/recommended"
-    ],
-    "rules": {
-        "no-console": "warn",
-        "no-unused-vars": "off",
-        "react/jsx-max-props-per-line": [1, {
-            "when": "multiline"
-        }],
-        "react/jsx-closing-bracket-location": ["error", "line-aligned"],
-        "react/jsx-curly-spacing": ["error", "never", {
-            "allowMultiline": false
-        }],
-        "react/jsx-first-prop-new-line": [1, "never"]
-    }
+  "extends": [
+    "eslint:recommended"
+  ],
+  "env": {
+    "es6": true,
+    "browser": true,
+    "node": true
+  },
+  "plugins": ["react"],
+  "parser": "babel-eslint",
+  "rules": {
+    "no-console": "warn",
+    "no-unused-vars": "off",
+    "react/jsx-max-props-per-line": [1, {
+      "when": "multiline"
+    }],
+    "react/jsx-closing-bracket-location": ["error", "line-aligned"],
+    "react/jsx-curly-spacing": ["error", "never", {
+      "allowMultiline": false
+    }],
+    "react/jsx-first-prop-new-line": [1, "never"]
+  }
 }

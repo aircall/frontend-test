@@ -14,11 +14,7 @@ class Activities extends Component {
 
     return (
       <div className="activitiesCallsList">
-        {isLoading ? (
-          <p>Loading....</p>
-        ) : data.activities ? (
-          <ActivityList activitiesList={data.activities} />
-        ) : null}
+        {isLoading ? <p>Loading....</p> : data.activities ? <ActivityList activitiesList={data.activities} /> : null}
       </div>
     )
   }
