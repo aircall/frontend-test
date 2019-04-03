@@ -1,10 +1,13 @@
 import React, { Component } from 'react'
 import moment from 'moment'
+import 'moment/locale/fr'
 
 import icoInbound from './../../assets/images/listCalls/icon_inbound.svg'
 import icoOutbound from './../../assets/images/listCalls/icon_outbound.svg'
 import './style.css'
 
+moment.locale('fr')
+moment().format('D MMM YY')
 class ActivityList extends Component {
   async componentDidMount() {}
 
