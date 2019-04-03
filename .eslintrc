@@ -10,6 +10,13 @@
   "plugins": ["react"],
   "parser": "babel-eslint",
   "rules": {
+    "comma-dangle": ["error", {
+      "arrays": "never",
+      "objects": "never",
+      "imports": "never",
+      "exports": "never",
+      "functions": "ignore"
+    }],
     "no-console": "warn",
     "no-unused-vars": "off",
     "react/jsx-max-props-per-line": [1, {

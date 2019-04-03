@@ -1,6 +1,9 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import moment from 'moment'
+import 'moment/locale/fr'
+moment.locale('fr')
+moment().format('D MMM YY')
 
 import icoClose from './../../assets/images/listCalls/icon-close.svg'
 import './style.css'
