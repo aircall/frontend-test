@@ -11,16 +11,16 @@ const htmlWebpackPlugin = new HtmlWebPackPlugin({
   filename: './index.html'
 });
 
+
 const loaderOptionsPlugin = new webpack.LoaderOptionsPlugin({
   minimize: true,
   debug: false,
 })
 
-
-
   /*Optim load MomentJs */
 const ignoreMomentBuild = new webpack.ContextReplacementPlugin(/moment[/\\]locale$/, /fr|fr/)
 const mergeChunks = new webpack.optimize.AggressiveMergingPlugin()
+
 
 // OPTIMIZER 
 const optimMinizer = {
@@ -107,7 +107,10 @@ module.exports = {
   plugins: [
     ignoreMomentBuild,
     htmlWebpackPlugin,
+<<<<<<< HEAD
     loaderOptionsPlugin,
+=======
+>>>>>>> ba843b6f22a5658884f72b1061c8b873b3257612
     mergeChunks
   ]
 }
