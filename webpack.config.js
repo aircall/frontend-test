@@ -107,10 +107,7 @@ module.exports = {
   plugins: [
     ignoreMomentBuild,
     htmlWebpackPlugin,
-<<<<<<< HEAD
     loaderOptionsPlugin,
-=======
->>>>>>> ba843b6f22a5658884f72b1061c8b873b3257612
     mergeChunks
   ]
 }
