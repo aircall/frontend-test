@@ -1,5 +1,6 @@
 {
   "extends": [
+    "react-app",
     "eslint:recommended"
   ],
   "env": {
@@ -8,7 +9,7 @@
     "node": true,
     "mocha": true
   },
-  "plugins": ["react"],
+  "plugins": ["react", "jsx-a11y"],
   "parser": "babel-eslint",
   "rules": {
     "comma-dangle": ["error", {
