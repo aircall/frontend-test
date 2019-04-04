@@ -1,10 +1,12 @@
-## Improvements
+[![Netlify Status](https://api.netlify.com/api/v1/badges/8010a9a4-4d50-4292-b52a-e8cbc8a1ba9c/deploy-status)](https://app.netlify.com/sites/aircall-bbelhadi/deploys)
 
-# Live
+# Improvements
+
+## Live
 
 Run Live [Demo](https://aircall-bbelhadi.netlify.com) Deploy app with Netlify
 
-# Tests
+# #Tests
 
 Add "units tests" for reducers and actions
 
@@ -12,7 +14,7 @@ Add "units tests" for reducers and actions
 yarn run tests
 ```
 
-# Quality Code
+## Quality Code
 
 Add and apply Eslint and Prettier
 
