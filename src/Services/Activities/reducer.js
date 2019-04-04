@@ -12,7 +12,7 @@ import {
 } from './../../constants/types'
 
 const INITIAL_STATE = {
-  activities: {},
+  activities: [],
   activity: {},
   success: {
     status: false,

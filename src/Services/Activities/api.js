@@ -39,7 +39,7 @@ export const fetchActivities = (currentNav = 'all') => async dispatch => {
 
 export const archiveActivities = activities => async dispatch => {
   dispatch(isLoading())
-  Promise.all(
+  await Promise.all(
     activities.map(async activity => {
       const url = `${hostAPI}/activities/${activity.id}`
       await axios.post(url, {
@@ -61,7 +61,7 @@ export const resetActivities = () => async dispatch => {
     .get(url)
     .then(data => {
       dispatch(isLoaded())
-      dispatch(resetPayloadActivitiesSuccess(data))
+      dispatch(resetPayloadActivitiesSuccess([...data.data]))
     })
     .catch(error => dispatch(resetPayloadActivitiesError(error)))
 }
