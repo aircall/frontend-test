@@ -2,7 +2,7 @@
 
 # Live
 
-Run Live [Demo](https://eager-bhaskara-669554.netlify.com) Deploy app with Netlify
+Run Live [Demo](https://aircall-bbelhadi.netlify.com "Demo" target="\_blank") Deploy app with Netlify
 
 # Tests
 
