@@ -9,7 +9,7 @@
   "private": false,
   "scripts": {
     "start": "webpack-dev-server --mode development --open",
-    "build": "NODE_ENV=production webpack --mode production",
+    "build": "NODE_ENV=production ./node_modules/.bin/webpack --mode production",
     "lint": "./node_modules/.bin/eslint  ./src -f table --ext .js --ext .jsx || true",
     "lint-fix": "./node_modules/.bin/eslint --fix ./src -f table --ext .js --ext .jsx",
     "precommit": "pretty-quick --staged",
