@@ -6,7 +6,7 @@
 
 Run Live [Demo](https://aircall-bbelhadi.netlify.com) Deploy app with Netlify
 
-# #Tests
+##Tests
 
 Add "units tests" for reducers and actions
 
