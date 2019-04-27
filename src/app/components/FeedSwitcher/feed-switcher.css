@@ -1,0 +1,17 @@
+.feed-switcher {
+  width: 100%;
+  height: 40px;
+  border-bottom: 1px solid rgb(231, 231, 231);
+  display: flex;
+}
+
+.feed-selector {
+  flex-grow: 1;
+  text-align: center;
+  cursor: pointer;    
+  border-right: 1px solid rgb(231, 231, 231);
+}
+
+.feed-selected {
+  font-weight: 700;
+}

@@ -7,6 +7,7 @@ import { store } from '../store/store.js'
 // Components
 import Header from './Header/Header.jsx';
 import ActivityFeed from './ActivityFeed/ActivityFeed.jsx'
+import FeedSwitcher from './FeedSwitcher/FeedSwitcher.jsx'
 
 /**
  * Entrypoint React component for the app
@@ -15,6 +16,7 @@ const App = () => {
   return (
     <div className='container'>
       <Header/>
+      <FeedSwitcher/>
       <div className="container-view">
         <ActivityFeed/>
       </div>

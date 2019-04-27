@@ -12,3 +12,10 @@ export function updateCalls(calls) {
     calls
   }
 }
+
+export function selectFeed(feed) {
+  return {
+    type: ActionTypes.SELECT_FEED,
+    feed
+  }
+}
