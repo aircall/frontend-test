@@ -1,13 +1,14 @@
 // Libraries
 import React from 'react';
 import { connect } from 'react-redux'
-// Styles
-import './activity-feed.css'
-// Modules
+// Components
 import Call from '../Call/Call.jsx'
 import RLCallsFetcher from '../RLCallsFetcher/RLCallsFetcher.jsx'
+// Store
 import { calls } from '../../store/reducers.js'
 import { fetchCalls } from '../../store/actions/actions.js'
+// Styles
+import './activity-feed.css'
 
 const mapStateToProps = (state) => {
   return {
@@ -19,6 +20,12 @@ const mapDispatchToProps = {
   fetchCalls
 }
 
+/**
+ * This components renders a list of calls.
+ * 
+ * @class ActivityFeed
+ * @extends React.Component
+ */
 class ActivityFeed extends React.Component {
   componentDidMount() {
     this.props.fetchCalls();
@@ -29,7 +36,7 @@ class ActivityFeed extends React.Component {
 
     this.props.calls.forEach(call => {
       callsList.push(
-        <Call key={call.id}/>
+        <Call key={call.id} call={call}/>
       )
     })
   
@@ -42,8 +49,6 @@ class ActivityFeed extends React.Component {
       </div>
     );
   }
-
-
 }
 
 export default connect(
