@@ -1,9 +1,25 @@
 .call-container {
   margin:5px;
   border-radius: 3px;
-  border: 1px solid rgb(168, 168, 168);
+  border: 1px solid rgb(231, 231, 231);
+  display: flex;
+  justify-content: space-between;
+}
+
+.call-infos {
+  list-style-type: none;
+  padding: 8px;
 }
 
 .call-info {
-  list-style-type: none;
+  padding: 3px;
 }
+
+.missed {
+  border: 1px solid rgb(231, 85, 85);
+}
+
+.answered {
+  border: 1px solid rgb(64, 194, 114);
+}
+

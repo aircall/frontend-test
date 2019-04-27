@@ -1,0 +1,8 @@
+
+.archive-btn {
+  cursor: pointer;
+  border: none;
+  height: 24px;
+  border-radius: 3px;
+  align-self: flex-end;
+}

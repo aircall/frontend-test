@@ -1,5 +1,7 @@
 // Libraries
 import React from 'react';
+// Components
+import ArchiveButton from '../CallArchiver/CallArchiver.jsx'
 // Styles
 import './call.css'
 
@@ -10,15 +12,12 @@ const Call = ({
   call
 }) => {
   return (
-    <div className='call-container'>
-      <ul className="call-info">
-        <li>{call.call_type}</li>
-        <li>{call.direction}</li>
-        <li>{call.duration}</li>
-        <li>{call.from}</li>
-        <li>{call.to}</li>
-        <li>{call.is_archived}</li>
+    <div className={`call-container ${call.call_type}`}>
+      <ul className="call-infos">
+        <li className="call-info">From: {call.from || 'Unknown'}</li>
+        <li className="call-info">To: {call.to || 'Unknown'}</li>
       </ul>
+      <ArchiveButton callId={call.id} />
     </div>
   );
 };

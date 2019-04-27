@@ -4,8 +4,6 @@ import { connect } from 'react-redux'
 // Store
 import { callsFecthing } from '../../store/reducers.js'
 import { updateCalls } from '../../store/actions/actions.js'
-// Scripts
-import { fetchCalls } from '../../script/call_fetcher.js'
 
 const mapStateToProps = (state) => {
   return {
@@ -15,6 +13,16 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = {
   updateCalls
+}
+
+const CALLS_LIST_ENDPOINT = 'https://aircall-job.herokuapp.com/activities'
+
+function fetchCalls() {
+  return fetch(CALLS_LIST_ENDPOINT)
+    .then(function(response) {
+      return response.json();
+    })
+    .catch(err => console.error(err))
 }
 
 /**

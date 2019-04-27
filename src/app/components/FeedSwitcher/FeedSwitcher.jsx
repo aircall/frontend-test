@@ -26,9 +26,9 @@ const FeedSwitcher = ({
 }) => {
   return (
     <div className="feed-switcher">
-      <p className={`feed-selector ${selectedFeed === 'all' ? 'feed-selected': ''}`} onClick={() => selectFeed('all')}>All</p>
-      <p className={`feed-selector ${selectedFeed === 'archived' ? 'feed-selected': ''}`} onClick={() => selectFeed('archived')}>Archived</p>
       <p className={`feed-selector ${selectedFeed === 'active' ? 'feed-selected': ''}`} onClick={() => selectFeed('active')}>Active</p>
+      <p className={`feed-selector ${selectedFeed === 'archived' ? 'feed-selected': ''}`} onClick={() => selectFeed('archived')}>Archived</p>
+      <p className={`feed-selector ${selectedFeed === 'all' ? 'feed-selected': ''}`} onClick={() => selectFeed('all')}>All</p>
     </div>
   );
 };

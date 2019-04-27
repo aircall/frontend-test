@@ -16,9 +16,11 @@ const App = () => {
   return (
     <div className='container'>
       <Header/>
-      <FeedSwitcher/>
-      <div className="container-view">
-        <ActivityFeed/>
+      <div className="content">
+        <FeedSwitcher/>
+        <div className="container-view">
+          <ActivityFeed/>
+        </div>
       </div>
     </div>
   );
