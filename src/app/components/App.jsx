@@ -5,7 +5,7 @@ import { Provider } from 'react-redux'
 // Store
 import { store } from '../store/store.js'
 // Components
-import Header from './Header.jsx';
+import Header from './Header/Header.jsx';
 import ActivityFeed from './ActivityFeed/ActivityFeed.jsx'
 
 /**

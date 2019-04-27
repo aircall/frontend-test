@@ -25,5 +25,6 @@ export default function app(state = initialState, action) {
 }
 
 export const calls = (state) => state.calls
+export const archivedCalls = (state) => state.calls.filter(call => call.is_archived)
 export const hasCalls = (state) => state.calls.length !== 0
 export const callsFecthing = (state) => state.callsFecthing
