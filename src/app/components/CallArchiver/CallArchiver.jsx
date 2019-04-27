@@ -20,10 +20,10 @@ const mapDispatchToProps = {
 
 const ARCHIVE_CALL_ENDPOINT = 'https://aircall-job.herokuapp.com/activities/'
 
-const archive = (callId, callsToArchive, archiveCall, successCb) => {
-  if (callsToArchive.indexOf(callId) !== -1) {
-    return 
-  }
+const archive = (callId, status, archiveCall, successCb) => {
+  // if (callsToArchive.indexOf(callId) !== -1) {
+  //   return 
+  // }
 
   archiveCall()
 
@@ -33,7 +33,7 @@ const archive = (callId, callsToArchive, archiveCall, successCb) => {
       'Content-Type': 'application/json'
     },
     body: JSON.stringify({
-      "is_archived": true
+      "is_archived": status
     })
   })
     .then(function() {
@@ -49,10 +49,11 @@ const CallArchiver = ({
   callId,
   archiveCall,
   callsToArchive,
-  fetchCalls
+  fetchCalls,
+  toArchive
 }) => {
   return (
-    <button className="archive-btn" onClick={() => archive(callId, callsToArchive, archiveCall, fetchCalls)}>Archive</button>
+    <button className="archive-btn" onClick={() => archive(callId, toArchive, archiveCall, fetchCalls)}>{toArchive ? 'Archive' : 'Unarchive'}</button>
   );
 };
 

@@ -17,7 +17,7 @@ const Call = ({
         <li className="call-info">From: {call.from || 'Unknown'}</li>
         <li className="call-info">To: {call.to || 'Unknown'}</li>
       </ul>
-      <ArchiveButton callId={call.id} />
+      <ArchiveButton callId={call.id} toArchive={call.is_archived === false}/>
     </div>
   );
 };

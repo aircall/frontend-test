@@ -18,7 +18,8 @@ export default function app(state = initialState, action) {
     case ActionsTypes.UPDATE_CALLS: {
       return {
         ...state,
-        calls: action.calls
+        calls: action.calls,
+        callsFecthing: false
       }
     }
     case ActionsTypes.SELECT_FEED: {
