@@ -8,6 +8,8 @@ import { store } from '../store/store.js'
 import Header from './Header/Header.jsx';
 import ActivityFeed from './ActivityFeed/ActivityFeed.jsx'
 import FeedSwitcher from './FeedSwitcher/FeedSwitcher.jsx'
+// Styles
+import './app.css'
 
 /**
  * Entrypoint React component for the app
