@@ -1,7 +1,7 @@
-import * as Actions from './actions/actions.js'
+import * as Actions from './actions/actions_types.js'
 
 const initialState = {
-  calls: [0, 1, 2, 3, 4, 5],
+  calls: [],
   callsFecthing: false
 }
 
@@ -26,3 +26,4 @@ export default function app(state = initialState, action) {
 
 export const calls = (state) => state.calls
 export const hasCalls = (state) => state.calls.length !== 0
+export const callsFecthing = (state) => state.callsFecthing

@@ -1,4 +1,7 @@
 .call-container {
   height: 30px;
   background-color: red;
+
+  margin:5px;
+  border-radius: 3px;
 }

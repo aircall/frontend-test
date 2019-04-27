@@ -6,8 +6,9 @@ export function fetchCalls() {
   }
 }
 
-export function updateCalls() {
+export function updateCalls(calls) {
   return {
-    type: ActionTypes.UPDATE_CALLS
+    type: ActionTypes.UPDATE_CALLS,
+    calls
   }
 }
