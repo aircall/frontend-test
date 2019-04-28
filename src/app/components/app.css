@@ -44,3 +44,14 @@ body {
 .content {
   margin-top: 80px;
 }
+
+button {
+  cursor: pointer;
+  border: none;
+  height: 24px;
+  align-self: flex-end;
+}
+
+button:hover {
+  background-color: rgb(231, 231, 231);
+}

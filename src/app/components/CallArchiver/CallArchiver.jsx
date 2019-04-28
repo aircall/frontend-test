@@ -4,8 +4,6 @@ import { connect } from 'react-redux'
 // Store
 import { archiveCall, fetchCalls } from '../../store/actions/actions.js'
 import { callsToArchive } from '../../store/reducers.js'
-// Styles
-import './call-archiver.css'
 
 const mapStateToProps = (state) => {
   return {
