@@ -4,7 +4,6 @@ const initialState = {
   calls: [],
   callsFecthing: false,
   selectedFeed: 'active',
-  callsToArchive: []
 }
 
 export default function app(state = initialState, action) {
@@ -28,12 +27,6 @@ export default function app(state = initialState, action) {
         selectedFeed: action.feed
       }
     }
-    case ActionsTypes.ARCHIVE_CALL: {
-      return {
-        ...state,
-        callsToArchive: [...state.callsToArchive, action.callId]
-      }
-    }
     default:
       return state
   }
@@ -45,4 +38,3 @@ export const activeCalls = (state) => state.calls.filter(call => !call.is_archiv
 export const hasCalls = (state) => state.calls.length !== 0
 export const callsFecthing = (state) => state.callsFecthing
 export const selectedFeed = (state) => state.selectedFeed
-export const callsToArchive = (state) => state.callsToArchive

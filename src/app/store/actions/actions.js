@@ -19,17 +19,3 @@ export function selectFeed(feed) {
     feed
   }
 }
-
-export function archiveCall(callId) {
-  return {
-    type: ActionTypes.ARCHIVE_CALL,
-    callId
-  }
-}
-
-export function archivedCall(callId) {
-  return {
-    type: ActionTypes.ARCHIVED_CALL,
-    callId
-  }
-}

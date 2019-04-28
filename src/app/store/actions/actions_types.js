@@ -1,5 +1,3 @@
 export const FETCH_CALLS = 'FETCH_CALLS'
 export const UPDATE_CALLS = 'UPDATE_CALLS'
 export const SELECT_FEED = 'SELECT_FEED'
-export const ARCHIVE_CALL = 'ARCHIVE_CALL'
-export const ARCHIVED_CALL = 'ARCHIVED_CALL'
