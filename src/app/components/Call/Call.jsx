@@ -21,8 +21,14 @@ class Call extends React.Component {
     return (
       <div className={`call-container ${call.call_type}`}>
         <ul className="call-infos">
-          <li className="call-info">From: {call.from || 'Unknown'}</li>
-          <li className="call-info">To: {call.to || 'Unknown'}</li>
+          <li className="call-info">
+            <span className="info-description">From: </span> 
+            {call.from || 'Unknown'}
+          </li>
+          <li className="call-info">
+            <span className="info-description">To: </span>  
+            {call.to || 'Unknown'}
+          </li>
         </ul>
         <CallDetails visible={this.state.detailsShown} callId={call.id}/>
         <div className="call-actions">

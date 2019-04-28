@@ -55,3 +55,7 @@ button {
 button:hover {
   background-color: rgb(231, 231, 231);
 }
+
+.info-description {
+  font-weight: 700;
+}

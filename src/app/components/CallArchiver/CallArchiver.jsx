@@ -51,7 +51,11 @@ const CallArchiver = ({
   toArchive
 }) => {
   return (
-    <button className="archive-btn" onClick={() => archive(callId, toArchive, archiveCall, fetchCalls)}>{toArchive ? 'Archive' : 'Unarchive'}</button>
+    <button 
+      className="archive-btn" 
+      onClick={() => archive(callId, toArchive, archiveCall, fetchCalls)}>
+      {toArchive ? 'Archive' : 'Unarchive'}
+    </button>
   );
 };
 
