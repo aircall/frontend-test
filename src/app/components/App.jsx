@@ -8,6 +8,7 @@ import { store } from '../store/store.js'
 import Header from './Header/Header.jsx';
 import ActivityFeed from './ActivityFeed/ActivityFeed.jsx'
 import FeedSwitcher from './FeedSwitcher/FeedSwitcher.jsx'
+import Reset from './Reset/Reset.jsx'
 // Styles
 import './app.css'
 
@@ -24,6 +25,7 @@ const App = () => {
           <ActivityFeed/>
         </div>
       </div>
+      <Reset />
     </div>
   );
 };
