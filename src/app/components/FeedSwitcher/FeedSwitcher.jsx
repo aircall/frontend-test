@@ -7,6 +7,7 @@ import './feed-switcher.css'
 import { selectedFeed } from '../../store/reducers.js'
 import { selectFeed } from '../../store/actions/actions.js'
 
+// Store connection
 const mapStateToProps = (state) => {
   return {
     selectedFeed: selectedFeed(state)

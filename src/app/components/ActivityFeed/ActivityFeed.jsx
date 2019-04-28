@@ -10,6 +10,7 @@ import { fetchCalls } from '../../store/actions/actions.js'
 // Styles
 import './activity-feed.css'
 
+// Store Connection
 const mapStateToProps = (state) => {
   return {
     calls: calls(state),
@@ -20,6 +21,8 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = {
   fetchCalls
 }
+
+// Helper functions and variables
 
 const getFilterFn = (filter) => {
   if (filter === 'all') {

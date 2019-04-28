@@ -5,6 +5,7 @@ import { connect } from 'react-redux'
 import { archiveCall, fetchCalls } from '../../store/actions/actions.js'
 import { callsToArchive } from '../../store/reducers.js'
 
+// Store Connection
 const mapStateToProps = (state) => {
   return {
     callsToArchive: callsToArchive(state)
@@ -16,6 +17,7 @@ const mapDispatchToProps = {
   fetchCalls
 }
 
+// Helper functions and variables
 const ARCHIVE_CALL_ENDPOINT = 'https://aircall-job.herokuapp.com/activities/'
 
 const archive = (callId, status, archiveCall, successCb) => {

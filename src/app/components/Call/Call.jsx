@@ -6,6 +6,12 @@ import CallDetails from '../CallDetails/CallDetails.jsx'
 // Styles
 import './call.css'
 
+/**
+ * This component represents and renders a Call.
+ * 
+ * @class Call
+ * @extends React.Component
+ */
 class Call extends React.Component {
   constructor(props) {
     super(props)

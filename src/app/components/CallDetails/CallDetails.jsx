@@ -3,6 +3,7 @@ import React from 'react';
 // Styles
 import './call-details.css'
 
+// Helper functions and variables
 const CALL_DETAIL_ENDPOINT = 'https://aircall-job.herokuapp.com/activities/'
 
 function fetchCallDetail(id) {
