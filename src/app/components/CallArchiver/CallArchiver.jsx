@@ -27,10 +27,12 @@ class CallArchiver extends React.Component {
   }
 
   archive() {
+    // If we're already archiving the call, do nothing
     if (!this.state.canArchive) {
       return
     }
 
+    // Avoid multiple requests at the samme time
     this.setState({ canArchive: false })
 
     return fetch(ARCHIVE_CALL_ENDPOINT + this.props.callId, {
@@ -44,7 +46,7 @@ class CallArchiver extends React.Component {
     })
       .then(this.props.fetchCalls)
       .catch(err => console.error(err))
-      .finally(() => this.setState({ canArchive: true }))
+      .finally(() => this.setState({ canArchive: true })) // Allow future requests
   }
 
   render() {

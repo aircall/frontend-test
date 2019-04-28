@@ -23,7 +23,6 @@ const mapDispatchToProps = {
 }
 
 // Helper functions and variables
-
 const getFilterFn = (filter) => {
   if (filter === 'all') {
     return (call) => call

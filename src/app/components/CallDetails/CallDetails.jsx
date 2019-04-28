@@ -6,14 +6,6 @@ import './call-details.css'
 // Helper functions and variables
 const CALL_DETAIL_ENDPOINT = 'https://aircall-job.herokuapp.com/activities/'
 
-function fetchCallDetail(id) {
-  return fetch(CALL_DETAIL_ENDPOINT + id)
-    .then(function(response) {
-      return response.json();
-    })
-    .catch(err => console.error(err))
-}
-
 /**
  * This components fetches and renders the details of a call.
  * 
@@ -25,24 +17,30 @@ class CallDetails extends React.Component {
     super(props)
 
     this.state = {
-      isFetched: false,
+      canFetch: true,
       call: {}
     }
+
+    this.fetchCallDetail = this.fetchCallDetail.bind(this)
+  }
+
+  fetchCallDetail() {
+    return fetch(CALL_DETAIL_ENDPOINT + this.props.callId)
+      .then((response) => response.json())
   }
 
   componentDidUpdate() {
-    // Avoid starting a new fecth for the same resource if one is already in progress
+    // Avoid starting a new fetch for the same resource if one is already in progress
     // or already done
-    if (!this.state.isFetched) {
-      this.setState({isFetched: true})
-
-      fetchCallDetail(this.props.callId)
-        .then(call => this.setState({call}))
-        .catch(() => {
-          // In the case when the fetch fails reset the isFetched property to avoid blocking further attempts
-          this.setState({isFetched: false}) 
-        })
+    if (!this.state.canFetch) {
+      return
     }
+    
+    this.setState({canFetch: false}) // Block multiple calls
+
+    return this.fetchCallDetail()
+      .then(call => this.setState({call}))
+      .catch(() => this.setState({ canFetch: true })) // Allow future requests in case of failure
   }
 
   render() {
