@@ -1,6 +1,6 @@
 import { Call, CallApi, fromApi } from './call.model';
 
-export function getCalls(): Promise<ReadonlyArray<Call>> {
+export async function getCalls(): Promise<ReadonlyArray<Call>> {
   return fetch('https://aircall-job.herokuapp.com/activities')
     .then((response) => response.ok ? response.json() as Promise<ReadonlyArray<CallApi>> : Promise.reject())
     .then((calls) => calls.map(fromApi))
@@ -8,7 +8,7 @@ export function getCalls(): Promise<ReadonlyArray<Call>> {
   ;
 }
 
-export function archiveCall(id: number): Promise<undefined> {
+export async function archiveCall(id: number): Promise<undefined> {
   return fetch(
     `https://aircall-job.herokuapp.com/activities/${id}`,
     {
@@ -24,7 +24,7 @@ export function archiveCall(id: number): Promise<undefined> {
   ;
 }
 
-export function resetArchivedStatus(): Promise<ReadonlyArray<Call>> {
+export async function resetArchivedStatus(): Promise<ReadonlyArray<Call>> {
   return fetch('https://aircall-job.herokuapp.com/reset')
     .then((response) => response.ok ? Promise.resolve() : Promise.reject())
     .then(() => undefined)

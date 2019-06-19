@@ -23,44 +23,45 @@ class App extends React.Component<{}, AppState> {
       hasArchivedCalls: false,
     };
 
-    getCalls()
-      .then((calls) => this.setState({
-        calls: calls.filter(({ isArchived }) => !isArchived),
-        hasArchivedCalls: calls.some(({ isArchived }) => isArchived),
-      }))
-    ;
+    this.getCalls();
   }
 
-  selectCall(callId?: number) {
+  private async getCalls() {
+    const calls = await getCalls();
+    this.setState({
+      calls: calls.filter(({ isArchived }) => !isArchived),
+      hasArchivedCalls: calls.some(({ isArchived }) => isArchived),
+    });
+  }
+
+  private selectCall(callId?: number) {
     this.setState({
       ...this.state,
       selectedCall: callId ? this.state.calls.find(({ id }) => id === callId) : undefined,
     });
   }
 
-  archiveSelectedCall() {
+  private async archiveSelectedCall() {
     if (!this.state.selectedCall) {
       return ;
     }
     const callId = this.state.selectedCall.id;
-    archiveCall(callId)
-      .then(() => this.setState({
-        calls: this.state.calls.filter(({ id }) => id !== callId),
-        selectedCall: undefined,
-        hasArchivedCalls: true,
-      }))
-    ;
+    await archiveCall(callId);
+    this.setState({
+      calls: this.state.calls.filter(({ id }) => id !== callId),
+      selectedCall: undefined,
+      hasArchivedCalls: true,
+    });
   }
 
-  resetArchivedStatus() {
-    resetArchivedStatus()
-      .then(() => getCalls())
-      .then((calls) => this.setState({
-        ...this.state,
-        calls: calls.filter(({ isArchived }) => !isArchived),
-        hasArchivedCalls: calls.some(({ isArchived }) => isArchived),
-      }))
-    ;
+  private async resetArchivedStatus() {
+    await resetArchivedStatus();
+    const calls = await getCalls();
+    this.setState({
+      ...this.state,
+      calls: calls.filter(({ isArchived }) => !isArchived),
+      hasArchivedCalls: calls.some(({ isArchived }) => isArchived),
+    });
   }
 
   render() {
