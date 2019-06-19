@@ -3,7 +3,7 @@ import './Detail.scss';
 import * as React from 'react';
 
 import { Call } from './shared/call.model';
-import { getDisplayName, getTimeAsString, getViaDesc, getDateTimeAsString, getDurationAsString } from './shared/utils';
+import { getDisplayName, getDateTimeAsString, getDurationAsString } from './shared/utils';
 import CallIcon from './CallIcon';
 
 type DetailProps = {
