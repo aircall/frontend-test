@@ -1,5 +1,6 @@
 import * as React from 'react';
 
+// tslint:disable:max-line-length
 const Header = () => {
   return (
     <header>
