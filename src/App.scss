@@ -58,9 +58,15 @@ footer {
     background: #DD401C;
     color: white;
 
+    outline: none;
+
     font-size: 16px;
 
     cursor: pointer;
+
+    &:hover {
+      background: rgba(#DD401C, .9);
+    }
   }
 
   .app--has-archived-calls & {

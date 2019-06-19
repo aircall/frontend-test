@@ -15,6 +15,10 @@
 
   cursor: pointer;
 
+  &:hover {
+    background-color: #efefef;
+  }
+
   .call-icon {
     font-size: 20px;
     margin: 0 16px;

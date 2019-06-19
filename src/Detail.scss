@@ -36,6 +36,7 @@ article {
     font-size: 20px;
     color: #333;
     font-weight: bold;
+    user-select: none;
   }
 
   &__back {
@@ -47,6 +48,8 @@ article {
     background: transparent;
     padding: 0;
     border: 0;
+
+    outline: none;
 
     cursor: pointer;
 
@@ -80,6 +83,7 @@ article {
     &-label {
       font-weight: bold;
       width: 80px;
+      user-select: none;
     }
 
     &-value {
@@ -112,7 +116,13 @@ article {
     background: #DD401C;
     color: white;
 
+    outline: none;
+
     cursor: pointer;
+
+    &:hover {
+      background: rgba(#DD401C, .9);
+    }
 
     &-icon {
       font-size: 20px;
