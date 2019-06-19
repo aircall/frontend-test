@@ -31,6 +31,8 @@ article {
   transform: translateX(100%);
   transition: transform 300ms ease-in-out;
 
+  box-sizing: border-box;
+
   .app--detail-visible & {
     transform: translateX(0);
   }

@@ -2,6 +2,115 @@ article {
   background-color: #FDFDFC;
 
   box-shadow: 0 1px 8px rgba(0, 0, 0, 0.2);
+}
 
+.details {
   padding: 16px;
+
+  display: flex;
+  flex-direction: column;
+
+  &__header {
+    height: 30px;
+  }
+
+  &__title {
+    display: flex;
+    align-items: center;
+    height: 40px;
+    margin-top: 16px;
+    margin-bottom: 16px;
+  }
+
+  &__icon {
+    position: relative;
+    color: #999;
+  }
+
+  &__icon-phone {
+    display: flex;
+    justify-content: center;
+    font-size: 30px;
+    width: 30px;
+  }
+
+  &__icon-inbound,
+  &__icon-outbound {
+    display: none;
+    font-size: 20px;
+    position: absolute;
+    top: -6px;
+    right: 6px;
+    color: red;
+  }
+
+  &[data-call-type="answered"] &__icon-inbound,
+  &[data-call-type="answered"] &__icon-outbound {
+    color: green;
+  }
+
+  &[data-direction="inbound"] &__icon-inbound,
+  &[data-direction="outbound"] &__icon-outbound {
+    display: block;
+  }
+
+  &__name {
+    flex: 1;
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    margin-left: 16px;
+    font-size: 20px;
+    color: #333;
+    font-weight: bold;
+  }
+
+  &__back {
+    display: inline-flex;
+    align-items: center;
+
+    font-family: inherit;
+    font-size: inherit;
+    background: transparent;
+    padding: 0;
+    border: 0;
+
+    cursor: pointer;
+
+    color: darkblue;
+
+    &-icon {
+      font-size: 16px;
+      margin-right: 8px;
+    }
+
+    &-label {
+      font-size: 14px;
+    }
+  }
+
+  &__body {
+    flex: 1;
+    min-height: 0;
+  }
+
+  &__data {
+    display: flex;
+    list-style-type: none;
+    font-size: 14px;
+    line-height: 32px;
+    border: 0 solid #ddd;
+    border-bottom-width: 1px;
+
+    &-label {
+      font-weight: bold;
+      width: 80px;
+    }
+
+    &-value {
+      flex: 1;
+      min-width: 0;
+    }
+  }
 }

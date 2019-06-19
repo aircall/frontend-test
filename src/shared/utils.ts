@@ -7,6 +7,13 @@ export const getDateAsString = (() => {
   };
 })();
 
+export const getDateTimeAsString = (() => {
+  const formatter = new Intl.DateTimeFormat('en-GB', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', hour: 'numeric', minute: 'numeric' });
+  return (date: Date) => {
+    return formatter.format(date);
+  };
+})();
+
 export const getTimeAsString = (() => {
   const formatter = new Intl.DateTimeFormat('en-GB', { hour: 'numeric', minute: 'numeric' });
   return (date: Date) => {
