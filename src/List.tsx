@@ -3,8 +3,8 @@ import './List.scss';
 import * as React from 'react';
 
 import { Call } from './shared/call.model';
-import { getDisplayName, getTimeAsString, getViaDesc, getDateAsString } from './shared/utils';
-import CallIcon from './CallIcon';
+import { getDateAsString } from './shared/utils';
+import CallTile from './CallTile';
 
 type ListProps = {
   calls: ReadonlyArray<Call>;
@@ -12,23 +12,12 @@ type ListProps = {
 };
 
 class List extends React.Component<ListProps> {
-  getCalls(calls: ReadonlyArray<Call>) {
-    return calls.map(
-      (call) => (
-        <div className='call'
-          data-direction={call.direction}
-          data-call-type={call.callType}
-          onClick={this.props.onSelect.bind(null, call.id)}
-          key={call.id}>
-          <CallIcon call={call}/>
-          <div className='call__info'>
-            <div className='call__name'>{getDisplayName(call)}</div>
-            <div className='call__via'>{getViaDesc(call)}</div>
-          </div>
-          <div className='call__time'>{getTimeAsString(call.createdAt)}</div>
-        </div>
-      ),
-    );
+  private getCalls(calls: ReadonlyArray<Call>) {
+    return calls.map((call) => (
+      <CallTile call={call}
+        onClick={this.props.onSelect.bind(null, call.id)}
+        key={call.id}/>
+    ));
   }
 
   render() {
@@ -42,7 +31,8 @@ class List extends React.Component<ListProps> {
 
     const list = groupedCalls.map(
       (group) => (
-        <div className='call-group'>
+        <div className='call-group'
+          key={group.day.getTime()}>
           <div className='call-group__name'>{getDateAsString(group.day)}</div>
           <div className='call-group__calls'>{this.getCalls(group.calls)}</div>
         </div>
