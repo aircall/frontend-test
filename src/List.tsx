@@ -21,6 +21,14 @@ class List extends React.Component<ListProps> {
   }
 
   render() {
+    if (!this.props.calls.length) {
+      return (
+        <main className='list list--empty'>
+          No call history
+        </main>
+      );
+    }
+
     const groupedCalls = this.props.calls.reduce((acc, call) => {
       if (!acc.length || call.creationDay.getTime() !== acc[acc.length - 1].day.getTime()) {
         acc.push({ day: new Date(call.creationDay), calls: [] });
@@ -40,7 +48,7 @@ class List extends React.Component<ListProps> {
     );
 
     return (
-      <main>
+      <main className='list'>
         {list}
       </main>
     );
