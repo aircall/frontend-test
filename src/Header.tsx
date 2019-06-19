@@ -1,3 +1,5 @@
+import './Header.scss';
+
 import * as React from 'react';
 
 // tslint:disable:max-line-length

@@ -13,3 +13,14 @@ body {
   color: #333333;
   line-height: 1;
 }
+
+#app {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+}

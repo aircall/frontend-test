@@ -1,12 +1,14 @@
+import './App.scss';
+
 import * as React from 'react';
 
 import Header from './Header';
 
 const App = () => {
   return (
-    <div className='container'>
+    <div className='app'>
       <Header/>
-      <div className='container-view'>Some activities should be here</div>
+      <main>Some activities should be here</main>
     </div>
   );
 };
