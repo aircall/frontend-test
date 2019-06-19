@@ -1,7 +1,6 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
+import * as React from 'react';
 
-import Header from './Header.jsx';
+import Header from './Header';
 
 const App = () => {
   return (
@@ -11,7 +10,5 @@ const App = () => {
     </div>
   );
 };
-
-ReactDOM.render(<App/>, document.getElementById('app'));
 
 export default App;
