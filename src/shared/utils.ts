@@ -1,21 +1,21 @@
 import { Call } from './call.model';
 
 export const getDateAsString = (() => {
-  const formatter = new Intl.DateTimeFormat('en-GB', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' });
+  const formatter = new Intl.DateTimeFormat('en-UK', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' });
   return (date: Date) => {
     return formatter.format(date);
   };
 })();
 
 export const getDateTimeAsString = (() => {
-  const formatter = new Intl.DateTimeFormat('en-GB', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', hour: 'numeric', minute: 'numeric' });
+  const formatter = new Intl.DateTimeFormat('en-UK', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', hour: 'numeric', minute: 'numeric' });
   return (date: Date) => {
     return formatter.format(date);
   };
 })();
 
 export const getTimeAsString = (() => {
-  const formatter = new Intl.DateTimeFormat('en-GB', { hour: 'numeric', minute: 'numeric' });
+  const formatter = new Intl.DateTimeFormat('en-UK', { hour: 'numeric', minute: 'numeric' });
   return (date: Date) => {
     return formatter.format(date);
   };
