@@ -8,6 +8,7 @@ import { getDisplayName, getTimeAsString, getViaDesc, getDateTimeAsString, getDu
 type DetailProps = {
   call?: Call;
   onClose: () => any;
+  onArchive: () => any;
 };
 
 class Detail extends React.Component<DetailProps> {
@@ -63,6 +64,12 @@ class Detail extends React.Component<DetailProps> {
               <span className='details__data-value'>{call.callType}</span>
             </li>
           </ul>
+          <div className='details__footer'>
+            <button className='details__archive' onClick={this.props.onArchive}>
+              <span className='fa fa-archive details__archive-icon'></span>
+              <span className='details__archive-label'>Archive</span>
+            </button>
+          </div>
         </div>
       </article>
     );

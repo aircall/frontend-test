@@ -93,6 +93,7 @@ article {
   &__body {
     flex: 1;
     min-height: 0;
+    width: 100%;
   }
 
   &__data {
@@ -102,6 +103,7 @@ article {
     line-height: 32px;
     border: 0 solid #ddd;
     border-bottom-width: 1px;
+    width: 100%;
 
     &-label {
       font-weight: bold;
@@ -111,6 +113,42 @@ article {
     &-value {
       flex: 1;
       min-width: 0;
+    }
+  }
+
+  &__footer {
+    text-align: center;
+  }
+
+  &__archive {
+    margin-top: 32px;
+
+    display: inline-flex;
+    align-items: center;
+
+    font-family: inherit;
+    font-size: inherit;
+    background: transparent;
+    padding: 0 16px;
+    border: 0;
+
+    height: 32px;
+    line-height: 32px;
+
+    border-radius: 8px;
+
+    background: #DD401C;
+    color: white;
+
+    cursor: pointer;
+
+    &-icon {
+      font-size: 20px;
+      margin-right: 8px;
+    }
+
+    &-label {
+      font-size: 18px;
     }
   }
 }
