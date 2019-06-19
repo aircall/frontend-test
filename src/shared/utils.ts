@@ -7,8 +7,25 @@ export const getDateAsString = (() => {
   };
 })();
 
+export const getTimeAsString = (() => {
+  const formatter = new Intl.DateTimeFormat('en-GB', { hour: 'numeric', minute: 'numeric' });
+  return (date: Date) => {
+    return formatter.format(date);
+  };
+})();
+
 export function getDisplayName(call: Call) {
   return call.direction === 'inbound' ? call.from : call.to;
+}
+
+export function getViaDesc(call: Call) {
+  switch (call.callType) {
+    case 'answered':
+      return `called on ${call.via}`;
+    case 'missed':
+    case 'voicemail':
+      return `tried to call on ${call.via}`;
+  }
 }
 
 export function getDurationAsString(duration: number) {

@@ -1,0 +1,90 @@
+main {
+  padding: 20px;
+
+  background-color: #FDFDFC;
+
+  .call {
+    margin: 8px 0;
+  }
+}
+
+.call {
+  display: flex;
+  align-items: center;
+
+  background-color: white;
+
+  height: 48px;
+
+  border: 1px solid #ddd;
+  border-radius: 12px;
+
+  padding: 4px;
+
+  user-select: none;
+
+  &__icon {
+    position: relative;
+    margin: 0 16px;
+    color: #999;
+  }
+
+  &__icon-phone {
+    font-size: 20px;
+    width: 20px;
+  }
+
+  &__icon-inbound,
+  &__icon-outbound {
+    display: none;
+    font-size: 12px;
+    position: absolute;
+    top: -4px;
+    right: 6px;
+    color: red;
+  }
+
+  &[data-call-type="answered"] &__icon-inbound,
+  &[data-call-type="answered"] &__icon-outbound {
+    color: green;
+  }
+
+  &[data-direction="inbound"] &__icon-inbound,
+  &[data-direction="outbound"] &__icon-outbound {
+    display: block;
+  }
+
+  &__info {
+    flex: 1;
+    min-width: 0;
+
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__name,
+  &__via {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  &__name {
+    font-size: 14px;
+    line-height: 18px;
+    color: #333;
+    font-weight: bold;
+  }
+
+  &__via {
+    font-size: 12px;
+    line-height: 14px;
+    color: #999;
+  }
+
+  &__time {
+    font-size: 12px;
+    margin: 0 8px;
+    color: #333;
+  }
+}
