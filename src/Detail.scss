@@ -22,36 +22,8 @@ article {
     margin-bottom: 16px;
   }
 
-  &__icon {
-    position: relative;
-    color: #999;
-  }
-
-  &__icon-phone {
-    display: flex;
-    justify-content: center;
+  .call-icon {
     font-size: 30px;
-    width: 30px;
-  }
-
-  &__icon-inbound,
-  &__icon-outbound {
-    display: none;
-    font-size: 20px;
-    position: absolute;
-    top: -6px;
-    right: 6px;
-    color: red;
-  }
-
-  &[data-call-type="answered"] &__icon-inbound,
-  &[data-call-type="answered"] &__icon-outbound {
-    color: green;
-  }
-
-  &[data-direction="inbound"] &__icon-inbound,
-  &[data-direction="outbound"] &__icon-outbound {
-    display: block;
   }
 
   &__name {

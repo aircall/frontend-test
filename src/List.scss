@@ -41,37 +41,9 @@ main {
 
   cursor: pointer;
 
-  &__icon {
-    position: relative;
-    margin: 0 16px;
-    color: #999;
-  }
-
-  &__icon-phone {
-    display: flex;
-    justify-content: center;
+  .call-icon {
     font-size: 20px;
-    width: 20px;
-  }
-
-  &__icon-inbound,
-  &__icon-outbound {
-    display: none;
-    font-size: 12px;
-    position: absolute;
-    top: -4px;
-    right: 4px;
-    color: red;
-  }
-
-  &[data-call-type="answered"] &__icon-inbound,
-  &[data-call-type="answered"] &__icon-outbound {
-    color: green;
-  }
-
-  &[data-direction="inbound"] &__icon-inbound,
-  &[data-direction="outbound"] &__icon-outbound {
-    display: block;
+    margin: 0 16px;
   }
 
   &__info {

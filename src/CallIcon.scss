@@ -1,0 +1,31 @@
+.call-icon {
+  font-size: 20px;
+  position: relative;
+  color: #999;
+
+  &__phone {
+    display: flex;
+    justify-content: center;
+    width: 1em;
+  }
+
+  &__inbound,
+  &__outbound {
+    display: none;
+    font-size: 0.6em;
+    position: absolute;
+    top: -0.2em;
+    right: 0.3em;
+    color: red;
+  }
+
+  &[data-call-type="answered"] &__inbound,
+  &[data-call-type="answered"] &__outbound {
+    color: green;
+  }
+
+  &[data-direction="inbound"] &__inbound,
+  &[data-direction="outbound"] &__outbound {
+    display: block;
+  }
+}

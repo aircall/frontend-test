@@ -4,6 +4,7 @@ import * as React from 'react';
 
 import { Call } from './shared/call.model';
 import { getDisplayName, getTimeAsString, getViaDesc, getDateTimeAsString, getDurationAsString } from './shared/utils';
+import CallIcon from './CallIcon';
 
 type DetailProps = {
   call?: Call;
@@ -31,11 +32,7 @@ class Detail extends React.Component<DetailProps> {
         </div>
         <div className='details__body'>
           <h1 className='details__title'>
-            <div className='details__icon'>
-              <span className='fa fa-phone details__icon-phone'></span>
-              <span className='fa fa-long-arrow-down details__icon-inbound'></span>
-              <span className='fa fa-long-arrow-up details__icon-outbound'></span>
-            </div>
+            <CallIcon call={call}/>
             <span className='details__name'>{getDisplayName(call)}</span>
           </h1>
           <ul>
