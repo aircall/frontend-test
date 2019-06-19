@@ -3,7 +3,7 @@ import './List.scss';
 import * as React from 'react';
 
 import { Call } from './shared/call.model';
-import { getDisplayName, getTimeAsString, getViaDesc } from './shared/utils';
+import { getDisplayName, getTimeAsString, getViaDesc, getDateAsString } from './shared/utils';
 
 type ListProps = {
   calls: ReadonlyArray<Call>;
@@ -11,8 +11,8 @@ type ListProps = {
 };
 
 class List extends React.Component<ListProps> {
-  render() {
-    const list = this.props.calls.map(
+  getCalls(calls: ReadonlyArray<Call>) {
+    return calls.map(
       (call) => (
         <div className='call'
           data-direction={call.direction}
@@ -29,6 +29,25 @@ class List extends React.Component<ListProps> {
             <div className='call__via'>{getViaDesc(call)}</div>
           </div>
           <div className='call__time'>{getTimeAsString(call.createdAt)}</div>
+        </div>
+      ),
+    );
+  }
+
+  render() {
+    const groupedCalls = this.props.calls.reduce((acc, call) => {
+      if (!acc.length || call.creationDay.getTime() !== acc[acc.length - 1].day.getTime()) {
+        acc.push({ day: new Date(call.creationDay), calls: [] });
+      }
+      acc[acc.length - 1].calls.push(call);
+      return acc;
+    }, [] as Array<{ day: Date, calls: Call[] }>);
+
+    const list = groupedCalls.map(
+      (group) => (
+        <div className='call-group'>
+          <div className='call-group__name'>{getDateAsString(group.day)}</div>
+          <div className='call-group__calls'>{this.getCalls(group.calls)}</div>
         </div>
       ),
     );

@@ -8,6 +8,22 @@ main {
   }
 }
 
+.call-group {
+  margin-top: 16px;
+
+  &__name {
+    text-align: center;
+    color: #999;
+    font-size: 12px;
+
+    user-select: none;
+  }
+
+  &:first-child {
+    margin-top: 0;
+  }
+}
+
 .call {
   display: flex;
   align-items: center;
