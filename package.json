@@ -13,11 +13,15 @@
   },
   "dependencies": {
     "@babel/runtime": "^7.5.5",
+    "@fortawesome/fontawesome-svg-core": "^1.2.19",
+    "@fortawesome/free-solid-svg-icons": "^5.9.0",
+    "@fortawesome/react-fontawesome": "^0.1.4",
     "luxon": "^1.17.1",
     "react": "^16.3.1",
     "react-dom": "^16.3.1",
     "react-redux": "^7.1.0",
     "react-router-dom": "^5.0.1",
+    "react-router-redux": "^4.0.8",
     "redux": "^4.0.4",
     "redux-saga": "^1.0.5"
   },

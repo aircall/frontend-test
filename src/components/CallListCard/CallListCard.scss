@@ -6,7 +6,19 @@
     margin: 10px 0;
     padding: 10px 20px; 
     position: relative;
+    padding-left: 30px;
 
+    &__icon {
+        position: absolute;
+        left: 10px;
+        top: 15px;
+        &.missed {
+            color: $color-danger; 
+        }
+        &.answered {
+            color: $color-success; 
+        }
+    }
     &__from {
         font-size: larger;
         font-weight: bold;

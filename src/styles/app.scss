@@ -27,15 +27,31 @@
 
 button {
   background-color: $color-white;
-  padding: 10px 30px;
+  padding: 10px 20px;
+  border-radius: 3px;
   border: none;
   text-transform: uppercase;
+  cursor: pointer;
+  font-weight: bold;
 
-  & .primary {
-    color: $color-primary;
+  &.round {
+    border-radius: 50%;
+    padding: 15px;
   }
 
-  & .error {
-    color: $color-danger;
+  &.primary {
+    background-color: $color-primary;
+    &:hover {
+      background-color: lighten($color-primary, 50%);
+      color: $color-primary;
+    }
+  }
+
+  &.error {
+    background-color: $color-danger;
+    &:hover {
+      background-color: $color-white;
+      color: $color-danger;
+    }
   }
 }

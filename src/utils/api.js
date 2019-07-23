@@ -6,7 +6,7 @@ export async function callApi (method, endpoint, body = null, headers = null) {
         'Content-Type': 'application/json',
         ...headers
         },
-        body: method !== 'GET' && body ? body : null
+        body: method !== 'GET' && body ? JSON.stringify(body) : null
     });
     const data = await result.json();
     return data;

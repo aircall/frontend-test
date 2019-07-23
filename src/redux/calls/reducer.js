@@ -20,7 +20,10 @@ const calls = (state = INITIAL_STATE, action) => {
         case GET_CALLS_SUCCESS:
             return {
                 ...state,
-                list: { ...action.calls },
+                list: action.calls.reduce((obj, item) => {
+                    obj[item.id] = item
+                    return obj
+                  }, {}),
                 loading: false
             }
         case GET_CALLS_ERROR:
@@ -37,6 +40,10 @@ const calls = (state = INITIAL_STATE, action) => {
         case GET_CALL_SUCCESS:
             return {
                 ...state,
+                list: {
+                    ...state.list,
+                    [action.call.id]: action.call
+                },
                 loading: false
             }
         case GET_CALL_ERROR:
