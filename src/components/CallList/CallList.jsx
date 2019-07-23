@@ -1,7 +1,9 @@
 import React, { Component } from "react";
 import { connect } from 'react-redux'
 import { Link } from "react-router-dom";
+import CallListCard from '../CallListCard/CallListCard.jsx'
 import { getCalls } from '../../redux/calls/actions.js'
+import './CallList.scss'
 
 class CallsList extends Component {
   componentDidMount() {
@@ -11,12 +13,14 @@ class CallsList extends Component {
   render() {
     const { calls } = this.props;
     return (
-      <div>
-          <button>Archive all Calls</button>
+      <div className="CallList">
+          <button className=".primary">Archive all Calls</button>
           <h1>Calls</h1>  
-          <div>
-            {calls && calls.map(call => <Link to={`/calls/${call.id}`}>{call.from}</Link>)}
-          </div>
+          <>
+            {calls && Object.values(calls).map(call => (<Link key={call.id} className="CallList__item" to={`/call/${call.id}`}>
+              <CallListCard call={call}/>
+            </Link>))}
+          </>
       </div>
     );
   }

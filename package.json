@@ -13,6 +13,7 @@
   },
   "dependencies": {
     "@babel/runtime": "^7.5.5",
+    "luxon": "^1.17.1",
     "react": "^16.3.1",
     "react-dom": "^16.3.1",
     "react-redux": "^7.1.0",
@@ -30,6 +31,8 @@
     "css-loader": "2.1.*",
     "html-loader": "0.5.*",
     "html-webpack-plugin": "3.2.*",
+    "node-sass": "^4.12.0",
+    "sass-loader": "^7.1.0",
     "style-loader": "0.23.*",
     "webpack": "4.29.*",
     "webpack-cli": "3.2.*",

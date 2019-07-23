@@ -4,9 +4,7 @@ import { Provider } from "react-redux";
 import App from './App.jsx'
 import { configureStore } from './redux/store.js'
 
-import './css/body.css';
-import './css/app.css';
-import './css/header.css';
+import './styles/body.scss';
 
 const MainApp = () => (
     <Provider store={configureStore()}>

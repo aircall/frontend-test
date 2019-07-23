@@ -1,3 +1,5 @@
+@import './variables.scss';
+
 #app {
   position: absolute;
   display: flex;
@@ -14,7 +16,7 @@
   height: 666px;
   z-index: 100;
 
-  background: white;
+  background: $color-gray;
   border-radius: 3px;
   box-shadow: 0 0 5px 0 rgba(0, 0, 0, .9);
 }
@@ -23,3 +25,17 @@
   padding: 20px;
 }
 
+button {
+  background-color: $color-white;
+  padding: 10px 30px;
+  border: none;
+  text-transform: uppercase;
+
+  & .primary {
+    color: $color-primary;
+  }
+
+  & .error {
+    color: $color-danger;
+  }
+}

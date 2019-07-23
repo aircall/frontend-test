@@ -1,5 +1,8 @@
 import { all, call, put, takeEvery } from 'redux-saga/effects';
-import { GET_CALLS, GET_CALLS_SUCCESS, GET_CALLS_ERROR } from './actionsTypes.js';
+import { 
+  GET_CALLS, GET_CALLS_SUCCESS, GET_CALLS_ERROR,
+  GET_CALL, GET_CALL_SUCCESS, GET_CALL_ERROR
+} from './actionsTypes.js';
 import { callApi } from '../../utils/api.js'
 
 // Get calls

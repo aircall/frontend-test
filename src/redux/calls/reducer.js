@@ -1,7 +1,10 @@
-import { GET_CALLS, GET_CALLS_SUCCESS, GET_CALLS_ERROR} from './actionsTypes.js';
+import { 
+    GET_CALLS, GET_CALLS_SUCCESS, GET_CALLS_ERROR,
+    GET_CALL, GET_CALL_SUCCESS, GET_CALL_ERROR
+} from './actionsTypes.js';
 
 const INITIAL_STATE = {
-    list: [],
+    list: {},
     loading: false,
     error: null
   }
@@ -17,10 +20,26 @@ const calls = (state = INITIAL_STATE, action) => {
         case GET_CALLS_SUCCESS:
             return {
                 ...state,
-                list: action.calls,
+                list: { ...action.calls },
                 loading: false
             }
         case GET_CALLS_ERROR:
+            return {
+                ...state,
+                error: action.error,
+                loading: false
+            }
+        case GET_CALL:
+            return {
+                ...state,
+                loading: true
+            }
+        case GET_CALL_SUCCESS:
+            return {
+                ...state,
+                loading: false
+            }
+        case GET_CALL_ERROR:
             return {
                 ...state,
                 error: action.error,
