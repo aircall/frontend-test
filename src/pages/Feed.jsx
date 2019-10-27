@@ -1,19 +1,22 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 
 import { fetchActivities } from '../actions/feed';
 
-const Feed = ({
-  feed,
-  onFetchActivities,
-}) => (
+const Feed = React.memo(({ feed, onFetchActivities }) => {
+  useEffect(
+    () => {
+      onFetchActivities();
+    },
+    [],
+  );
+
+  return (
     <div>
-      <div>
-        {JSON.stringify(feed)}
-      </div>
-      <button onClick={onFetchActivities}>Increment</button>
+      <div>{JSON.stringify(feed)}</div>
     </div>
-);
+  );
+});
 
 function mapStateToProps(state) {
   const { feed } = state;
@@ -28,4 +31,7 @@ function mapDispatchToProps(dispatch) {
   };
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(Feed);
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps,
+)(Feed);
