@@ -6,29 +6,33 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import styled from 'styled-components';
 
-import { fetchActivities } from '../actions/feed';
+import { fetchActivities, resetAll } from '../actions/feed';
 import CallDetail from './CallDetail.jsx';
 import CallItem from '../components/CallItem.jsx';
 
-const CallList = styled.div`
-  /* padding: 2rem 1rem; */
+const ArchiveButton = styled.div`
+  padding: 1rem 1.5rem;
+  background: #ececeb;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  margin-top: 1rem;
 `;
 
-const Feed = React.memo(({ activities, onFetchActivities }) => {
+const Feed = React.memo(({ activities, onFetchActivities, onResetAll }) => {
   /**
    * The current call detail of a selected call.
    * `undefined` if users are just seeing the list.
    */
   const [curActiveDetail, setCurActiveDetail] = useState(undefined);
 
-  const onItemClick = useCallback(
+  const handleItemClick = useCallback(
     (callId) => () => {
       setCurActiveDetail(callId);
     },
     [],
   );
 
-  const onDetailViewClose = useCallback(
+  const handleDetailViewClose = useCallback(
     () => {
       setCurActiveDetail(undefined);
     },
@@ -43,16 +47,18 @@ const Feed = React.memo(({ activities, onFetchActivities }) => {
     [onFetchActivities],
   );
 
+  const nonArchivedActivities = activities.filter((activity) => !activity.is_archived);
+
   return (
     <>
       {curActiveDetail && (
         <CallDetail
           callId={curActiveDetail}
-          onClose={onDetailViewClose}
+          onClose={handleDetailViewClose}
         />
       )}
-      <CallList>
-        {activities.map(({
+      <div>
+        {nonArchivedActivities.map(({
           id,
           to,
           from,
@@ -69,10 +75,11 @@ const Feed = React.memo(({ activities, onFetchActivities }) => {
             time={created_at}
             callType={call_type}
             direction={direction}
-            onClick={onItemClick(id)}
+            onClick={handleItemClick(id)}
           />
         ))}
-      </CallList>
+      </div>
+      <ArchiveButton onClick={onResetAll}>Reset All</ArchiveButton>
     </>
   );
 });
@@ -81,6 +88,7 @@ Feed.propTypes = {
   // eslint-disable-next-line react/forbid-prop-types
   activities: PropTypes.array,
   onFetchActivities: PropTypes.func.isRequired,
+  onResetAll: PropTypes.func.isRequired,
 };
 
 Feed.defaultProps = {
@@ -97,6 +105,7 @@ function mapStateToProps(state) {
 function mapDispatchToProps(dispatch) {
   return {
     onFetchActivities: () => dispatch(fetchActivities()),
+    onResetAll: () => dispatch(resetAll()),
   };
 }
 

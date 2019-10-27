@@ -7,6 +7,8 @@ export const RECEIVE_CALL_DETAILS = 'RECEIVE_CALL_DETAILS';
 export const ARCHIVE_CALL = 'ARCHIVE_CALL';
 export const UPDATE_ARCHIVED_CALL = 'UPDATE_ARCHIVED_CALL';
 
+export const RESET_ALL = 'RESET_ALL';
+
 export function fetchActivities() {
   return { type: FETCH_ACTIVITIES };
 }
@@ -44,5 +46,11 @@ export function updateArchivedCall(callId) {
   return {
     type: UPDATE_ARCHIVED_CALL,
     callId,
+  };
+}
+
+export function resetAll() {
+  return {
+    type: RESET_ALL,
   };
 }
