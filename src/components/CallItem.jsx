@@ -15,6 +15,7 @@ const Wrapper = styled.div`
   border-radius: 1.5rem;
   padding: 0.5rem 1rem;
   margin-top: 1rem;
+  cursor: pointer;
 `;
 
 const CallItem = ({
