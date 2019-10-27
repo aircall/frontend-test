@@ -24,12 +24,13 @@ const CallItem = ({
   time,
   callType,
   direction,
+  onClick,
 }) => {
   const directionIcon = direction === 'outbound' ? '↖️' : '↘️';
 
   return (
-    <Wrapper callType={callType}>
-      <p>{`${directionIcon} ${to}`}</p>
+    <Wrapper callType={callType} onClick={onClick}>
+      <p>{`${directionIcon} ${to || 'Unknown'}`}</p>
       <p>{`${from} via ${via}`}</p>
       <p>{format(new Date(time), 'dd/MM HH:mm')}</p>
     </Wrapper>
@@ -37,12 +38,17 @@ const CallItem = ({
 };
 
 CallItem.propTypes = {
-  to: PropTypes.string.isRequired,
+  to: PropTypes.string,
   from: PropTypes.string.isRequired,
   via: PropTypes.string.isRequired,
   time: PropTypes.string.isRequired,
   callType: PropTypes.string.isRequired,
   direction: PropTypes.string.isRequired,
+  onClick: PropTypes.func.isRequired,
+};
+
+CallItem.defaultProps = {
+  to: undefined,
 };
 
 export default CallItem;

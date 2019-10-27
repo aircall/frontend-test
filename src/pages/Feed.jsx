@@ -1,9 +1,13 @@
-import React, { useEffect } from 'react';
+/* eslint-disable camelcase */
+import React, {
+  useEffect, useState, useCallback,
+} from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import styled from 'styled-components';
 
 import { fetchActivities } from '../actions/feed';
+import CallDetail from './CallDetail.jsx';
 import CallItem from '../components/CallItem.jsx';
 
 const CallList = styled.div`
@@ -11,6 +15,27 @@ const CallList = styled.div`
 `;
 
 const Feed = React.memo(({ activities, onFetchActivities }) => {
+  /**
+   * The current call detail of a selected call.
+   * `undefined` if users are just seeing the list.
+   */
+  const [curActiveDetail, setCurActiveDetail] = useState(undefined);
+
+  const onItemClick = useCallback(
+    (callId) => () => {
+      setCurActiveDetail(callId);
+    },
+    [],
+  );
+
+  const onDetailViewClose = useCallback(
+    () => {
+      setCurActiveDetail(undefined);
+    },
+    [],
+  );
+
+  // get the list of calls
   useEffect(
     () => {
       onFetchActivities();
@@ -18,30 +43,37 @@ const Feed = React.memo(({ activities, onFetchActivities }) => {
     [onFetchActivities],
   );
 
-  console.log(activities);
-
   return (
-    <CallList>
-      {activities.map(({
-        id,
-        to,
-        from,
-        via,
-        created_at,
-        call_type,
-        direction,
-      }) => (
-        <CallItem
-          key={id}
-          to={to}
-          from={from}
-          via={via}
-          time={created_at}
-          callType={call_type}
-          direction={direction}
+    <>
+      {curActiveDetail && (
+        <CallDetail
+          callId={curActiveDetail}
+          onClose={onDetailViewClose}
         />
-      ))}
-    </CallList>
+      )}
+      <CallList>
+        {activities.map(({
+          id,
+          to,
+          from,
+          via,
+          created_at,
+          call_type,
+          direction,
+        }) => (
+          <CallItem
+            key={id}
+            to={to}
+            from={from}
+            via={via}
+            time={created_at}
+            callType={call_type}
+            direction={direction}
+            onClick={onItemClick(id)}
+          />
+        ))}
+      </CallList>
+    </>
   );
 });
 
