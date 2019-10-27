@@ -14,7 +14,7 @@
   height: 666px;
   z-index: 100;
 
-  background: white;
+  background: #fdfdfc;
   border-radius: 3px;
   box-shadow: 0 0 5px 0 rgba(0, 0, 0, .9);
 }

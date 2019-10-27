@@ -1,4 +1,8 @@
-export default function feed(state = {}, action) {
+const INITIAL_STATE = {
+  activities: [],
+};
+
+export default function feed(state = INITIAL_STATE, action) {
   switch (action.type) {
     case 'RECEIVE_ACTIVITIES': {
       const { payload } = action;
