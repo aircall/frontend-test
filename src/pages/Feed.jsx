@@ -1,18 +1,18 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-import {incrementAsync} from '../actions/feed';
+import {fetchActivities} from '../actions/feed';
 
 const Feed = ({
   feed,
-  onIncrement
+  onFetchActivities
 }) => {
   return (
     <div>
       <div>
-        Count: {feed}
+        {JSON.stringify(feed)}
       </div>
-      <button onClick={onIncrement}>Increment</button>
+      <button onClick={onFetchActivities}>Increment</button>
     </div>
   );
 }
@@ -26,7 +26,7 @@ function mapStateToProps(state) {
 
 function mapDispatchToProps(dispatch) {
   return {
-      onIncrement: () => dispatch(incrementAsync())
+      onFetchActivities: () => dispatch(fetchActivities())
   };
 }
 

@@ -1,7 +1,13 @@
-export const INCREMENT_ASYNC = 'INCREMENT_ASYNC';
+export const FETCH_ACTIVITIES = 'FETCH_ACTIVITIES';
+export const RECEIVE_ACTIVITIES = 'RECEIVE_ACTIVITIES';
 
-export function incrementAsync() {
+export function fetchActivities() {
+  return { type: FETCH_ACTIVITIES };
+}
+
+export function receiveActivities(payload) {
   return {
-    type: INCREMENT_ASYNC,
+    type: RECEIVE_ACTIVITIES,
+    payload,
   };
 }
