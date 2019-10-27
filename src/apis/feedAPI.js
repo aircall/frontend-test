@@ -1,4 +1,4 @@
-import { getResource } from './baseAPI';
+import { getResource, postResource } from './baseAPI';
 
 export function getFeeds() {
   return getResource('activities');
@@ -6,4 +6,10 @@ export function getFeeds() {
 
 export function getDetail(activityId) {
   return getResource(`activities/${activityId}`);
+}
+
+export function archiveCall(activityId) {
+  return postResource(`activities/${activityId}`, {
+    payload: { is_archived: true },
+  });
 }

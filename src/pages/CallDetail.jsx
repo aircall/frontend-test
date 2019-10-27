@@ -1,10 +1,10 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useCallback } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import styled from 'styled-components';
 import { format } from 'date-fns';
 
-import { fetchCallDetails } from '../actions/feed';
+import { fetchCallDetails, archiveCall } from '../actions/feed';
 
 const DetailWrapper = styled.div`
   position: absolute;
@@ -36,21 +36,36 @@ const DetailContent = styled.div`
   padding: 1.5rem;
 `;
 
+const ArchiveButton = styled.div`
+  padding: 1rem 1.5rem;
+  background: #ececeb;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  margin-top: 1rem;
+`;
 
 const CallDetail = React.memo(({
   callId,
   detailData,
   onFetchCallDetails,
+  onArchiveCall,
   onClose,
 }) => {
   const currentDetail = detailData[callId];
-  console.log(currentDetail);
 
   useEffect(
     () => {
       onFetchCallDetails(callId);
     },
     [callId, onFetchCallDetails],
+  );
+
+  const handleArchiveClick = useCallback(
+    () => {
+      onArchiveCall(callId);
+      onClose();
+    },
+    [callId, onArchiveCall, onClose],
   );
 
   const detailContent = typeof currentDetail === 'undefined'
@@ -64,6 +79,7 @@ const CallDetail = React.memo(({
         <p>{`Via: ${currentDetail.via}`}</p>
         <p>{`Duration: ${currentDetail.duration}`}</p>
         <p>{`Time: ${format(new Date(currentDetail.created_at), 'dd/MM/yyyy HH:mm')}`}</p>
+        <p>{`Archived: ${currentDetail.is_archived}`}</p>
       </>
     );
 
@@ -74,6 +90,7 @@ const CallDetail = React.memo(({
       </Header>
       <DetailContent>
         {detailContent}
+        <ArchiveButton onClick={handleArchiveClick}>Archive</ArchiveButton>
       </DetailContent>
     </DetailWrapper>
   );
@@ -84,6 +101,7 @@ CallDetail.propTypes = {
   // eslint-disable-next-line
   detailData: PropTypes.object,
   onFetchCallDetails: PropTypes.func.isRequired,
+  onArchiveCall: PropTypes.func.isRequired,
   onClose: PropTypes.func.isRequired,
 };
 
@@ -101,6 +119,7 @@ function mapStateToProps(state) {
 function mapDispatchToProps(dispatch) {
   return {
     onFetchCallDetails: (callId) => dispatch(fetchCallDetails(callId)),
+    onArchiveCall: (callId) => dispatch(archiveCall(callId)),
   };
 }
 

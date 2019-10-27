@@ -22,6 +22,22 @@ export default function feed(state = INITIAL_STATE, action) {
         },
       };
     }
+    case 'UPDATE_ARCHIVED_CALL': {
+      const { callId } = action;
+      const activities = state.activities.map((activity) => {
+        if (activity.id === callId) {
+          return {
+            ...activity,
+            is_archived: true,
+          };
+        }
+        return activity;
+      });
+      return {
+        ...state,
+        activities,
+      };
+    }
     default:
       return state;
   }
