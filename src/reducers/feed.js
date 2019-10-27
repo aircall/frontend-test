@@ -1,5 +1,6 @@
 const INITIAL_STATE = {
   activities: [],
+  details: {},
 };
 
 export default function feed(state = INITIAL_STATE, action) {
@@ -9,6 +10,16 @@ export default function feed(state = INITIAL_STATE, action) {
       return {
         ...state,
         activities: payload,
+      };
+    }
+    case 'RECEIVE_CALL_DETAILS': {
+      const { payload, callId } = action;
+      return {
+        ...state,
+        details: {
+          ...state.details,
+          [callId]: payload,
+        },
       };
     }
     default:
