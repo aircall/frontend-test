@@ -15,13 +15,17 @@ export function receiveActivities(payload) {
   };
 }
 
-export function fetchCallDetails() {
-  return { type: FETCH_CALL_DETAILS };
+export function fetchCallDetails(callId) {
+  return {
+    type: FETCH_CALL_DETAILS,
+    callId,
+  };
 }
 
-export function receiveCallDetails(payload) {
+export function receiveCallDetails(callId, payload) {
   return {
     type: RECEIVE_CALL_DETAILS,
+    callId,
     payload,
   };
 }
