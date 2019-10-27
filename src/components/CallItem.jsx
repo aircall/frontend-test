@@ -5,17 +5,33 @@ import { format } from 'date-fns';
 
 const BORDER_COLOR = {
   missed: '#f98798',
-  answered: '#87f994',
+  answered: '#28c420',
   default: '#ececeb',
 };
 
 const Wrapper = styled.div`
+  position: relative;
   background: #fff;
-  border: 2px solid ${({ callType }) => BORDER_COLOR[callType] || BORDER_COLOR.default};
-  border-radius: 1.5rem;
+  border: 1px solid ${({ callType }) => BORDER_COLOR[callType] || BORDER_COLOR.default};
+  border-radius: 0.5rem;
   padding: 0.5rem 1rem;
-  margin-top: 1rem;
+  margin-bottom: 0.8rem;
   cursor: pointer;
+
+  h5{
+    font-size: 1.3rem;
+    margin-block-start: 0.5rem;
+    margin-block-end: 0.5rem;
+  }
+`;
+
+const DateBox = styled.div`
+  position: absolute;
+  top: 0;
+  right: 0;
+  top: 1.2rem;
+  right: 0.6rem;
+  color: #8a8888;
 `;
 
 const CallItem = ({
@@ -31,9 +47,9 @@ const CallItem = ({
 
   return (
     <Wrapper callType={callType} onClick={onClick}>
-      <p>{`${directionIcon} ${to || 'Unknown'}`}</p>
-      <p>{`${from} via ${via}`}</p>
-      <p>{format(new Date(time), 'dd/MM HH:mm')}</p>
+      <h5>{`${directionIcon} ${to || 'Unknown'}`}</h5>
+      <p>{`${from} - ${via}`}</p>
+      <DateBox>{format(new Date(time), 'dd/MM HH:mm')}</DateBox>
     </Wrapper>
   );
 };

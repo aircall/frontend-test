@@ -15,6 +15,7 @@ const DetailWrapper = styled.div`
   box-sizing: border-box;
   background: rgba(255,255,255,0.75);
   backdrop-filter: blur(5px);
+  z-index: 1;
 `;
 
 const Header = styled.div`
@@ -33,7 +34,7 @@ const CloseButton = styled.div`
 `;
 
 const DetailContent = styled.div`
-  padding: 1.5rem;
+  padding: 1.8rem;
 `;
 
 const ArchiveButton = styled.div`
@@ -41,7 +42,7 @@ const ArchiveButton = styled.div`
   background: #ececeb;
   border-radius: 0.5rem;
   cursor: pointer;
-  margin-top: 1rem;
+  margin-top: 1.6rem;
 `;
 
 const CallDetail = React.memo(({
@@ -72,14 +73,38 @@ const CallDetail = React.memo(({
     ? <span>Loading</span>
     : (
       <>
-        <p>{`From: ${currentDetail.from}`}</p>
-        <p>{`To: ${currentDetail.to}`}</p>
-        <p>{`Call type: ${currentDetail.call_type}`}</p>
-        <p>{`Direction: ${currentDetail.direction}`}</p>
-        <p>{`Via: ${currentDetail.via}`}</p>
-        <p>{`Duration: ${currentDetail.duration}`}</p>
-        <p>{`Time: ${format(new Date(currentDetail.created_at), 'dd/MM/yyyy HH:mm')}`}</p>
-        <p>{`Archived: ${currentDetail.is_archived}`}</p>
+        <p>
+          <b>From: </b>
+          {currentDetail.from}
+        </p>
+        <p>
+          <b>To: </b>
+          {currentDetail.to}
+        </p>
+        <p>
+          <b>Call type: </b>
+          {currentDetail.call_type}
+        </p>
+        <p>
+          <b>Direction: </b>
+          {currentDetail.direction}
+        </p>
+        <p>
+          <b>Via: </b>
+          {currentDetail.via}
+        </p>
+        <p>
+          <b>Duration: </b>
+          {currentDetail.duration}
+        </p>
+        <p>
+          <b>Time: </b>
+          {format(new Date(currentDetail.created_at), 'dd/MM/yyyy HH:mm')}
+        </p>
+        <p>
+          <b>Archived: </b>
+          {currentDetail.is_archived}
+        </p>
       </>
     );
 
