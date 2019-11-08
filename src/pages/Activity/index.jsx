@@ -4,6 +4,7 @@ import { connect } from 'react-redux'
 import { withRouter, Link } from 'react-router-dom'
 import { getActivityDetailAction } from '../../actions/activities'
 import ActivityDetail from '../../components/ActivityDetail/index.jsx'
+import Button from '../../components/Button/index.jsx'
 import * as S from './styles'
 
 const Activity = ({ match, activity, getActivityDetail }) => {
@@ -14,7 +15,7 @@ const Activity = ({ match, activity, getActivityDetail }) => {
 
   return (
     <S.PageWrapper>
-      <Link to='/'>Back</Link>
+      <Button as={Link} to='/'>Back</Button>
 
       {activity.id && <ActivityDetail />}
     </S.PageWrapper>

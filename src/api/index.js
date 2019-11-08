@@ -1,21 +1,6 @@
-const URL = 'https://aircall-job.herokuapp.com/'
+import { get, post } from '../helpers/api'
 
-export const fetchActivities = async () => fetch(`${URL}activities`).then(response => response.json())
-
-export const fetchActivityDetail = async (id) => fetch(`${URL}activities/${id}`).then(response => response.json())
-
-export const archiveActivity = async (id) => fetch(
-  `${URL}activities/${id}`,
-  {
-    method: 'POST',
-    headers: {
-      Accept: 'application/json',
-      'Content-Type': 'application/json'
-    },
-    body: JSON.stringify({
-      is_archived: true
-    })
-  }
-).then(response => response.json())
-
-export const resetActivitiesArchives = async () => fetch(`${URL}reset`).then(response => response.json())
+export const fetchActivities = async () => get('activities')
+export const fetchActivityDetail = async id => get(`activities/${id}`)
+export const archiveActivity = async (id) => post(`activities/${id}`, JSON.stringify({ is_archived: true }))
+export const resetActivitiesArchives = async () => get('reset')
