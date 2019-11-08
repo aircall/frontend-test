@@ -6,5 +6,11 @@ const intialState = {
 }
 
 export default (state = intialState, action) => {
-  return state
+  switch (action.type) {
+    case ACTIONS.SET_ACTIVITIES:
+      return { ...state, list: action.list }
+
+    default:
+      return state
+  }
 }
