@@ -2,7 +2,7 @@ import React, { useEffect } from 'react'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import { getActivitiesAction } from '../../actions/activities'
-import { ActivityItem } from '../ActivityItem/index.jsx'
+import ActivityItem from '../../components/ActivityItem/index.jsx'
 import * as S from './styles'
 
 const Activities = ({ getActivities, list }) => {

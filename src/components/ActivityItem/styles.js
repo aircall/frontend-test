@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { Link } from 'react-router-dom'
 
 export const CallType = styled.div`
   width: 12px;
@@ -25,12 +26,14 @@ export const Details = styled.div`
 
 export const Time = styled.div``
 
-export const Activity = styled.div`
+export const Activity = styled(Link)`
   display: flex;
   align-items: center;
   padding: 10px 12px;
   border-radius: 8px;
   background: rgba(0, 0, 0, .04);
+  text-decoration: none;
+  color: #000;
 
   ${CallType} {
     margin-right: 12px;

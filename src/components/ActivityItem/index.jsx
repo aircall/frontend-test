@@ -3,11 +3,11 @@ import PropTypes from 'prop-types'
 import format from 'date-fns/format'
 import * as S from './styles'
 
-export const ActivityItem = ({ activity }) => {
+const ActivityItem = ({ activity }) => {
   const callDate = new Date(activity.created_at)
 
   return (
-    <S.Activity>
+    <S.Activity to={`/${activity.id}`}>
       <S.CallType type={activity.call_type} />
 
       <S.CallDetails>
@@ -25,14 +25,16 @@ export const ActivityItem = ({ activity }) => {
 
 ActivityItem.propTypes = {
   activity: PropTypes.shape({
-    id: PropTypes.number,
-    created_at: PropTypes.string,
-    direction: PropTypes.string,
-    from: PropTypes.string,
+    id: PropTypes.number.isRequired,
+    created_at: PropTypes.string.isRequired,
+    direction: PropTypes.string.isRequired,
+    from: PropTypes.string.isRequired,
     to: PropTypes.string,
-    via: PropTypes.string,
-    duration: PropTypes.string,
-    is_archived: PropTypes.bool,
-    call_type: PropTypes.string
+    via: PropTypes.string.isRequired,
+    duration: PropTypes.string.isRequired,
+    is_archived: PropTypes.bool.isRequired,
+    call_type: PropTypes.string.isRequired
   })
 }
+
+export default ActivityItem

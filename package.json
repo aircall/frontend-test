@@ -14,9 +14,10 @@
   "dependencies": {
     "date-fns": "^2.7.0",
     "prop-types": "^15.7.2",
-    "react": "^16.8.3",
+    "react": ">=15",
     "react-dom": "^16.11.0",
     "react-redux": "7.1.3",
+    "react-router-dom": "5.1.2",
     "redux": "4.0.0",
     "redux-saga": "^1.1.3",
     "styled-components": "^4.4.1"
