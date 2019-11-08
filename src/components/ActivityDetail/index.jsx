@@ -2,11 +2,16 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import format from 'date-fns/format'
+import { archiveActivityAction } from '../../actions/activities'
 import ActivityStatusIcon from '../ActivityStatusIcon/index.jsx'
 import * as S from './styles'
 
 /* eslint-disable camelcase */
-const ActivityDetail = ({ activity: { direction, from, created_at, duration, call_type, via, to } }) => {
+const ActivityDetail = ({ activity: { id, direction, from, created_at, duration, call_type, via, to, is_archived }, archiveActivity }) => {
+  const handleArchiveClick = () => {
+    archiveActivity(id)
+  }
+
   return (
     <S.Activity direction={direction}>
       <S.Header>
@@ -25,15 +30,28 @@ const ActivityDetail = ({ activity: { direction, from, created_at, duration, cal
         {via && <em>Via {via}</em>}
         <em>{format(new Date(created_at), 'P p')}</em>
         <em>{duration} seconds</em>
+
       </S.Details>
+
+      <S.Archive>
+        {!is_archived &&
+          <button onClick={handleArchiveClick}>Archive</button>}
+
+        {is_archived && <b>ARCHIVED</b>}
+      </S.Archive>
     </S.Activity>
   )
 }
 
 ActivityDetail.propTypes = {
-  activity: PropTypes.object.isRequired
+  activity: PropTypes.object.isRequired,
+  archiveActivity: PropTypes.func.isRequired
 }
 
 const mstp = ({ activities: { detail } }) => ({ activity: detail })
 
-export default connect(mstp)(ActivityDetail)
+const mdtp = (dispatch) => ({
+  archiveActivity: (id) => dispatch(archiveActivityAction(id))
+})
+
+export default connect(mstp, mdtp)(ActivityDetail)

@@ -25,7 +25,6 @@ export const Header = styled.div`
 `
 
 export const Details = styled.div`
-
   b, em, span {
     display: block;
     margin-bottom: 0.3em;
@@ -38,6 +37,10 @@ export const Details = styled.div`
   em:last-child {
     margin-top: 12px;
   }
+`
+
+export const Archive = styled.div`
+  margin-top: 24px;
 `
 
 export const Activity = styled.section`
