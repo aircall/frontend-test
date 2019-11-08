@@ -30,7 +30,6 @@ const ActivityDetail = ({ activity: { id, direction, from, created_at, duration,
         {via && <em>Via {via}</em>}
         <em>{format(new Date(created_at), 'P p')}</em>
         <em>{duration} seconds</em>
-
       </S.Details>
 
       <S.Archive>

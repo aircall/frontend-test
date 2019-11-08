@@ -1,4 +1,4 @@
-import { takeEvery, call, put } from 'redux-saga/effects'
+import { takeLatest, call, put } from 'redux-saga/effects'
 import ACTIONS from '../actions'
 import { archiveActivity } from '../api'
 import { setActivityDetailAction } from '../actions/activities'
@@ -13,5 +13,5 @@ function * handleActivityArchive (action) {
 }
 
 export default function * watchArchiveActivity () {
-  yield takeEvery(ACTIONS.ARCHIVE_ACTIVITY, handleActivityArchive)
+  yield takeLatest(ACTIONS.ARCHIVE_ACTIVITY, handleActivityArchive)
 }

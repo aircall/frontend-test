@@ -24,7 +24,15 @@ export const Details = styled.div`
   }
 `
 
-export const Time = styled.div``
+export const Time = styled.div`
+  display: flex;
+  flex-direction: column;
+
+  span:not(:last-child) {
+    display: inline-block;
+    margin-bottom: 4px;
+  }
+`
 
 export const Activity = styled(Link)`
   display: flex;

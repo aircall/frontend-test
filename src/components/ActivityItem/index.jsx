@@ -3,20 +3,22 @@ import PropTypes from 'prop-types'
 import format from 'date-fns/format'
 import * as S from './styles'
 
-const ActivityItem = ({ activity }) => {
-  const callDate = new Date(activity.created_at)
+/* eslint-disable camelcase */
+const ActivityItem = ({ activity: { id, call_type, from, created_at, is_archived } }) => {
+  const callDate = new Date(created_at)
 
   return (
-    <S.Activity to={`/${activity.id}`}>
-      <S.CallType type={activity.call_type} />
+    <S.Activity to={`/${id}`}>
+      <S.CallType type={call_type} />
 
       <S.CallDetails>
         <S.Details>
-          <b>{activity.from}</b>
+          <b>{from}</b>
           <span>{format(callDate, 'P')}</span>
         </S.Details>
         <S.Time>
           <span>{format(callDate, 'p')}</span>
+          {is_archived && <span>Archived</span>}
         </S.Time>
       </S.CallDetails>
     </S.Activity>
