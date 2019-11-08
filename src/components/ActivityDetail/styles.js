@@ -4,10 +4,27 @@ export const To = styled.span`
   font-size: 1.2em;
 `
 
+export const Status = styled.div`
+  display: flex;
+  align-items: center;
+`
+
 export const Header = styled.div`
-  padding: 0 0 12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 6px 0 12px;
   margin: 0 0 12px;
   border-bottom: solid 1px rgba(0, 0, 0, .1);
+
+  b {
+    display: inline-block;
+    margin-left: 12px;
+    text-transform: uppercase;
+  }
+`
+
+export const Details = styled.div`
 
   b, em, span {
     display: block;
@@ -23,20 +40,9 @@ export const Header = styled.div`
   }
 `
 
-export const Details = styled.div`
-  b {
-    margin-bottom: 6px;
-  }
-
-  b, em, span {
-    display: block;
-    margin-bottom: 0.3em;
-  }
-`
-
 export const Activity = styled.section`
   margin-top: 24px;
   padding: 10px 12px;
   border-radius: 8px;
-  background: rgba(0, 0, 0, .04);
+  background: ${props => props.direction === 'inbound' ? 'lightgreen' : 'lightgray'};
 `
