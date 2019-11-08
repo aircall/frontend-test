@@ -4,12 +4,12 @@ import format from 'date-fns/format'
 import * as S from './styles'
 
 /* eslint-disable camelcase */
-const ActivityItem = ({ activity: { id, call_type, from, created_at, is_archived } }) => {
+const ActivityItem = ({ activity: { id, direction, from, created_at, is_archived } }) => {
   const callDate = new Date(created_at)
 
   return (
     <S.Activity to={`/${id}`}>
-      <S.CallType type={call_type} />
+      <S.CallDirection direction={direction} />
 
       <S.CallDetails>
         <S.Details>

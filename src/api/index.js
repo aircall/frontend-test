@@ -17,3 +17,5 @@ export const archiveActivity = async (id) => fetch(
     })
   }
 ).then(response => response.json())
+
+export const resetActivitiesArchives = async () => fetch(`${URL}reset`).then(response => response.json())

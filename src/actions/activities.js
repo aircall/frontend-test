@@ -9,3 +9,5 @@ export const getActivityDetailAction = id => ({ type: ACTIONS.GET_ACTIVITY_DETAI
 export const setActivityDetailAction = detail => ({ type: ACTIONS.SET_ACTIVITY_DETAIL, detail })
 
 export const archiveActivityAction = id => ({ type: ACTIONS.ARCHIVE_ACTIVITY, id })
+
+export const resetArchivesAction = { type: ACTIONS.RESET_ACTIVITIES_ARCHIVES }

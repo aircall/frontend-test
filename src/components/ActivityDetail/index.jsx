@@ -4,6 +4,7 @@ import { connect } from 'react-redux'
 import format from 'date-fns/format'
 import { archiveActivityAction } from '../../actions/activities'
 import ActivityStatusIcon from '../ActivityStatusIcon/index.jsx'
+import Button from '../Button/index.jsx'
 import * as S from './styles'
 
 /* eslint-disable camelcase */
@@ -34,7 +35,7 @@ const ActivityDetail = ({ activity: { id, direction, from, created_at, duration,
 
       <S.Archive>
         {!is_archived &&
-          <button onClick={handleArchiveClick}>Archive</button>}
+          <Button onClick={handleArchiveClick}>Archive</Button>}
 
         {is_archived && <b>ARCHIVED</b>}
       </S.Archive>

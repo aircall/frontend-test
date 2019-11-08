@@ -1,10 +1,10 @@
 import styled from 'styled-components'
 import { Link } from 'react-router-dom'
 
-export const CallType = styled.div`
+export const CallDirection = styled.div`
   width: 12px;
   height: 12px;
-  background: ${props => props.type === 'missed' ? 'orange' : 'lightgreen'};
+  background: ${props => props.direction === 'outbound' ? 'gray' : 'lightgreen'};
   border-radius: 6px;
 `
 
@@ -43,7 +43,7 @@ export const Activity = styled(Link)`
   text-decoration: none;
   color: #000;
 
-  ${CallType} {
+  ${CallDirection} {
     margin-right: 12px;
   }
 `

@@ -1,13 +1,17 @@
 import React, { useEffect, useState } from 'react'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
-import { getActivitiesAction } from '../../actions/activities'
+import { getActivitiesAction, resetArchivesAction } from '../../actions/activities'
 import ActivityItem from '../../components/ActivityItem/index.jsx'
 import Button from '../../components/Button/index.jsx'
 import * as S from './styles'
 
-const Activities = ({ getActivities, list }) => {
+const Activities = ({ list, getActivities, resetArchives }) => {
   const [showArchives, setShowArchives] = useState(true)
+
+  const handleResetArchivesClick = () => {
+    resetArchives()
+  }
 
   useEffect(() => {
     getActivities()
@@ -17,9 +21,14 @@ const Activities = ({ getActivities, list }) => {
 
   return (
     <S.PageWrapper>
-      <Button onClick={() => setShowArchives(!showArchives)}>
-        {showArchives ? 'Hide' : 'Show'} archived calls
-      </Button>
+      <S.Header>
+        <Button onClick={() => setShowArchives(!showArchives)}>
+          {showArchives ? 'Hide' : 'Show'} archived calls
+        </Button>
+        <Button onClick={handleResetArchivesClick}>
+          Reset archives
+        </Button>
+      </S.Header>
 
       <S.Activities>
         {filteredList.map(item =>
@@ -31,12 +40,14 @@ const Activities = ({ getActivities, list }) => {
 }
 
 Activities.propTypes = {
+  list: PropTypes.array.isRequired,
   getActivities: PropTypes.func.isRequired,
-  list: PropTypes.array.isRequired
+  resetArchives: PropTypes.func.isRequired
 }
 
 const mdtp = dispatch => ({
-  getActivities: () => dispatch(getActivitiesAction)
+  getActivities: () => dispatch(getActivitiesAction),
+  resetArchives: () => dispatch(resetArchivesAction)
 })
 
 const mstp = ({ activities: { list } }) => ({
