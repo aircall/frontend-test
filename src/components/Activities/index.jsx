@@ -2,6 +2,8 @@ import React, { useEffect } from 'react'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import { getActivitiesAction } from '../../actions/activities'
+import { ActivityItem } from '../ActivityItem/index.jsx'
+import * as S from './styles'
 
 const Activities = ({ getActivities, list }) => {
   useEffect(() => {
@@ -9,10 +11,11 @@ const Activities = ({ getActivities, list }) => {
   }, [])
 
   return (
-    <div>
-      Activities
-      {list.map(item => <div key={item.id}>#{item.id} {item.from}</div>)}
-    </div>
+    <S.Activities>
+      {list.map(item =>
+        <ActivityItem key={item.id} activity={item} />
+      )}
+    </S.Activities>
   )
 }
 
