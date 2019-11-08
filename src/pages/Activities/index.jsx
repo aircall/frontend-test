@@ -11,11 +11,13 @@ const Activities = ({ getActivities, list }) => {
   }, [])
 
   return (
-    <S.Activities>
-      {list.map(item =>
-        <ActivityItem key={item.id} activity={item} />
-      )}
-    </S.Activities>
+    <S.PageWrapper>
+      <S.Activities>
+        {list.map(item =>
+          <ActivityItem key={item.id} activity={item} />
+        )}
+      </S.Activities>
+    </S.PageWrapper>
   )
 }
 

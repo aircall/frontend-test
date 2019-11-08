@@ -4,6 +4,7 @@ import { setActivityDetailAction } from '../actions/activities'
 import { fetchActivityDetail } from '../api'
 
 function * handleGetActivityDetail (action) {
+  yield put(setActivityDetailAction({}))
   const activity = yield call(fetchActivityDetail, action.id)
   yield put(setActivityDetailAction(activity))
 }

@@ -5,7 +5,7 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import store from './store'
 import Header from './components/Header/index.jsx'
 import Activities from './pages/Activities/index.jsx'
-import ActivityDetail from './pages/ActivityDetail/index.jsx'
+import Activity from './pages/Activity/index.jsx'
 
 const App = () => {
   return (
@@ -14,7 +14,7 @@ const App = () => {
         <div className='container'>
           <Header />
           <Switch>
-            <Route path='/:id' component={ActivityDetail} />
+            <Route path='/:id' component={Activity} />
             <Route path='/' component={Activities} />
           </Switch>
         </div>
