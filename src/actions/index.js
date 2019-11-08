@@ -1,0 +1,3 @@
+export default {
+  FETCH_ACTIVITIES: 'FETCH_ACTIVITIES'
+}
