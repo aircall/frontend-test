@@ -1,3 +1,8 @@
+import { all, call } from 'redux-saga/effects'
+import watchGetActivities from './activities'
+
 export default function * mainSaga () {
-  console.log('main saga')
+  yield all([
+    call(watchGetActivities)
+  ])
 }
