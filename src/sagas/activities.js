@@ -1,11 +1,11 @@
 import { takeEvery, call, put } from 'redux-saga/effects'
 import ACTIONS from '../actions'
-import { setActivities } from '../actions/activities'
+import { setActivitiesAction } from '../actions/activities'
 import { fetchActivities } from '../api'
 
 function * handleGetActivities () {
   const activities = yield call(fetchActivities)
-  yield put(setActivities(activities))
+  yield put(setActivitiesAction(activities))
 }
 
 export default function * watchGetActivities () {
