@@ -8,7 +8,7 @@ import {
 } from "../action";
 
 export default {
-  [DETAIL_VIEW](state, { callId }) {
+  [DETAIL_VIEW](state, callId) {
     return {
       ...state,
       detailView: {
@@ -20,7 +20,7 @@ export default {
     };
   },
 
-  [DETAIL_VIEW_SUCCESS](state, { data }) {
+  [DETAIL_VIEW_SUCCESS](state, data) {
     return {
       ...state,
       detailView: {
@@ -31,7 +31,7 @@ export default {
     };
   },
 
-  [DETAIL_VIEW_ERROR](state, { error }) {
+  [DETAIL_VIEW_ERROR](state, error) {
     return {
       ...state,
       detailView: {

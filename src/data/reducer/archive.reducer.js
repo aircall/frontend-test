@@ -1,7 +1,7 @@
 import { ARCHIVE, ARCHIVE_ERROR, ARCHIVE_SUCCESS } from "../action";
 
 export default {
-  [ARCHIVE](state, { callId }) {
+  [ARCHIVE](state, callId) {
     return {
       ...state,
       archive: {
@@ -14,7 +14,7 @@ export default {
     };
   },
 
-  [ARCHIVE_SUCCESS](state, { callId }) {
+  [ARCHIVE_SUCCESS](state, callId) {
     return {
       ...state,
       archive: {

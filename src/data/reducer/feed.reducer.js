@@ -12,7 +12,7 @@ export default {
     };
   },
 
-  [FEED_SUCCESS](state, { data }) {
+  [FEED_SUCCESS](state, data) {
     return {
       ...state,
       feed: {
@@ -23,7 +23,7 @@ export default {
     };
   },
 
-  [FEED_ERROR](state, { error }) {
+  [FEED_ERROR](state, error) {
     return {
       ...state,
       feed: {

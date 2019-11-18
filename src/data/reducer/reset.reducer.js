@@ -20,7 +20,7 @@ export default {
     };
   },
 
-  [RESET_STATE_ERROR](state, { error }) {
+  [RESET_STATE_ERROR](state, error) {
     return {
       ...state,
       reset: {
