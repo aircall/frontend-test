@@ -4,11 +4,12 @@ export const defaultStore = {
     error: null,
     data: []
   },
-  callViewing: {
+  detailView: {
     loading: true,
     error: null,
     data: {}
   },
+  archive: {},
   reset: {
     loading: true,
     error: null
