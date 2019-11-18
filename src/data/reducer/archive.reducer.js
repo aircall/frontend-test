@@ -20,8 +20,7 @@ export default {
       archive: {
         ...state.archive,
         [callId]: {
-          loading: true,
-          error: null
+          loading: false
         }
       }
     };
