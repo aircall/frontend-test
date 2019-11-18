@@ -7,6 +7,7 @@ export const defaultStore = {
   detailView: {
     loading: true,
     error: null,
+    callId: null,
     data: {}
   },
   archive: {},
