@@ -1,8 +1,8 @@
-import { BASE_URL } from "../data/config";
+import CONFIG from "../data/config";
 
 export async function privateFetch(path, method, data) {
   const canContainBody = method === "POST";
-  let url = BASE_URL + path;
+  let url = CONFIG.BASE_URL + path;
 
   if (!canContainBody) {
     url = new URL(url);
