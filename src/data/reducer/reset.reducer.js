@@ -1,11 +1,7 @@
-import {
-  RESET_STATE_LOADING,
-  RESET_STATE_SUCCESS,
-  RESET_STATE_ERROR
-} from "../action";
+import { RESET_STATE, RESET_STATE_SUCCESS, RESET_STATE_ERROR } from "../action";
 
 export default {
-  [RESET_STATE_LOADING](state) {
+  [RESET_STATE](state) {
     return {
       ...state,
       reset: {

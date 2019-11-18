@@ -1,7 +1,7 @@
-import { FEED_LOADING, FEED_SUCCESS, FEED_ERROR } from "../action";
+import { FEED, FEED_SUCCESS, FEED_ERROR } from "../action";
 
 export default {
-  [FEED_LOADING](state) {
+  [FEED](state) {
     return {
       ...state,
       feed: {

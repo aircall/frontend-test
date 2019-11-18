@@ -1,7 +1,7 @@
-import { ARCHIVE_LOADING, ARCHIVE_ERROR, ARCHIVE_SUCCESS } from "../action";
+import { ARCHIVE, ARCHIVE_ERROR, ARCHIVE_SUCCESS } from "../action";
 
 export default {
-  [ARCHIVE_LOADING](state, { callId }) {
+  [ARCHIVE](state, { callId }) {
     return {
       ...state,
       archive: {

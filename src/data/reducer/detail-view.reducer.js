@@ -1,14 +1,14 @@
 import { defaultStore } from "../store";
 
 import {
-  DETAIL_VIEW_LOADING,
+  DETAIL_VIEW,
   DETAIL_VIEW_SUCCESS,
   DETAIL_VIEW_ERROR,
   DETAIL_VIEW_RESET
 } from "../action";
 
 export default {
-  [DETAIL_VIEW_LOADING](state, { callId }) {
+  [DETAIL_VIEW](state, { callId }) {
     return {
       ...state,
       detailView: {
