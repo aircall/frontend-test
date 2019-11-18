@@ -7,6 +7,7 @@ export const FEED_ERROR = "FEED_ERROR";
 export const DETAIL_VIEW_LOADING = "DETAIL_VIEW_LOADING";
 export const DETAIL_VIEW_SUCCESS = "DETAIL_VIEW_SUCCESS";
 export const DETAIL_VIEW_ERROR = "DETAIL_VIEW_ERROR";
+export const DETAIL_VIEW_RESET = "DETAIL_VIEW_RESET";
 
 // archive actions
 export const ARCHIVE_LOADING = "ARCHIVE_LOADING";
