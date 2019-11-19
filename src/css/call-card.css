@@ -1,32 +1,91 @@
 .call-card {
   display: flex;
-  align-items: center;
+  flex-flow: column;
+  align-items: stretch;
+  width: 100%;
+  height: 65px;
+  margin: 0 auto 10px;
   padding: 10px;
+  background: white;
   border: 1px solid rgba(1, 1, 1, 0.05);
   border-radius: 10px;
-  margin: 0 0 10px;
   transition: all 0.25s ease;
   cursor: pointer;
+  user-select: none;
 }
 
 .call-card:last-of-type {
-  margin: 0;
+  margin: 0 auto;
 }
 
 .call-card:hover {
+  box-shadow: 0 0 7px 0 rgba(1, 1, 1, 0.05);
+  transform: scale(1.03);
+}
+
+.call-card__compact,
+.call-card__detail {
+  display: flex;
+  align-items: center;
+}
+
+.call-card__compact {
+  height: 100%;
+}
+
+.call-card__detail {
+  height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: all 0.25s ease;
+}
+
+.call-card[data-active="true"] {
+  height: 130px;
   box-shadow: 0 0 7px 2px rgba(1, 1, 1, 0.05);
-  transform: scale(1.05);
+  transform: scale(1.03);
 }
 
-.call-card.call-card--active {
-  transform: scale(1.05);
+.call-card[data-active="true"] .call-card__detail {
+  height: 100%;
+  opacity: 1;
 }
 
-.call-card__icon {
+.call-card__icon,
+.call-card__archive {
   flex-shrink: 0;
   width: 30px;
   height: 30px;
   margin: 0 10px 0 0;
+}
+
+.call-card__archive-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  color: white;
+  font-size: 0.7rem;
+  background: lightcoral;
+  border: 2px solid transparent;
+  border-radius: 50%;
+  cursor: pointer;
+  outline: none;
+  transition: all 0.25s ease;
+}
+
+.call-card__archive-btn:hover {
+  border: 2px solid rgba(1, 1, 1, 0.1);
+}
+
+.call-card__archive-btn:active {
+  transition: scale(0.9);
+}
+
+.call-card__archive-btn > svg {
+  width: 15px;
+  height: 15px;
 }
 
 .call-card__icon--outbound {
@@ -38,7 +97,7 @@
 }
 
 .call-card__icon--inbound.call-card__icon--missed {
-  color: lightcoral;
+  color: lightsalmon;
 }
 
 .call-card__icon--inbound.call-card__icon--voicemail {
@@ -46,10 +105,15 @@
 }
 
 .call-card__group-title {
+  margin: 20px 0;
   color: #bbb;
   font-size: 0.7rem;
   text-transform: uppercase;
   text-align: center;
+}
+
+.call-card__group:first-of-type > .call-card__group-title:first-of-type {
+  margin: 0 0 20px;
 }
 
 .call-card__info {
@@ -66,8 +130,25 @@
   font-weight: bold;
 }
 
+.call-card__info-via,
+.call-card__info-duration {
+  color: #aaa;
+}
+
 .call-card__info-time {
   color: #aaa;
   font-size: 0.7rem;
   font-weight: bold;
+}
+
+.call-card__info-duration {
+  display: flex;
+  align-items: center;
+  font-size: 0.7rem;
+}
+
+.call-card__info-duration-icon {
+  width: 12px;
+  height: 12px;
+  margin: -2px 3px 0 0;
 }
