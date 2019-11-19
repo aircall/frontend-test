@@ -96,6 +96,7 @@ export default function CallCard({
         number={getAppropriateNumber(direction, from, to, true)}
         duration={duration}
         isActive={isActive}
+        direction={direction}
         onArchive={handleArchive}
       />
     </div>
