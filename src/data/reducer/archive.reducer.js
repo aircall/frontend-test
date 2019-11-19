@@ -14,10 +14,10 @@ export default {
     };
   },
 
-  [ARCHIVE_SUCCESS](state, { callId, callIndex, groupIndex }) {
+  [ARCHIVE_SUCCESS](state, { callId, callIndex, groupIndex, isArchived }) {
     const feedData = [...state.feed.data];
 
-    feedData[groupIndex][1][callIndex].is_archived = true;
+    feedData[groupIndex][1][callIndex].is_archived = isArchived;
 
     return {
       ...state,
