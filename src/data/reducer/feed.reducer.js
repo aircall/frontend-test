@@ -1,5 +1,7 @@
 import { FEED, FEED_SUCCESS, FEED_ERROR } from "../action";
 
+import { transposeFeedDataIntoGroups } from "../../utils";
+
 export default {
   [FEED](state) {
     return {
@@ -18,7 +20,7 @@ export default {
       feed: {
         ...state.feed,
         loading: false,
-        data
+        data: transposeFeedDataIntoGroups(data)
       }
     };
   },
