@@ -12,13 +12,16 @@ export interface IActivityState {
   updateActivityIsError?: string
 }
 
-const userStateDefault: IActivityState = {
+const activityStateDefault: IActivityState = {
   getActivitiesListIsFetching: false,
   getActivityIsFetching: false,
   updateActivityIsFetching: false
 }
 
-export function user(state: IActivityState = userStateDefault, action: any): IActivityState {
+export function activity(
+  state: IActivityState = activityStateDefault,
+  action: any
+): IActivityState {
   switch (action.type) {
     case ActivityTypeKeys.ACTIVITIES_LIST_FETCHING:
       return {

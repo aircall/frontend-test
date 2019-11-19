@@ -10,28 +10,13 @@ export type NetworkingErrorHandler = (error: INetworkingError) => void
 export class Networking {
   private api: AxiosInstance
   private baseUrl: string
-  private localStorageJWTKey: string
   private errorhandlers: NetworkingErrorHandler[] = []
 
-  constructor(baseUrl: string, localStorageJWTKey: string) {
+  constructor(baseUrl: string) {
     this.baseUrl = baseUrl
-    this.localStorageJWTKey = localStorageJWTKey
     this.api = axios.create()
     this.api.interceptors.request.use(this.requestInterceptor)
     this.api.interceptors.response.use(this.responseInterceptor, this.errorResponseInterceptor)
-  }
-
-  public async setToken(token: string): Promise<void> {
-    localStorage.setItem(this.localStorageJWTKey, token)
-  }
-
-  public async deleteToken(): Promise<void> {
-    localStorage.removeItem(this.localStorageJWTKey)
-    return
-  }
-
-  public async isTokenSet(): Promise<boolean> {
-    return !!(await localStorage.getItem(this.localStorageJWTKey))
   }
 
   public addErrorHandler(errorHandler: (error: INetworkingError) => void) {
@@ -64,11 +49,9 @@ export class Networking {
 
   private requestInterceptor = async (config: AxiosRequestConfig) => {
     console.log('request', config)
-    const token = await localStorage.getItem(this.localStorageJWTKey)
     config.baseURL = this.baseUrl
     config.headers = {
-      ...config.headers,
-      authorization: token ? `Bearer ${token}` : undefined
+      ...config.headers
     }
     return config
   }

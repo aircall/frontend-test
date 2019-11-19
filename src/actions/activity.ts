@@ -67,7 +67,7 @@ export function doGetActivitiesList(): KThunkAction {
     dispatch(activitiesListFetching())
     try {
       const activitiesResponse = await api.activity.getActivitiesList()
-      dispatch(activitiesListSuccess(activitiesResponse.activities))
+      dispatch(activitiesListSuccess(activitiesResponse))
     } catch (err) {
       dispatch(activitiesListError(err))
     }
@@ -114,7 +114,7 @@ export function doGetActivity(id: string): KThunkAction {
     dispatch(activityFetching())
     try {
       const activityResponse = await api.activity.getActivityById(id)
-      dispatch(activitySuccess(activityResponse.activity))
+      dispatch(activitySuccess(activityResponse))
     } catch (err) {
       dispatch(activityError(err))
     }
@@ -161,7 +161,7 @@ export function doUpdateActivity(id: string, is_archived: boolean): KThunkAction
     dispatch(updateActivityFetching())
     try {
       const activityResponse = await api.activity.updateActivity(id, is_archived)
-      dispatch(updateActivitySuccess(activityResponse.activity))
+      dispatch(updateActivitySuccess(activityResponse))
     } catch (err) {
       dispatch(updateActivityError(err))
     }

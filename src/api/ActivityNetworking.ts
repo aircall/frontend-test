@@ -2,7 +2,8 @@ import { Networking } from './Networking'
 import {
   IActivityResponse,
   IActivitiesListResponse,
-  IActivityUpdateRequestBody
+  IActivityUpdateRequestBody,
+  IActivity
 } from '../shared/api-types'
 
 export class ActivityNetworking {
@@ -12,16 +13,16 @@ export class ActivityNetworking {
     this.networking = networking
   }
 
-  public async getActivitiesList(): Promise<IActivitiesListResponse> {
-    return this.networking.get<IActivitiesListResponse>(`/activities`)
+  public async getActivitiesList(): Promise<IActivity[]> {
+    return this.networking.get<IActivity[]>(`/activities`)
   }
 
-  public async getActivityById(id: string): Promise<IActivityResponse> {
-    return this.networking.get<IActivityResponse>(`/activities/${id}`)
+  public async getActivityById(id: string): Promise<IActivity> {
+    return this.networking.get<IActivity>(`/activities/${id}`)
   }
 
-  public async updateActivity(id: string, is_archived: boolean): Promise<IActivityResponse> {
+  public async updateActivity(id: string, is_archived: boolean): Promise<IActivity> {
     const body: IActivityUpdateRequestBody = { is_archived }
-    return this.networking.post<IActivityResponse>(`/activities/${id}`, body)
+    return this.networking.post<IActivity>(`/activities/${id}`, body)
   }
 }
