@@ -10,16 +10,18 @@
 }
 
 #app .container {
+  display: flex;
+  flex-flow: column;
   width: 376px;
   height: 666px;
   z-index: 100;
 
   background: white;
   border-radius: 3px;
-  box-shadow: 0 0 5px 0 rgba(0, 0, 0, .9);
+  box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.9);
 }
 
 #app .container-view {
+  height: 100%;
   padding: 20px;
 }
-
