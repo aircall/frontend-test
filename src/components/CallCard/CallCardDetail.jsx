@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import { parseDuration } from "../../utils";
 
 export default function CallCardDetail({
   number,
@@ -25,7 +26,7 @@ export default function CallCardDetail({
               data-feather="clock"
               className="call-card__info-duration-icon"
             ></i>
-            {duration}
+            {parseDuration(duration)}
           </span>
         </div>
       </div>
