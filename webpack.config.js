@@ -1,9 +1,16 @@
 const HtmlWebPackPlugin = require('html-webpack-plugin')
 
 module.exports = {
+  entry: {
+    index: './src/index.tsx'
+  },
+  output: {
+    filename: 'bundle.js',
+    path: __dirname + '/dist'
+  },
   resolve: {
     // Add '.ts' and '.tsx' as resolvable extensions.
-    extensions: ['.ts', '.tsx']
+    extensions: ['.ts', '.tsx', '.js', '.jsx']
   },
   module: {
     rules: [
