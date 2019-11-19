@@ -1,0 +1,73 @@
+.call-card {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  border: 1px solid rgba(1, 1, 1, 0.05);
+  border-radius: 10px;
+  margin: 0 0 10px;
+  transition: all 0.25s ease;
+  cursor: pointer;
+}
+
+.call-card:last-of-type {
+  margin: 0;
+}
+
+.call-card:hover {
+  box-shadow: 0 0 7px 2px rgba(1, 1, 1, 0.05);
+  transform: scale(1.05);
+}
+
+.call-card.call-card--active {
+  transform: scale(1.05);
+}
+
+.call-card__icon {
+  flex-shrink: 0;
+  width: 30px;
+  height: 30px;
+  margin: 0 10px 0 0;
+}
+
+.call-card__icon--outbound {
+  color: lightgreen;
+}
+
+.call-card__icon--inbound.call-card__icon--answered {
+  color: lightskyblue;
+}
+
+.call-card__icon--inbound.call-card__icon--missed {
+  color: lightcoral;
+}
+
+.call-card__icon--inbound.call-card__icon--voicemail {
+  color: grey;
+}
+
+.call-card__group-title {
+  color: #bbb;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.call-card__info {
+  display: flex;
+  flex-shrink: 1;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.call-card__info-number {
+  margin: 0 0 5px;
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+.call-card__info-time {
+  color: #aaa;
+  font-size: 0.7rem;
+  font-weight: bold;
+}
