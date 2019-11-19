@@ -16,7 +16,7 @@
   height: 666px;
   z-index: 100;
 
-  background: white;
+  background: #efefef;
   border-radius: 3px;
   box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.9);
 }
@@ -24,4 +24,6 @@
 #app .container-view {
   height: 100%;
   padding: 20px;
+  overflow-y: auto;
+  overflow-x: hidden;
 }
