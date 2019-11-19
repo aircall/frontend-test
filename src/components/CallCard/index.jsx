@@ -1,32 +1,64 @@
-import React, { useEffect } from "react";
+import React, { useContext, useEffect } from "react";
 
-import { getIconName, parseTime } from "../../utils";
+import { Store } from "../StoreContext";
 
-export default function CallCardCompact({
-  data: { id, direction, from, to, via, call_type, callTime }
+import { DETAIL_VIEW, ARCHIVE } from "../../data/action";
+
+import CallCardCompact from "./CallCardCompact";
+import CallCardDetail from "./CallCardDetail";
+
+export default function CallCard({
+  data: { id, direction, from, to, via, duration, call_type, callTime }
 }) {
+  const {
+    state: { detailView },
+    dispatch
+  } = useContext(Store);
+
+  const isActive = detailView === id;
+
   useEffect(() => {
     feather.replace();
   }, []);
 
-  const getAppropriateNumber = (direction, from, to) =>
-    direction === "outgoing" ? to : from;
+  const handleDetailView = () => {
+    if (!isActive) {
+      dispatch(DETAIL_VIEW, id);
+    } else {
+      dispatch(DETAIL_VIEW, null);
+    }
+  };
+
+  const handleArchive = e => {
+    e.stopPropagation();
+    // dispatch(ARCHIVE, id);
+    // fetch.post(`/`)
+  };
+
+  const getAppropriateNumber = (direction, from, to, inverse) =>
+    direction === "outgoing" ? (inverse ? from : to) : inverse ? to : from;
 
   return (
-    <div className="call-card" id={id}>
-      <i
-        data-feather={getIconName(direction, call_type)}
-        className={`call-card__icon call-card__icon--${direction} call-card__icon--${call_type}`}
+    <div
+      className="call-card"
+      id={id}
+      onClick={handleDetailView}
+      data-active={isActive}
+      data-archiving={}
+    >
+      <CallCardCompact
+        number={getAppropriateNumber(direction, from, to, false)}
+        via={via}
+        direction={direction}
+        callType={call_type}
+        callTime={callTime}
       />
-      <div className="call-card__info">
-        <div className="call-card__info-details">
-          <p className="call-card__info-number">
-            {getAppropriateNumber(direction, from, to)}
-          </p>
-          <span>Tried to call on {via}</span>
-        </div>
-        <div className="call-card__info-time">{callTime}</div>
-      </div>
+      <CallCardDetail
+        number={getAppropriateNumber(direction, from, to, true)}
+        duration={duration}
+        isActive={isActive}
+        onArchive={handleArchive}
+      />
     </div>
   );
 }
