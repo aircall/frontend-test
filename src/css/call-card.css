@@ -1,4 +1,5 @@
 .call-card {
+  position: relative;
   display: flex;
   flex-flow: column;
   align-items: stretch;
@@ -42,8 +43,24 @@
 
 .call-card[data-active="true"] {
   height: 130px;
-  box-shadow: 0 0 7px 2px rgba(1, 1, 1, 0.05);
+  box-shadow: 0 0 7px 0 rgba(1, 1, 1, 0.05);
   transform: scale(1.03);
+}
+
+.call-card[data-archiving="true"] {
+  opacity: 0.5;
+  cursor: progress;
+}
+
+.call-card[data-archived="true"]:after {
+  content: "";
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  height: 10px;
+  width: 10px;
+  background: lightgray;
+  border-radius: 50%;
 }
 
 .call-card[data-active="true"] .call-card__detail {
