@@ -7,7 +7,8 @@ export const defaultStore = {
   detailView: null,
   archive: {},
   reset: {
-    loading: true,
+    loading: false,
     error: null
-  }
+  },
+  showArchivedCalls: false
 };
