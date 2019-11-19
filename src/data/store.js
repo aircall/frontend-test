@@ -4,12 +4,7 @@ export const defaultStore = {
     error: null,
     data: []
   },
-  detailView: {
-    loading: true,
-    error: null,
-    callId: null,
-    data: {}
-  },
+  detailView: null,
   archive: {},
   reset: {
     loading: true,
