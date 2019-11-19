@@ -4,6 +4,7 @@ import styled from 'styled-components'
 
 interface IActivityItemProps {
   activity: IActivity
+  onClick: (id: number) => void
 }
 
 const Container = styled.div`
@@ -14,18 +15,27 @@ const Container = styled.div`
   border-radius: 10px;
   margin-bottom: 10px;
   display: flex;
+  flex-direction: column;
   padding-left: 10px;
-  align-items: center;
+  justify-content: center;
+  cursor: pointer;
 `
 
 const Title = styled.h1`
-  color: black;
+  color: #505050;
+  margin-bottom: 2px;
+  font-weight: bold;
 `
 
-const ActivityItem: React.FC<IActivityItemProps> = ({ activity }) => {
+const Subtitle = styled.h3`
+  color: #a0a0a0;
+`
+
+const ActivityItem: React.FC<IActivityItemProps> = ({ activity, onClick }) => {
   return (
-    <Container>
+    <Container onClick={() => onClick(activity.id)}>
       <Title>{activity.from}</Title>
+      <Subtitle>{`tried to call on ${activity.to}`}</Subtitle>
     </Container>
   )
 }
