@@ -2,12 +2,11 @@ import CONFIG from "../data/config";
 
 export async function privateFetch(path, method, data) {
   const canContainBody = method === "POST";
-  let url = CONFIG.BASE_URL + path;
+  let url = new URL(CONFIG.BASE_URL + path);
 
-  if (!canContainBody) {
-    url = new URL(url);
-    Object.entries(params).forEach(([key, value]) =>
-      path.searchParams.append(key, params[key])
+  if (!canContainBody && data) {
+    Object.entries(data).forEach(([key, value]) =>
+      url.searchParams.append(key, value)
     );
   }
 
