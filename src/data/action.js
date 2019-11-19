@@ -5,9 +5,6 @@ export const FEED_ERROR = "FEED_ERROR";
 
 // detail view actions
 export const DETAIL_VIEW = "DETAIL_VIEW";
-export const DETAIL_VIEW_SUCCESS = "DETAIL_VIEW_SUCCESS";
-export const DETAIL_VIEW_ERROR = "DETAIL_VIEW_ERROR";
-export const DETAIL_VIEW_RESET = "DETAIL_VIEW_RESET";
 
 // archive actions
 export const ARCHIVE = "ARCHIVE";
