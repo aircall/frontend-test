@@ -1,7 +1,8 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, Suspense } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import IStore from '../IStore'
 import { doGetActivitiesList } from '../actions/activity'
+import ActivitiesList from '../components/organisms/ActivitiesList'
 
 const Activity: React.FC = () => {
   const { activities, isFetching, isError } = useSelector<IStore>((state: IStore) => ({
@@ -15,7 +16,7 @@ const Activity: React.FC = () => {
   useEffect(() => {
     dispatch(doGetActivitiesList())
   }, [])
-  return <div>{activities && <h1>{JSON.stringify(activities)}</h1>}</div>
+  return <div>{activities && <ActivitiesList activities={activities} />}</div>
 }
 
 export default Activity
