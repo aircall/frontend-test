@@ -4,6 +4,8 @@ import { Store } from "../StoreContext";
 
 import { FEED, FEED_SUCCESS, FEED_ERROR } from "../../data/action";
 
+import CallCardGroup from "../CallCard/CallCardGroup";
+
 import fetch from "../../utils/fetch";
 
 export default function Feed(props) {
@@ -30,5 +32,7 @@ export default function Feed(props) {
     return JSON.stringify(error);
   }
 
-  return JSON.stringify(data);
+  return data.map(([date, calls]) => (
+    <CallCardGroup key={date} date={date} calls={calls} />
+  ));
 }
