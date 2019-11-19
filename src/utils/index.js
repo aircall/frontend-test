@@ -12,6 +12,10 @@ export async function privateFetch(path, method, data) {
 
   const response = await fetch(url, {
     method,
+    headers: {
+      Accept: "application/json",
+      "Content-Type": "application/json"
+    },
     ...(canContainBody
       ? {
           body: JSON.stringify(data)
@@ -85,4 +89,11 @@ export function parseTime(dateString) {
   return `${tHours < 10 ? `0${tHours}` : tHours}:${
     minutes < 10 ? `0${minutes}` : minutes
   } ${meridian.toUpperCase()}`;
+}
+
+export function parseDuration(duration) {
+  const minutes = Math.floor(duration / 60);
+  const seconds = duration % 60;
+
+  return `${minutes}:${seconds < 10 ? `0${seconds}` : seconds} min`;
 }
