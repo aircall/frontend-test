@@ -40,3 +40,12 @@
   width: 50%;
   height: auto;
 }
+
+.feed_error {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
