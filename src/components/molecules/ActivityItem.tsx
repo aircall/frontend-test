@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { IActivity } from '../../shared/api-types'
 import styled from 'styled-components'
+import IncomingCallLogo from '../atoms/IncomingCallLogo'
 
 interface IActivityItemProps {
   activity: IActivity
@@ -15,10 +16,15 @@ const Container = styled.div`
   border-radius: 10px;
   margin-bottom: 10px;
   display: flex;
-  flex-direction: column;
   padding-left: 10px;
-  justify-content: center;
+  align-items: center;
   cursor: pointer;
+`
+
+const SubContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
 `
 
 const Title = styled.h1`
@@ -34,8 +40,11 @@ const Subtitle = styled.h3`
 const ActivityItem: React.FC<IActivityItemProps> = ({ activity, onClick }) => {
   return (
     <Container onClick={() => onClick(activity.id)}>
-      <Title>{activity.from}</Title>
-      <Subtitle>{`tried to call on ${activity.to}`}</Subtitle>
+      <IncomingCallLogo />
+      <SubContainer>
+        <Title>{activity.from}</Title>
+        <Subtitle>{`tried to call on ${activity.to}`}</Subtitle>
+      </SubContainer>
     </Container>
   )
 }

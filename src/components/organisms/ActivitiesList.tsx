@@ -3,6 +3,7 @@ import { IActivity } from '../../shared/api-types'
 import ActivityItem from '../molecules/ActivityItem'
 import styled from 'styled-components'
 import moment from 'moment'
+import ArchiveLogo from '../atoms/ArchiveLogo'
 
 interface IActivitiesListProps {
   activities: IActivity[]
@@ -26,9 +27,8 @@ const ArchiveCellContainer = styled.div`
   border-radius: 10px;
   margin-bottom: 10px;
   display: flex;
-  flex-direction: column;
   padding-left: 10px;
-  justify-content: center;
+  align-items: center;
   cursor: pointer;
 `
 
@@ -46,6 +46,7 @@ const ActivitiesList: React.FC<IActivitiesListProps> = ({
   return (
     <Container>
       <ArchiveCellContainer onClick={archiveAllCall}>
+        <ArchiveLogo />
         <ArchiveTitle>Archive all calls</ArchiveTitle>
       </ArchiveCellContainer>
       {activities
