@@ -6,6 +6,7 @@ import ActivitiesList from '../components/organisms/ActivitiesList'
 import { IActivity } from '../shared/api-types'
 
 const Activity: React.FC = () => {
+  const [activitiesList, setActivitiesList] = useState()
   const { activities, isFetching, error, isUpdateActivityFetching } = useSelector<IStore>(
     (state: IStore) => ({
       activities: state.activity.activities,
@@ -19,14 +20,15 @@ const Activity: React.FC = () => {
 
   useEffect(() => {
     dispatch(doGetActivitiesList())
-  }, [])
+    setActivitiesList(activities)
+  }, [activitiesList])
 
   if (isFetching) {
     return <div>Loading...</div>
   } else if (error) {
     return <div>{error}</div>
   } else if (activities && activities.length === 0) {
-    return <div></div>
+    return <div>No activity</div>
   }
   return (
     <div>
@@ -40,6 +42,7 @@ const Activity: React.FC = () => {
           }}
           archiveCall={(id: number) => {
             dispatch(doUpdateActivity(id.toString(), true))
+            setActivitiesList(activities)
           }}
         />
       )}
