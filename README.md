@@ -1,5 +1,7 @@
 # [aircall.io](https://aircall.io) - Frontend technical test
 
+[![CircleCI](https://circleci.com/gh/jeremyscatigna/frontend-test.svg?style=svg)](https://circleci.com/gh/jeremyscatigna/frontend-test)
+
 This test is a part of our hiring process at Aircall for [the Frontend Developer position](https://jobs.lever.co/aircall/c0fdd41e-a2a1-408d-ad08-890153518587). It should take you between 3 and 6 hours depending on your experience.
 
 **Feel free to apply! Drop us a line with your LinkedIn/GitHub/Twitter at jobs@aircall.io**
