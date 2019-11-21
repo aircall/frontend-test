@@ -4,6 +4,7 @@ import ActivityItem from '../molecules/ActivityItem'
 import styled from 'styled-components'
 import moment from 'moment'
 import ArchiveLogo from '../atoms/ArchiveLogo'
+import Collapsible from 'react-collapsible'
 
 interface IActivitiesListProps {
   activities: IActivity[]
