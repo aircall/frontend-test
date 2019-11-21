@@ -10,7 +10,8 @@
     "allowJs": true, // allow a partial TypeScript and JavaScript codebase
     "allowSyntheticDefaultImports": true,
     "preserveConstEnums": true,
-    "noImplicitReturns": false
+    "noImplicitReturns": false,
+    "esModuleInterop": true
   },
   "include": ["./src/"]
 }
