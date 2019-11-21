@@ -1,21 +1,50 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, Suspense } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import IStore from '../IStore'
-import { doGetActivitiesList } from '../actions/activity'
+import { doGetActivitiesList, doUpdateActivity } from '../actions/activity'
+import ActivitiesList from '../components/organisms/ActivitiesList'
+import { IActivity } from '../shared/api-types'
 
 const Activity: React.FC = () => {
-  const { activities, isFetching, isError } = useSelector<IStore>((state: IStore) => ({
-    activities: state.activity.activities,
-    isFetching: state.activity.getActivitiesListIsFetching,
-    error: state.activity.getActivitiesListIsError
-  }))
+  const { activities, isFetching, error, isUpdateActivityFetching } = useSelector<IStore>(
+    (state: IStore) => ({
+      activities: state.activity.activities,
+      isFetching: state.activity.getActivitiesListIsFetching,
+      error: state.activity.getActivitiesListIsError,
+      isUpdateActivityFetching: state.activity.updateActivityIsFetching
+    })
+  )
 
   const dispatch = useDispatch()
 
   useEffect(() => {
     dispatch(doGetActivitiesList())
   }, [])
-  return <div>{activities && <h1>{JSON.stringify(activities)}</h1>}</div>
+
+  if (isFetching) {
+    return <div>Loading...</div>
+  } else if (error) {
+    return <div>{error}</div>
+  } else if (activities && activities.length === 0) {
+    return <div></div>
+  }
+  return (
+    <div>
+      {activities && (
+        <ActivitiesList
+          activities={activities}
+          archiveAllCall={() => {
+            activities.forEach((activity: IActivity) => {
+              dispatch(doUpdateActivity(activity.id.toString(), true))
+            })
+          }}
+          archiveCall={(id: number) => {
+            dispatch(doUpdateActivity(id.toString(), true))
+          }}
+        />
+      )}
+    </div>
+  )
 }
 
 export default Activity

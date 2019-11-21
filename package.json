@@ -16,14 +16,17 @@
     "@types/react": "^16.9.11",
     "@types/react-dom": "^16.9.4",
     "axios": "^0.19.0",
+    "moment": "^2.24.0",
     "react": "^16.12.0",
+    "react-collapsible": "^2.6.0",
     "react-dom": "^16.12.0",
     "react-redux": "^7.1.3",
     "redux": "^4.0.4",
     "redux-axios-middleware": "^4.0.1",
     "redux-devtools-extension": "^2.13.8",
     "redux-logger": "^3.0.6",
-    "redux-thunk": "^2.3.0"
+    "redux-thunk": "^2.3.0",
+    "styled-components": "^4.4.1"
   },
   "devDependencies": {
     "awesome-typescript-loader": "^5.2.1",
@@ -35,6 +38,7 @@
     "html-loader": "0.5.*",
     "html-webpack-plugin": "3.2.*",
     "jest": "^24.9.0",
+    "react-svg-loader": "^3.0.3",
     "source-map-loader": "^0.2.4",
     "style-loader": "0.23.*",
     "ts-jest": "^24.1.0",

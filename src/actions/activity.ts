@@ -161,6 +161,7 @@ export function doUpdateActivity(id: string, is_archived: boolean): KThunkAction
     dispatch(updateActivityFetching())
     try {
       const activityResponse = await api.activity.updateActivity(id, is_archived)
+      await doGetActivitiesList()
       dispatch(updateActivitySuccess(activityResponse))
     } catch (err) {
       dispatch(updateActivityError(err))
