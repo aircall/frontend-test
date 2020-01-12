@@ -1,4 +1,4 @@
-header {
+.header {
   height: 40px;
   margin: 0 auto;
   padding: 20px 0;
@@ -6,7 +6,7 @@ header {
   box-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);
 }
 
-header svg {
+.logo {
   display: block;
   width: 100%; height: 100%;
 }
