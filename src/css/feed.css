@@ -1,0 +1,56 @@
+.header {
+  position: sticky;
+  margin: 10px 20px 0;
+}
+
+.list {
+  display: grid;
+  grid-template-rows: auto 1fr;
+  padding: 0 20px;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  scroll-behavior: smooth;
+  scroll-snap-type: y proximity;
+}
+
+.list > * {
+  scroll-snap-align: start;
+}
+
+.list::-webkit-scrollbar {
+  width: 10px;
+}
+
+.list::-webkit-scrollbar-track {
+  background: white;
+}
+
+.list::-webkit-scrollbar-thumb {
+  background: #eee;
+}
+
+.list::-webkit-scrollbar-thumb:hover {
+  background: #ddd;
+}
+
+:global .event .label svg {
+  margin: 6px 12px;
+  width: 24px;
+}
+
+:global .event.missed .label svg {
+  fill: red;
+}
+
+:global .event.answered .label svg {
+  fill: green;
+}
+
+:global .event.voicemail .label svg {
+  fill: lightgreen;
+}
+
+:global .ui.feed > .event > .content .date {
+  /* avoid accessibility warning in Chrome audit*/
+  color: rgba(0, 0, 0, 0.6);
+}

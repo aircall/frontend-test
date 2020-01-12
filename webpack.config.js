@@ -9,7 +9,18 @@ module.exports = {
       },
       {
         test: /\.css$/,
-        use: ['style-loader', 'css-loader?modules']
+        oneOf: [
+          {
+            resourceQuery: /global/,
+            use: ['style-loader', 'css-loader?importLoaders=true']
+          },
+          {
+            use: ['style-loader', 'css-modules-typescript-loader', {
+              loader: 'css-loader',
+              options: { modules: { localIdentName: '[name]_[local]_[hash:base64:3]' } }
+            }]
+          }
+        ]
       },
       {
         test: /\.([jt]s|[jt]sx)$/,
