@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Technical test for Frontend Engineer position at Aircall",
   "main": "index.js",
-  "repository": "https://github.com/aircall/frontend-test-react.git",
+  "repository": "https://github.com/aircall/frontend-test.git",
   "author": "Xavier Durand <jobs@aircall.io>",
   "license": "MIT",
   "private": false,
