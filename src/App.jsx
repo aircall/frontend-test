@@ -4,7 +4,7 @@ import styles from './css/app.css';
 
 export default () => (
   <div className={styles.container}>
-    <Header/>
+    <Header />
     <div className={styles.view}>Some activities should be here</div>
   </div>
 );

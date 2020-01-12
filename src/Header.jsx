@@ -4,6 +4,6 @@ import styles from './css/header.css';
 
 export default () => (
   <header className={styles.header}>
-    <Logo className={styles.logo}/>
+    <Logo className={styles.logo} />
   </header>
 );

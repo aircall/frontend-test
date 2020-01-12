@@ -9,7 +9,19 @@
   "private": false,
   "scripts": {
     "start": "webpack-dev-server --mode development --open",
+    "format": "prettier --write '**/*.+(jsx?|css)'",
     "build": "webpack --mode production"
+  },
+  "lint-staged": {
+    "*.+(jsx?|css)": [
+      "prettier --write",
+      "git add"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
   },
   "dependencies": {
     "react": "^16.12.0",
@@ -22,6 +34,9 @@
     "css-loader": "^3.4.2",
     "html-loader": "^0.5.5",
     "html-webpack-plugin": "^3.2.0",
+    "husky": "^3.1.0",
+    "lint-staged": "^9.5.0",
+    "prettier": "^1.19.1",
     "react-svg-loader": "^3.0.3",
     "style-loader": "^1.1.2",
     "webpack": "^4.41.5",

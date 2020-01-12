@@ -5,30 +5,20 @@ module.exports = {
     rules: [
       {
         test: /\.html$/,
-        use: [
-          'html-loader?minimize'
-        ]
+        use: ['html-loader?minimize']
       },
       {
         test: /\.css$/,
-        use: [
-          'style-loader',
-          'css-loader?modules'
-        ]
+        use: ['style-loader', 'css-loader?modules']
       },
       {
         test: /\.(js|jsx)$/,
         exclude: /node_modules/,
-        use: [
-          'babel-loader'
-        ]
+        use: ['babel-loader']
       },
       {
         test: /\.svg$/,
-        use: [
-          'babel-loader',
-          'react-svg-loader?jsx'
-        ]
+        use: ['babel-loader', 'react-svg-loader?jsx']
       }
     ]
   },
