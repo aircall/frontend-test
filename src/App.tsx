@@ -1,5 +1,5 @@
 import React from 'react';
-import Header from './Header.jsx';
+import Header from './Header';
 import styles from './css/app.css';
 
 export default () => (

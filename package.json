@@ -2,18 +2,18 @@
   "name": "frontend-test-react",
   "version": "1.0.0",
   "description": "Technical test for Frontend Engineer position at Aircall",
-  "main": "index.js",
+  "main": "index.tsx",
   "repository": "https://github.com/aircall/frontend-test.git",
   "author": "Xavier Durand <jobs@aircall.io>",
   "license": "MIT",
   "private": false,
   "scripts": {
     "start": "webpack-dev-server --mode development --open",
-    "format": "prettier --write '**/*.+(jsx?|css)'",
+    "format": "prettier --write '**/*.+(ts|tsx|css)'",
     "build": "webpack --mode production"
   },
   "lint-staged": {
-    "*.+(jsx?|css)": [
+    "*.+(ts|tsx|css)": [
       "prettier --write",
       "git add"
     ]
@@ -30,8 +30,11 @@
   "devDependencies": {
     "@babel/core": "^7.8.0",
     "@babel/preset-react": "^7.8.0",
+    "@babel/preset-typescript": "^7.8.0",
+    "@types/react-dom": "^16.9.4",
     "babel-loader": "^8.0.6",
     "css-loader": "^3.4.2",
+    "css-modules-typescript-loader": "^4.0.0",
     "html-loader": "^0.5.5",
     "html-webpack-plugin": "^3.2.0",
     "husky": "^3.1.0",

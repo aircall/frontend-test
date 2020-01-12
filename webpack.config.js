@@ -12,7 +12,7 @@ module.exports = {
         use: ['style-loader', 'css-loader?modules']
       },
       {
-        test: /\.(js|jsx)$/,
+        test: /\.([jt]s|[jt]sx)$/,
         exclude: /node_modules/,
         use: ['babel-loader']
       },
@@ -21,6 +21,10 @@ module.exports = {
         use: ['babel-loader', 'react-svg-loader?jsx']
       }
     ]
+  },
+  entry: './src/index.tsx',
+  resolve: {
+    extensions: ['.ts', '.tsx', '.js', '.jsx']
   },
   plugins: [
     new HtmlWebPackPlugin({
