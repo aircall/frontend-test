@@ -2,17 +2,29 @@ import React, {
   useState,
   useEffect,
   PropsWithChildren,
-  Dispatch,
-  SetStateAction
+  SetStateAction,
+  Dispatch
 } from 'react';
+
 import ActivitiesContext, { Activity } from './index';
 
-const fetchActivities = async (
-  dispatch: Dispatch<SetStateAction<Activity[]>>
+const API_ROOT_PATH = 'https://aircall-job.herokuapp.com';
+
+const fetchActivities = async () => {
+  const response = await fetch(`${API_ROOT_PATH}/activities`);
+  return (await response.json()) as Activity[];
+};
+
+const fetchActivity = async (id: number) => {
+  const response = await fetch(`${API_ROOT_PATH}/activities/${id}`);
+  return (await response.json()) as Activity;
+};
+
+const updateActivities = async (
+  setActivities: Dispatch<SetStateAction<Activity[]>>
 ) => {
-  const response = await fetch('http://localhost:8081/activities.json');
-  const activities = await response.json();
-  dispatch(activities);
+  setActivities([]);
+  setActivities(await fetchActivities());
 };
 
 export default ({ children }: PropsWithChildren<any>) => {
@@ -21,12 +33,18 @@ export default ({ children }: PropsWithChildren<any>) => {
 
   const reload = () => setLoad(doLoad + 1);
 
+  const loadActivity = async (id: number) => {
+    return (
+      activities.find(({ id: found }) => found === id) || fetchActivity(id)
+    );
+  };
+
   useEffect(() => {
-    fetchActivities(setActivities);
+    updateActivities(setActivities);
   }, [doLoad]);
 
   return (
-    <ActivitiesContext.Provider value={{ activities, reload }}>
+    <ActivitiesContext.Provider value={{ activities, reload, loadActivity }}>
       {children}
     </ActivitiesContext.Provider>
   );

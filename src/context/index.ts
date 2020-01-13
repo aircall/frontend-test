@@ -4,12 +4,14 @@ export { default as ActivitiesProvider } from './provider';
 
 export default React.createContext<State>({
   activities: [],
-  reload: () => {}
+  reload: () => {},
+  loadActivity: (_id: number) => Promise.reject()
 });
 
 export interface State {
   activities: Activity[];
   reload: () => void;
+  loadActivity: (id: number) => Promise<Activity>;
 }
 
 export interface Activity {
