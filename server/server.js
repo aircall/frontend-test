@@ -1,7 +1,7 @@
 const express = require('express');
 const path = require('path');
 
-const { aircallActivities, aircallActivitieByID } = require('./routes/aircall');
+const { aircallActivities, aircallActivitieByID, aircallArchiveActivityByID } = require('./routes/aircall');
 
 const port = (process.env.PORT || 3000);
 
@@ -14,14 +14,7 @@ app.use((req, res, next) => {
 });
 
 app.get('/activities/:id', aircallActivitieByID);
+app.post('/activities/:id', aircallArchiveActivityByID);
 app.get('/activities', aircallActivities);
-
-app.get('/ping', (req, res) => res.send('pong'));
-
-app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, 'build', 'index.html'));
-});
-
-
 
 app.listen(port);

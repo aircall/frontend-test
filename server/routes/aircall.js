@@ -20,4 +20,16 @@ exports.aircallActivitieByID = function (req, res) {
   });
 };
 
-/* eslint-ensable func-names */
+exports.aircallResetAllCalls = function (req, res) {
+  request(`${AIRCALL_ACTIVITIES_URL}/reset`, (err, data) => {
+    res.send(JSON.parse(data.body));
+  });
+};
+
+exports.aircallArchiveActivityByID = function (req, res) {
+  request(`${AIRCALL_ACTIVITIES_URL}/${req.params.id}`, (err, data) => {
+    res.send(JSON.parse(data.body));
+  });
+};
+
+/* eslint-enable func-names */
