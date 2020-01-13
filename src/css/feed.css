@@ -4,8 +4,6 @@
 }
 
 .list {
-  display: grid;
-  grid-template-rows: auto 1fr;
   padding: 0 20px;
   overflow-x: hidden;
   overflow-y: scroll;

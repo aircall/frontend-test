@@ -5,13 +5,15 @@ export { default as ActivitiesProvider } from './provider';
 export default React.createContext<State>({
   activities: [],
   reload: () => {},
-  loadActivity: (_id: number) => Promise.reject()
+  loadActivity: (_id: number) => Promise.reject(),
+  archiveActivity: (_id: number) => {}
 });
 
 export interface State {
   activities: Activity[];
   reload: () => void;
   loadActivity: (id: number) => Promise<Activity>;
+  archiveActivity: (id: number) => void;
 }
 
 export interface Activity {

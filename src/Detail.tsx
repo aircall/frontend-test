@@ -1,9 +1,9 @@
 import React, { useEffect, useContext, useState } from 'react';
-import { FormattedDate, FormattedMessage } from 'react-intl';
-import { Item, Loader } from 'semantic-ui-react';
-import { Link, useParams } from 'react-router-dom';
+import { FormattedDate, FormattedMessage, FormattedTime } from 'react-intl';
+import { Item, Loader, Button } from 'semantic-ui-react';
+import { Link, useParams, useHistory } from 'react-router-dom';
 
-import ActivitiesContext, { Activity } from './context/index';
+import ActivitiesContext, { Activity, State } from './context/index';
 import {
   FULL_DATE_FORMAT,
   CallImage,
@@ -14,11 +14,11 @@ import {
 import 'semantic-ui-css/components/reset.min.css?global';
 import 'semantic-ui-css/components/loader.min.css?global';
 import 'semantic-ui-css/components/item.min.css?global';
-import 'semantic-ui-css/components/image.min.css?global';
+import 'semantic-ui-css/components/button.min.css?global';
 import status from './css/status.css';
 import styles from './css/detail.css';
 
-const activityToItemMapper = (activity: Activity) => ({
+const activityToItemMapper = (activity: Activity, archive?: () => void) => ({
   image: (
     <div className={`ui tiny image ${status.icon}`}>
       <CallImage direction={activity.direction} />
@@ -33,13 +33,25 @@ const activityToItemMapper = (activity: Activity) => ({
   ),
   extra: (
     <div className="extra">
-      <CallDuration minutes={parseInt(activity.duration, 10) / 60} />
+      <p>
+        <CallDuration minutes={parseInt(activity.duration, 10) / 60} />
+      </p>
+      <p>
+        <Button basic color="red" onClick={archive}>
+          <FormattedMessage
+            id="call.archive.button"
+            description="Archive call to action"
+            defaultMessage="Archive this call"
+          />
+        </Button>
+      </p>
     </div>
   )
 });
 
 const LoadDetail = () => {
-  const { loadActivity } = useContext(ActivitiesContext);
+  const { loadActivity, archiveActivity } = useContext(ActivitiesContext);
+  const history = useHistory();
   const { activityId } = useParams<{ activityId: string }>();
   const [activity, setActivity] = useState<Activity>();
 
@@ -47,11 +59,16 @@ const LoadDetail = () => {
     loadActivity(parseInt(activityId, 10)).then(setActivity);
   }, [activityId]);
 
+  const archive = (activity: Activity) => () => {
+    archiveActivity(activity.id);
+    history.push('/');
+  };
+
   return !activity ? (
     <Loader active inline="centered" />
   ) : (
     <Item.Group
-      items={[activityToItemMapper(activity)]}
+      items={[activityToItemMapper(activity, archive(activity))]}
       className={status[activity.call_type]}
     />
   );
