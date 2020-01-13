@@ -12,7 +12,11 @@
     "format": "prettier --write '**/*.+(ts|tsx|css)'",
     "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0",
     "build": "webpack --mode production",
-    "preversion": "npm run changelog"
+    "preversion": "npm run changelog",
+    "api-doc": "redoc-cli bundle spec/openapi.yml --output spec/index.html",
+    "api-lint": "spectral lint spec/openapi.yml",
+    "api-mock": "prism mock spec/openapi.yml --dynamic",
+    "api-types": "dtsgen --out src/context/api.d.ts spec/openapi.yml && echo 'export = Components;' >> src/context/api.d.ts"
   },
   "lint-staged": {
     "*.+(ts|tsx|css)": [
@@ -37,12 +41,15 @@
     "@babel/core": "^7.8.0",
     "@babel/preset-react": "^7.8.0",
     "@babel/preset-typescript": "^7.8.0",
+    "@stoplight/prism-cli": "^3.2.3",
+    "@stoplight/spectral": "^5.0.0",
     "@types/react-dom": "^16.9.4",
     "@types/react-router-dom": "^5.1.3",
     "babel-loader": "^8.0.6",
     "conventional-changelog-cli": "^2.0.31",
     "css-loader": "^3.4.2",
     "css-modules-typescript-loader": "^4.0.0",
+    "dtsgenerator": "^2.3.2",
     "html-loader": "^0.5.5",
     "html-webpack-plugin": "^3.2.0",
     "husky": "^3.1.0",
@@ -50,6 +57,7 @@
     "mini-css-extract-plugin": "^0.9.0",
     "prettier": "^1.19.1",
     "react-svg-loader": "^3.0.3",
+    "redoc-cli": "^0.9.5",
     "style-loader": "^1.1.2",
     "webpack": "^4.41.5",
     "webpack-bundle-analyzer": "^3.6.0",
