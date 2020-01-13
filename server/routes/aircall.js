@@ -12,7 +12,7 @@ exports.aircallActivities = function (req, res) {
 
 /* It looks like the server has a fixed number of calls
  that do not update, in which case this call is unnecessary
- generally. I will use it to confirm the post.
+ generally.
 */
 exports.aircallActivitieByID = function (req, res) {
   request(`${AIRCALL_ACTIVITIES_URL}/${req.params.id}`, (err, data) => {

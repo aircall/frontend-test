@@ -1,15 +1,24 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import { render } from 'react-dom';
+import { Provider } from 'react-redux';
+
+import store from './store/index';
 
 import Header from './Header';
+import ActivityContainer from './containers/ActivityContainer';
 
 const App = () => (
   <div className="container">
     <Header />
-    <div className="container-view">Some activities should be here</div>
+    <ActivityContainer className="container-view"/>
   </div>
 );
 
-ReactDOM.render(<App />, document.getElementById('app'));
+render(
+  <Provider store={store}>
+    <App />
+  </Provider>,
+  document.getElementById('app'),
+);
 
 export default App;
