@@ -16,14 +16,5 @@ export interface State {
   archiveActivity: (id: number) => void;
 }
 
-export interface Activity {
-  id: number;
-  created_at: string;
-  direction: 'inbound' | 'outbound';
-  from: string;
-  to: string;
-  via: string;
-  duration: string;
-  is_archived: boolean;
-  call_type: 'answered' | 'missed' | 'voicemail';
-}
+import { Schemas } from './api.d';
+export type Activity = Schemas.Activity;

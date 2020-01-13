@@ -3,7 +3,7 @@ import { FormattedDate, FormattedMessage, FormattedTime } from 'react-intl';
 import { Item, Loader, Button } from 'semantic-ui-react';
 import { Link, useParams, useHistory } from 'react-router-dom';
 
-import ActivitiesContext, { Activity, State } from './context/index';
+import ActivitiesContext, { Activity } from './context/index';
 import {
   FULL_DATE_FORMAT,
   CallImage,

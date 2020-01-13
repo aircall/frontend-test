@@ -43,7 +43,7 @@ module.exports = {
   },
   entry: './src/index.tsx',
   resolve: {
-    extensions: ['.ts', '.tsx', '.js', '.jsx']
+    extensions: ['.ts', '.tsx', '.ts', '.js', '.jsx']
   },
   plugins: [
     new HtmlWebPackPlugin({
