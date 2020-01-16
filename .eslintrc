@@ -8,8 +8,10 @@
   "rules": {
     "import/no-unresolved": "off",
     "react/jsx-filename-extension": "off",
+    "react/jsx-fragments": "off",
     "import/prefer-default-export": "off",
     "import/no-dynamic-require": "off",
-    "jsx-a11y/label-has-for": "off"
+    "jsx-a11y/label-has-for": "off",
+    "import/no-extraneous-dependencies": ["error", {"devDependencies": true}],
   }
 }

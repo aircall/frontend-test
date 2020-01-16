@@ -10,7 +10,7 @@ import ActivityContainer from './containers/ActivityContainer';
 const App = () => (
   <div className="container">
     <Header />
-    <ActivityContainer className="container-view"/>
+    <ActivityContainer className="container-view" />
   </div>
 );
 

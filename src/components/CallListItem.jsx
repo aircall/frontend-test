@@ -8,15 +8,13 @@ import { archiveCall } from '../store/actions/appStateActions';
 const CallListItem = (props) => {
   const {
     id,
-    created_at: createdAt,
+    createdAt,
     direction,
-    to: callTo,
-    from: callFrom,
+    callTo,
+    callFrom,
     via,
-    call_type: callType,
+    callType,
   } = props;
-
-  const { DATA_SOURCE } = process.env;
 
   const dispatch = useDispatch();
 
@@ -24,7 +22,7 @@ const CallListItem = (props) => {
 
   return (
     <details>
-      <summary aria-expanded="true/false" tabIndex={id + 5}>
+      <summary tabIndex={id}>
         <div className="pretend_icon">
           pretend I&apos;m
           <br />
@@ -47,7 +45,7 @@ const CallListItem = (props) => {
   );
 };
 
-CallListItem.propsTypes = {
+CallListItem.propTypes = {
   id: PropTypes.number.isRequired,
   createdAt: PropTypes.string.isRequired,
   direction: PropTypes.string.isRequired,

@@ -1,4 +1,3 @@
-/* eslint-disable react/jsx-fragments */
 import React, { useEffect } from 'react';
 
 import { useDispatch, useSelector } from 'react-redux';
@@ -24,9 +23,7 @@ const ActivitiyContainer = () => {
     })
       .then((res) => res.json())
       .then((res) => {
-        // eslint-disable-next-line no-console
         const filteredData = res.filter((call) => !call.is_archived);
-
         return filteredData;
       })
       .then((res) => dispatch(loadedState(res)));
@@ -37,15 +34,31 @@ const ActivitiyContainer = () => {
   if (calls) {
     return (
       <React.Fragment>
-        <button type="button" onClick={() => callAPI()}>Restore all</button>
+        <button type="button" onClick={() => callAPIForData()}>Restore all</button>
         <ul className="call-list">
           {
           calls.map((call, i) => {
-            const { id } = call;
+            const {
+              id,
+              created_at: createdAt,
+              direction,
+              to: callTo,
+              from: callFrom,
+              via,
+              call_type: callType,
+            } = call;
             return (
               // eslint-disable-next-line react/no-array-index-key
               <li key={`id-${id}-${i}`} className="callDetails">
-                <CallListItem {...call} />
+                <CallListItem
+                  id={id}
+                  createdAt={createdAt}
+                  direction={direction}
+                  callTo={callTo}
+                  callFrom={callFrom}
+                  via={via}
+                  call_type={callType}
+                />
               </li>
             );
           })
