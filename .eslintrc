@@ -13,5 +13,6 @@
     "import/no-dynamic-require": "off",
     "jsx-a11y/label-has-for": "off",
     "import/no-extraneous-dependencies": ["error", {"devDependencies": true}],
+    "prefer-object-spread": "off",
   }
 }

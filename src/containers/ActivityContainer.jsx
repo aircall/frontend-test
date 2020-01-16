@@ -3,15 +3,16 @@ import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { loadedState } from '../store/actions/appStateActions';
 
+import CallDetailView from '../components/CallDetailView';
 import CallListItem from '../components/CallListItem';
 
 const ActivitiyContainer = () => {
   const { DATA_SOURCE } = process.env;
   const calls = useSelector((state) => state.calls);
+  const detail = useSelector((state) => state.detail);
   const dispatch = useDispatch();
 
-  // eslint-disable-next-line func-names
-  const callAPIForData = function () {
+  const callAPIForData = () => {
     fetch(`${DATA_SOURCE}/activities`, {
       method: 'GET',
       headers: new Headers(
@@ -31,6 +32,30 @@ const ActivitiyContainer = () => {
 
   useEffect(callAPIForData, []);
 
+  let detailView = null;
+  if (detail) {
+    const {
+      id,
+      createdAt,
+      direction,
+      to: callTo,
+      from: callFrom,
+      via,
+      call_type: callType,
+    } = detail;
+    detailView = (
+      <CallDetailView
+        id={id}
+        createdAt={createdAt}
+        direction={direction}
+        callTo={callTo}
+        callFrom={callFrom}
+        via={via}
+        call_type={callType}
+      />
+    );
+  }
+
   if (calls) {
     return (
       <React.Fragment>
@@ -49,7 +74,7 @@ const ActivitiyContainer = () => {
             } = call;
             return (
               // eslint-disable-next-line react/no-array-index-key
-              <li key={`id-${id}-${i}`} className="callDetails">
+              <li key={`id-${id}-${i}`}>
                 <CallListItem
                   id={id}
                   createdAt={createdAt}
@@ -64,6 +89,7 @@ const ActivitiyContainer = () => {
           })
         }
         </ul>
+        { detailView }
       </React.Fragment>
     );
   }

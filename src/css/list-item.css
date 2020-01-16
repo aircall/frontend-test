@@ -2,38 +2,15 @@
   padding-top: 1em;
 }
 
-.callDetails details > section {
-  background: hsla(0, 0%, 90%, 1);
-  padding: 1em;
-}
-
 .callDetails {
+  background-color: #dfedde;
   border-bottom: 2px solid #2AC420;
-  display: flex;
-  flex-direction: column;
-  margin-bottom: 1em;
-}
-
-.callDetails summary {
+  border-top: 2px solid #2AC420;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  margin-bottom: 1em;
   width: 100%;
-}
-
-.callDetails summary{
-  outline-color: #2ac4205c;
-}
-
-.callDetails summary::-webkit-details-marker {
-  color: #2AC420;
-  padding-left: 1em;
-}
-
-.callDetails summary > section {
-  flex: 1;
-  padding: 0 1em;
-  text-align: left;
 }
 
 .pretend_icon {
