@@ -1,0 +1,62 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ActivityItemComponent snapshot renders 1`] = `
+<div
+  className="activity-feed-item"
+>
+  <div
+    className="item-left"
+  >
+    <svg
+      aria-hidden="true"
+      className="MuiSvgIcon-root"
+      focusable="false"
+      role="presentation"
+      viewBox="0 0 24 24"
+    >
+      <defs>
+        <path
+          d="M24 24H0V0h24v24z"
+          id="a"
+        />
+      </defs>
+      <path
+        d="M3 8.41l9 9 7-7V15h2V7h-8v2h4.59L12 14.59 4.41 7 3 8.41z"
+      />
+    </svg>
+  </div>
+  <div
+    className="item-center"
+  >
+    <div
+      className="activity-feed-item-number"
+    >
+      06 46 62 12 33
+    </div>
+    <div
+      className="activity-feed-item-info"
+    >
+      tried to call from NYC Office
+    </div>
+  </div>
+  <div
+    className="item-right"
+  >
+    <a
+      onClick={[Function]}
+    >
+      <svg
+        aria-hidden="true"
+        className="MuiSvgIcon-root"
+        focusable="false"
+        role="presentation"
+        viewBox="0 0 24 24"
+      >
+        <path
+          d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"
+        />
+      </svg>
+    </a>
+  </div>
+</div>
+`;
