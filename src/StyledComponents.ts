@@ -11,10 +11,12 @@ const {
 
 export interface IThemeInterface {
   primaryColor: string;
+  lightGrey: string;
 }
 
 export const theme = {
-  primaryColor: "#e9e9eb"
+  primaryColor: "#e9e9eb",
+  lightGrey: "fbfbfb"
 };
 
 export default styled;
