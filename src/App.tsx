@@ -3,6 +3,7 @@ import * as React from "react";
 import { Header } from "./components";
 import { Activity } from "./components/ActivityFeed";
 import { TFormatedActivity } from "./types";
+import { StyledContainer, StyledContainerView } from "./App.styled";
 
 const data = {
   id: 7834,
@@ -20,9 +21,11 @@ const data = {
 
 export const App = () => {
   return (
-    <div className="container">
+    <StyledContainer>
       <Header />
-      <Activity goToDetail={() => {}} activity={data} />
-    </div>
+      <StyledContainerView>
+        <Activity goToDetail={() => {}} activity={data} />
+      </StyledContainerView>
+    </StyledContainer>
   );
 };
