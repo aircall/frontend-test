@@ -1,5 +1,6 @@
 import { combineReducers } from "redux";
 import { formateCompleteData } from "../../utils";
+import { IActivity } from "../../types";
 
 const initialState = {
   activities: [],
@@ -41,6 +42,36 @@ const entity = (state = initialState, action: any) => {
         activityDetail,
         isLoading: false,
         error: null
+      };
+    case "ARCHIVE_ACTIVITY":
+      const activityId = action.payload;
+      const activities = state.activities.map((activity: IActivity) => {
+        if (activity.id === activityId) {
+          return {
+            ...activity,
+            is_archived: true
+          };
+        }
+        return activity;
+      });
+      return {
+        ...state,
+        activities
+      };
+    case "RESET_ACTIVITY":
+      const id = action.payload;
+      const activitiesMapped = state.activities.map((activity: IActivity) => {
+        if (activity.id === id) {
+          return {
+            ...activity,
+            is_archived: false
+          };
+        }
+        return activity;
+      });
+      return {
+        ...state,
+        activities: activitiesMapped
       };
     default:
       return state;

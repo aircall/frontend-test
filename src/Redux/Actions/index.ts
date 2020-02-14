@@ -1,7 +1,11 @@
 import * as constants from "../Constants";
 
 import { IActivity, TDispatch, TAction } from "../../types";
-import { fetchActivities, fetchActivityDetail } from "../../api";
+import {
+  fetchActivities,
+  fetchActivityDetail,
+  handleActivity
+} from "../../api";
 
 export const fetchActivitiesRequest = (): TAction => ({
   type: constants.FETCH_ACTIVITIES_REQUEST
@@ -47,4 +51,30 @@ export const fetchActivityDetailAction = (id: string) => (
       dispatch(fetchActivityDetailSuccess(response))
     )
     .catch((error: Error) => dispatch(fetchActivityDetailError(error.message)));
+};
+
+export const archiveActivity = (payload: number): TAction => ({
+  payload,
+  type: constants.ARCHIVE_ACTIVITY
+});
+
+export const resetActivity = (payload: number): TAction => ({
+  payload,
+  type: constants.RESET_ACTIVITY
+});
+
+export const archiveActivityAction = (id: string, isArchived: boolean) => (
+  dispatch: TDispatch
+) => {
+  return handleActivity(id, isArchived).then((response: IActivity) => {
+    dispatch(archiveActivity(response.id));
+  });
+};
+
+export const resetActivityAction = (id: string, isArchived: boolean) => (
+  dispatch: TDispatch
+) => {
+  return handleActivity(id, isArchived).then((response: IActivity) => {
+    dispatch(resetActivity(response.id));
+  });
 };
