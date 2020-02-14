@@ -9,8 +9,25 @@ const initialState = {
 
 const entity = (state = initialState, action: any) => {
   switch (action.type) {
-    case "INIT":
-      return state;
+    case "FETCH_ACTIVITIES_REQUEST":
+      return {
+        ...state,
+        isLoading: true,
+        error: null
+      };
+    case "FETCH_ACTIVITIES_ERROR":
+      return {
+        ...state,
+        isLoading: false,
+        error: action.payload
+      };
+    case "FETCH_ACTIVITIES_SUCCESS":
+      return {
+        ...state,
+        activities: action.payload,
+        isLoading: false,
+        error: null
+      };
     default:
       return state;
   }

@@ -17,3 +17,21 @@ export type TFormatedActivity = IActivity & {
   call_hour: string;
   hour_side: string;
 };
+
+export type TAction =
+  | { type: "FETCH_ACTIVITIES_SUCCESS"; payload: IActivity[] }
+  | { type: "FETCH_ACTIVITIES_REQUEST" }
+  | { type: "FETCH_ACTIVITIES_ERROR"; payload: string };
+
+export type TDispatch = (action: TAction) => void;
+
+export type TState = {
+  activities: IActivity[];
+  isLoading: boolean;
+  error: string | null;
+  activityDetail: IActivity;
+};
+
+export interface IRootState {
+  entity: TState;
+}
