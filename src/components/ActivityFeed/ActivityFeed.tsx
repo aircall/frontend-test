@@ -10,7 +10,7 @@ import {
   StyledTitle,
   StyledTab
 } from "./ActivityFeed.styled";
-// import { default as archiveIcon } from "../../assets/archiveIcon.svg";
+import { default as archiveIcon } from "../../assets/archiveIcon.svg";
 import { TabContent } from "../TabContent";
 import { BlockActivities } from "./BlockActivities";
 import { ActivityList } from "./ActivityList/ActivityList";
@@ -38,7 +38,7 @@ export const ActivityFeed: React.FC = () => {
           onClick={() => setTabSelected("archived")}
           active={tabSelected === "archived"}
         >
-          {/* <img src={archiveIcon} alt="" width="30px" /> */}
+          <img src={archiveIcon} alt="" width="30px" />
           <StyledTitle>Archived</StyledTitle>
         </StyledTab>
       </WrapperHeaderActivities>
