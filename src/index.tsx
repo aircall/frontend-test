@@ -5,5 +5,11 @@ import "./css/app.css";
 import "./css/header.css";
 
 import { App } from "./App";
+import { ThemeProvider, theme } from "./StyledComponents";
 
-ReactDOM.render(<App />, document.getElementById("app"));
+const Container = (
+  <ThemeProvider theme={theme}>
+    <App />
+  </ThemeProvider>
+);
+ReactDOM.render(Container, document.getElementById("app"));
