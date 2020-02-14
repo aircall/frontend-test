@@ -14,6 +14,7 @@ import { default as archiveIcon } from "../../assets/archiveIcon.svg";
 import { TabContent } from "../TabContent";
 import { BlockActivities } from "./BlockActivities";
 import { ActivityList } from "./ActivityList/ActivityList";
+import { useHistory } from "react-router-dom";
 
 export const ActivityFeed: React.FC = () => {
   const sortedActivities = useSelector((state: IRootState) =>
@@ -25,6 +26,12 @@ export const ActivityFeed: React.FC = () => {
   const [tabSelected, setTabSelected] = React.useState<"feeds" | "archived">(
     "feeds"
   );
+
+  const history = useHistory();
+
+  const goToDetail = (id: number) => {
+    history.push(`/detail/${id}`);
+  };
   return (
     <>
       <WrapperHeaderActivities>
@@ -45,14 +52,14 @@ export const ActivityFeed: React.FC = () => {
       <TabContent isVisible={tabSelected === "feeds"}>
         {sortedActivities.map(([date, activities]) => (
           <BlockActivities key={date} dayDate={date}>
-            <ActivityList activities={activities} goToDetail={() => {}} />
+            <ActivityList activities={activities} goToDetail={goToDetail} />
           </BlockActivities>
         ))}
       </TabContent>
       <TabContent isVisible={tabSelected === "archived"}>
         {sortedArchivedActivities.map(([date, activities]) => (
           <BlockActivities key={date} dayDate={date}>
-            <ActivityList activities={activities} goToDetail={() => {}} />
+            <ActivityList activities={activities} goToDetail={goToDetail} />
           </BlockActivities>
         ))}
       </TabContent>
