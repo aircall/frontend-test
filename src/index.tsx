@@ -4,10 +4,14 @@ import "./css/body.css";
 
 import { App } from "./App";
 import { ThemeProvider, theme } from "./StyledComponents";
+import { Provider } from "react-redux";
+import { default as store } from "./Redux";
 
 const Container = (
-  <ThemeProvider theme={theme}>
-    <App />
-  </ThemeProvider>
+  <Provider store={store}>
+    <ThemeProvider theme={theme}>
+      <App />
+    </ThemeProvider>
+  </Provider>
 );
 ReactDOM.render(Container, document.getElementById("app"));
