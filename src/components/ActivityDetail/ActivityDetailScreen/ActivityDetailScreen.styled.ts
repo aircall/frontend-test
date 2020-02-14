@@ -1,5 +1,21 @@
 import { default as styled } from "../../../StyledComponents";
 
+export const StyledWrapperHeader = styled.div`
+  display: flex;
+  justify-content: space-between;
+  padding: 5px;
+`;
+
+export const StyledButton = styled.button<{ isArchived?: boolean }>`
+  border-radius: 5px;
+  background-color: ${({ theme, isArchived }) =>
+    isArchived ? theme.lightGrey : theme.darkAirCall};
+  color: ${({ theme, isArchived }) => (isArchived ? theme.dark : theme.white)};
+  font-size: 12px;
+  padding: 10px;
+  outline: none;
+`;
+
 export const StyledLabel = styled.span`
   font-weight: 900;
 `;
@@ -23,20 +39,4 @@ export const StyledInfo = styled.span`
 export const StyledWrapper = styled.div`
   display: flex;
   flex-direction: column;
-`;
-
-export const StyledWrapperHeader = styled.div`
-  display: flex;
-  justify-content: space-between;
-  padding: 5px;
-`;
-
-export const StyledButton = styled.button<{ isArchived?: boolean }>`
-  border-radius: 5px;
-  background-color: ${({ theme, isArchived }) =>
-    isArchived ? theme.lightGrey : theme.darkAirCall};
-  color: ${({ theme, isArchived }) => (isArchived ? theme.dark : theme.white)};
-  font-size: 12px;
-  padding: 10px;
-  outline: none;
 `;
