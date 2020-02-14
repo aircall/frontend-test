@@ -14,13 +14,17 @@ export interface IThemeInterface {
   lightGrey: string;
   white: string;
   dark: string;
+  airCallColor: string;
+  darkAirCall: string;
 }
 
 export const theme = {
   primaryColor: "#e9e9eb",
   lightGrey: "#fbfbfb",
   dark: "#111",
-  white: "#fff"
+  white: "#fff",
+  airCallColor: "#2AC420",
+  darkAirCall: "#424242"
 };
 
 export default styled;
