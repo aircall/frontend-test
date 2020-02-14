@@ -8,24 +8,50 @@
   "license": "MIT",
   "private": false,
   "scripts": {
-    "start": "webpack-dev-server --mode development --open",
-    "build": "webpack --mode production"
+    "dev": "concurrently -r 'tsc --noEmit --watch' 'npm start'",
+    "start": "parcel public/index.html -p 8080 --open",
+    "build": "parcel build public/index.html --no-source-maps",
+    "serve": "npm run build && npx serve dist",
+    "test": "jest"
+  },
+  "jest": {
+    "verbose": true,
+    "preset": "ts-jest",
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js"
+    ],
+    "setupFilesAfterEnv": [
+      "<rootDir>/src/setupTests.ts"
+    ],
+    "moduleNameMapper": {
+      ".+\\.css$": "<rootDir>/src/styleMock.ts",
+      "\\.svg": "<rootDir>/src/svgrMock.ts"
+    },
+    "testMatch": [
+      "**/*.(test|spec).(ts|tsx|js)"
+    ]
   },
   "dependencies": {
     "react": "^16.3.1",
     "react-dom": "^16.3.1"
   },
   "devDependencies": {
-    "babel-core": "6.26.*",
-    "babel-loader": "7.1.*",
-    "babel-preset-env": "1.7.0",
-    "babel-preset-react": "6.24.*",
-    "css-loader": "2.1.*",
-    "html-loader": "0.5.*",
-    "html-webpack-plugin": "3.2.*",
-    "style-loader": "0.23.*",
-    "webpack": "4.29.*",
-    "webpack-cli": "3.2.*",
-    "webpack-dev-server": "3.1.*"
+    "@types/jest": "^25.1.2",
+    "@types/node": "^13.7.1",
+    "@types/react": "^16.9.19",
+    "@types/react-dom": "^16.9.5",
+    "concurrently": "^5.1.0",
+    "jest": "^25.1.0",
+    "jest-extended": "^0.11.5",
+    "parcel-bundler": "^1.12.4",
+    "prettier": "^1.19.1",
+    "ts-jest": "^25.2.0",
+    "tslint": "^6.0.0",
+    "tslint-config-airbnb": "^5.11.2",
+    "tslint-config-prettier": "^1.18.0",
+    "tslint-react": "^4.2.0",
+    "typescript": "^3.7.5"
   }
 }
