@@ -1,1 +1,1 @@
-export { Activity } from "./Activity";
+export { ActivityFeed as default } from "./ActivityFeed";
