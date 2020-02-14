@@ -1,8 +1,9 @@
 import * as React from "react";
+import { StyledHeader } from "./Header.styled";
 
 export const Header = () => {
   return (
-    <header>
+    <StyledHeader>
       <svg
         width="486px"
         height="168px"
@@ -40,6 +41,6 @@ export const Header = () => {
           />
         </g>
       </svg>
-    </header>
+    </StyledHeader>
   );
 };
