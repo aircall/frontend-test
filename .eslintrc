@@ -1,0 +1,21 @@
+{
+    "extends": ["eslint:recommended", "plugin:react/recommended"],
+    "env": {
+        "browser": true,
+        "node": true
+    },
+    "parser": "babel-eslint",
+    "parserOptions": {
+        "ecmaVersion": 6,
+        "ecmaFeatures": {
+            "jsx": true
+        },
+        "jsx": true
+    },
+    "settings": {
+        "react": {
+            "version": "16.13.1"
+        }
+    },
+    "plugins": ["react"]
+}
