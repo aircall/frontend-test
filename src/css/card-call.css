@@ -1,0 +1,45 @@
+.card-call {
+	margin: 16px 0px;
+    padding: 16px;
+    background-color: #FFFFFF;
+	border: solid 1px #E8E8E7;
+	border-radius: 8px;
+}
+
+.card-call .card-call-caller {
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+.card-call .call-missed {
+    color: #e23c34;
+}
+
+.card-call .card-call-callee {
+    font-size: 11px;
+    color: #AFAFAF;
+    padding-top: 3px;
+}
+
+.card-call .card-call-callee-identifier {
+    font-weight: 700;
+}
+
+.card-call .call-infos {
+	margin-left: 16px;
+}
+
+.card-call .call-time {
+    font-size: 11px;
+    font-weight: 400;
+    color: #AFAFAF;
+    letter-spacing: 0.5px;
+	padding: 8px 0 8px 16px;
+	border-left: 1px dotted #E8E8E7;
+}
+
+.card-call .call-time .ampm {
+    font-weight: 700;
+    color: #AFAFAF;
+	margin-left: 4px;
+}

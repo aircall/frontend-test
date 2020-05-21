@@ -1,0 +1,31 @@
+.call-details {
+    margin: 16px;
+}
+
+.call-details .title {
+	text-align: center;
+    font-size: 1.5em;
+    font-weight: 500;
+	margin: 32px 0;
+}
+
+.call-details .data-line {
+	margin: 32px 0;
+}
+
+.call-details .data-line .label {
+	text-transform: uppercase;
+	font-weight: 500;
+}
+
+.call-details .data-line .value {
+	font-size: 1.1em;
+}
+
+.call-details .archived {
+	color: #FC5624;
+	margin-top: 50px;
+	font-weight: 500;
+	text-align: center;
+	font-size: 1.1em;
+}

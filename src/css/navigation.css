@@ -1,0 +1,13 @@
+.navigation-link {
+	text-align: center;
+	padding: 16px 0px 8px;
+	font-size: 13px;
+	font-weight: 500;
+	transition: ease-in-out .2s;
+	border-bottom: solid 3px transparent;
+}
+
+.navigation-link.active {
+	padding-bottom: 8px;
+	border-bottom: solid 3px #FC5624;
+}
