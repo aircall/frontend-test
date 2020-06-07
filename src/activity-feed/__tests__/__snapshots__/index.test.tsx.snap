@@ -1,0 +1,7 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`activity-feed ActivityFeed should render correctly 1`] = `
+<div>
+  Some activities should be here
+</div>
+`;

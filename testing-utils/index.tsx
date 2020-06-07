@@ -2,12 +2,29 @@ import React from "react";
 import "jest-styled-components";
 import { render, RenderOptions } from "@testing-library/react";
 import { ThemeProvider } from "styled-components";
+import { MemoryRouter } from "react-router-dom";
 
 import { theme } from "../src/common/theme";
 
-const customRender = (ui: React.ReactElement, options: RenderOptions = {}) => {
+type Options = RenderOptions & {
+  pathName?: string;
+};
+
+const customRender = (
+  ui: React.ReactElement,
+  { pathName, ...options }: Options = {}
+) => {
   const AllTheProviders = ({ children }: { children?: React.ReactNode }) => {
-    return <ThemeProvider theme={theme}>{children}</ThemeProvider>;
+    return (
+      <ThemeProvider theme={theme}>
+        <MemoryRouter
+          initialEntries={[{ pathname: pathName || "/", key: "testKey" }]}
+          initialIndex={0}
+        >
+          {children}
+        </MemoryRouter>
+      </ThemeProvider>
+    );
   };
 
   return render(ui, { wrapper: AllTheProviders, ...options });

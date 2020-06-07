@@ -1,0 +1,8 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`activity-detail ActivityDetail should render correctly 1`] = `
+<div>
+  Activity detail: 
+  42
+</div>
+`;

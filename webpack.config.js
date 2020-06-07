@@ -1,34 +1,40 @@
-const HtmlWebPackPlugin = require('html-webpack-plugin');
+const HtmlWebPackPlugin = require("html-webpack-plugin");
 
 module.exports = {
-  entry: './src',
+  entry: "./src",
+  output: {
+    publicPath: "/",
+  },
   module: {
     rules: [
       {
         test: /\.html$/,
         use: [
           {
-            loader: 'html-loader',
-            options: { minimize: true }
-          }
-        ]
+            loader: "html-loader",
+            options: { minimize: true },
+          },
+        ],
       },
       {
         test: /\.(ts(x?))$/,
         exclude: /node_modules/,
         use: {
-          loader: 'babel-loader'
-        }
-      }
-    ]
+          loader: "babel-loader",
+        },
+      },
+    ],
   },
   resolve: {
-    extensions: ['.ts', '.tsx', '.js']
+    extensions: [".ts", ".tsx", ".js"],
   },
   plugins: [
     new HtmlWebPackPlugin({
       template: "./public/index.html",
-      filename: "./index.html"
-    })
-  ]
+      filename: "./index.html",
+    }),
+  ],
+  devServer: {
+    historyApiFallback: true,
+  },
 };
