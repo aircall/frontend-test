@@ -1,19 +1,131 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`activity-detail ActivityDetail #render should render correctly the activity 1`] = `
+.c0 {
+  list-style-type: none;
+  margin: 1.25rem 0;
+  border: 0.0625rem solid #333333;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  padding: 0.75rem;
+}
+
+.c1:nth-child(even) {
+  background-color: #ffffff;
+}
+
+.c1:nth-child(odd) {
+  background-color: #e5e5e5;
+}
+
+.c2 {
+  font-weight: bold;
+}
+
+.c3 {
+  text-transform: capitalize;
+}
+
 <div>
-  Pierre-Baptiste Béchu
+  <div
+    data-component="ActivitySummary"
+  >
+    {
+  "id": 7834,
+  "created_at": "2018-04-19T09:38:41.000Z",
+  "direction": "outbound",
+  "from": "Pierre-Baptiste Béchu",
+  "to": "06 46 62 12 33",
+  "via": "NYC Office",
+  "duration": "120",
+  "is_archived": false,
+  "call_type": "answered"
+}
+  </div>
+  <ul
+    class="c0"
+  >
+    <li
+      class="c1"
+    >
+      <label
+        class="c2"
+      >
+        Date
+      </label>
+      <label
+        class="c3"
+      >
+        4/19/2018, 11:38:41 AM
+      </label>
+    </li>
+    <li
+      class="c1"
+    >
+      <label
+        class="c2"
+      >
+        Duration
+      </label>
+      <label
+        class="c3"
+      >
+        00:02:00
+      </label>
+    </li>
+    <li
+      class="c1"
+    >
+      <label
+        class="c2"
+      >
+        Via
+      </label>
+      <label
+        class="c3"
+      >
+        NYC Office
+      </label>
+    </li>
+  </ul>
 </div>
 `;
 
 exports[`activity-detail ActivityDetail #render should render correctly when there's an error 1`] = `
+.c0 {
+  color: #e82300;
+}
+
 <div>
-  test_error
+  <p
+    class="c0"
+  >
+    test_error
+  </p>
 </div>
 `;
 
 exports[`activity-detail ActivityDetail #render should render correctly while loading 1`] = `
+.c0 {
+  background-image: url(spinner.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  height: 2rem;
+}
+
 <div>
-  Loading...
+  <div
+    class="c0"
+  />
 </div>
 `;

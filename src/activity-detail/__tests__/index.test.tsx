@@ -10,6 +10,13 @@ import { getActivityById } from "../../common/service/activity";
 jest.mock("recoil");
 jest.mock("../../common/hook/use-service");
 jest.mock("../../common/service/activity");
+jest.mock("../../common/components/activity-summary", () => ({
+  ActivitySummary: ({ activity }: any) => (
+    <div data-component="ActivitySummary">
+      {JSON.stringify(activity, null, 2)}
+    </div>
+  ),
+}));
 
 describe("activity-detail", () => {
   describe("ActivityDetail", () => {
