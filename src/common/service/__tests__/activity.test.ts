@@ -10,6 +10,7 @@ import {
   CallDirection,
   CallType,
   getActivityById,
+  archiveActivity,
 } from "../activity";
 
 describe("common/service/activity", () => {
@@ -80,6 +81,38 @@ describe("common/service/activity", () => {
         is_archived: false,
         call_type: CallType.ANSWERED,
       });
+    });
+  });
+
+  describe("#archiveActivity", () => {
+    it("should call the activity update endpoint", async () => {
+      const apiNock = nock(API_URL)
+        .post("/activities/42", {
+          id: 42,
+          created_at: "2018-09-10 13:06:00",
+          direction: CallDirection.INBOUND,
+          from: "John Doe",
+          to: "John Smith",
+          via: "NYC Office",
+          duration: 250,
+          is_archived: true,
+          call_type: CallType.ANSWERED,
+        })
+        .reply(200);
+
+      await archiveActivity({
+        id: 42,
+        created_at: "2018-09-10 13:06:00",
+        direction: CallDirection.INBOUND,
+        from: "John Doe",
+        to: "John Smith",
+        via: "NYC Office",
+        duration: 250,
+        is_archived: false,
+        call_type: CallType.ANSWERED,
+      });
+
+      apiNock.done();
     });
   });
 });

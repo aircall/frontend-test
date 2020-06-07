@@ -41,3 +41,14 @@ export async function getActivityById(id: number): Promise<Activity> {
   const response = await request.get<Activity>(`${API_URL}/activities/${id}`);
   return response.data;
 }
+
+/**
+ * Archive an activity
+ * @param activity Activity to archive
+ */
+export async function archiveActivity(activity: Activity): Promise<void> {
+  await request.post<void>(`${API_URL}/activities/${activity.id}`, {
+    ...activity,
+    is_archived: true,
+  });
+}
