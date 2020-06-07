@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const HeaderContainer = styled.header`
-  height: 2.5rem;
+  height: 5rem;
   margin: 0 auto;
   padding: ${({ theme }) => theme.COMPONENTS.APP.HEADER.PADDING} 0;
   text-align: center;

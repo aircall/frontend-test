@@ -7,7 +7,7 @@ import { listState } from "../common/state/activity";
 import { useService } from "../common/hook/use-service";
 import { getActivityList, Activity as TActivity } from "../common/service/activity";
 import { Spinner } from "../common/styled-components";
-import { DayList, ActivityItem, Error, DayItem, ActivityList, Day } from "./styled-components";
+import { DayList, ActivityItem, Error, DayItem, ActivityList, Day, ActivityLink } from "./styled-components";
 import { Activity } from "./components/activity";
 
 
@@ -32,9 +32,9 @@ export function ActivityFeed() {
               <ActivityList>
                 {activityIds.map(id => (
                   <ActivityItem key={id}>
-                    <Link to={`/activities/${id}`}>
+                    <ActivityLink to={`/activities/${id}`}>
                       <Activity id={id} />
-                    </Link>
+                    </ActivityLink>
                   </ActivityItem>
                 ))}
               </ActivityList>

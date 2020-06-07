@@ -7,12 +7,16 @@ exports[`activity-feed ActivityFeed #render should render correctly when there's
   margin: 0;
 }
 
+.c1 {
+  color: #e82300;
+}
+
 <div>
   <ul
     class="c0"
   />
   <p
-    class=""
+    class="c1"
   >
     test_error
   </p>
@@ -43,9 +47,57 @@ exports[`activity-feed ActivityFeed #render should render correctly with a list 
 }
 
 .c1 {
+  margin: 1.25rem 0;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  font-weight: bold;
+  color: #333333;
+  margin: 1.25rem 0;
+}
+
+.c2::before,
+.c2::after {
+  display: block;
+  content: "";
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  border-top: 0.0625rem solid #e5e5e5;
+}
+
+.c2::before {
+  margin-right: 0.75rem;
+}
+
+.c2::after {
+  margin-left: 0.75rem;
+}
+
+.c3 {
   list-style-type: none;
   padding: 0;
   margin: 0;
+}
+
+.c4 {
+  margin: 1.25rem 0;
+}
+
+.c5 {
+  display: block;
+  color: inherit;
+  -webkit-text-decoration: inherit;
+  text-decoration: inherit;
 }
 
 <div>
@@ -53,20 +105,21 @@ exports[`activity-feed ActivityFeed #render should render correctly with a list 
     class="c0"
   >
     <li
-      class=""
+      class="c1"
     >
       <h3
-        class=""
+        class="c2"
       >
         4/19/2018
       </h3>
       <ul
-        class="c1"
+        class="c3"
       >
         <li
-          class=""
+          class="c4"
         >
           <a
+            class="c5"
             href="/activities/4"
           >
             <div
@@ -76,9 +129,10 @@ exports[`activity-feed ActivityFeed #render should render correctly with a list 
           </a>
         </li>
         <li
-          class=""
+          class="c4"
         >
           <a
+            class="c5"
             href="/activities/1"
           >
             <div
@@ -90,20 +144,21 @@ exports[`activity-feed ActivityFeed #render should render correctly with a list 
       </ul>
     </li>
     <li
-      class=""
+      class="c1"
     >
       <h3
-        class=""
+        class="c2"
       >
         4/18/2018
       </h3>
       <ul
-        class="c1"
+        class="c3"
       >
         <li
-          class=""
+          class="c4"
         >
           <a
+            class="c5"
             href="/activities/3"
           >
             <div
@@ -115,20 +170,21 @@ exports[`activity-feed ActivityFeed #render should render correctly with a list 
       </ul>
     </li>
     <li
-      class=""
+      class="c1"
     >
       <h3
-        class=""
+        class="c2"
       >
         4/17/2018
       </h3>
       <ul
-        class="c1"
+        class="c3"
       >
         <li
-          class=""
+          class="c4"
         >
           <a
+            class="c5"
             href="/activities/2"
           >
             <div

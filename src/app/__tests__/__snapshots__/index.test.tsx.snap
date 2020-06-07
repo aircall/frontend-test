@@ -2,7 +2,7 @@
 
 exports[`app App #render should render correctly the activity detail when the URL is '/activities/:id' 1`] = `
 .c2 {
-  height: 2.5rem;
+  height: 5rem;
   margin: 0 auto;
   padding: 1.25rem 0;
   text-align: center;
@@ -36,6 +36,13 @@ exports[`app App #render should render correctly the activity detail when the UR
 }
 
 .c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
   width: 23.5rem;
   height: 41.625rem;
   z-index: 100;
@@ -45,7 +52,12 @@ exports[`app App #render should render correctly the activity detail when the UR
 }
 
 .c4 {
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
   padding: 1.25rem;
+  overflow: auto;
 }
 
 <div>
@@ -149,7 +161,7 @@ exports[`app App #render should render correctly the activity detail when the UR
 
 exports[`app App #render should render correctly the activity feed when the URL is '/' 1`] = `
 .c2 {
-  height: 2.5rem;
+  height: 5rem;
   margin: 0 auto;
   padding: 1.25rem 0;
   text-align: center;
@@ -183,6 +195,13 @@ exports[`app App #render should render correctly the activity feed when the URL 
 }
 
 .c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
   width: 23.5rem;
   height: 41.625rem;
   z-index: 100;
@@ -192,7 +211,12 @@ exports[`app App #render should render correctly the activity feed when the URL 
 }
 
 .c4 {
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
   padding: 1.25rem;
+  overflow: auto;
 }
 
 <div>

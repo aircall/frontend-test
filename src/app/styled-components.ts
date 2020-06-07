@@ -12,6 +12,8 @@ export const Main = styled.main`
 `;
 
 export const Container = styled.div`
+  display: flex;
+  flex-direction: column;
   width: 23.5rem;
   height: 41.625rem;
   z-index: 100;
@@ -22,5 +24,7 @@ export const Container = styled.div`
 `;
 
 export const View = styled.div`
+  flex-grow: 1;
   padding: ${({ theme }) => theme.COMPONENTS.APP.PADDING};
+  overflow: auto;
 `;

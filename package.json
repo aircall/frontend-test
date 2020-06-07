@@ -13,6 +13,7 @@
     "test": "jest --silent --rootDir src --coverage"
   },
   "dependencies": {
+    "@styled-icons/material": "^10.0.0",
     "@types/recoil": "^0.0.0",
     "axios": "^0.19.2",
     "lodash.memoize": "^4.1.2",
