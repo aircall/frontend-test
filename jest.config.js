@@ -19,11 +19,11 @@ module.exports = {
 
   // An array of glob patterns indicating a set of files for which coverage information should be collected
   collectCoverageFrom: [
-    '<rootDir>/**/*.ts',
-    '<rootDir>/**/*.tsx',
-    '!<rootDir>/__tests__/**/*.ts',
-    '!<rootDir>/__tests__/**/*.tsx',
-    '!<rootDir>/**/*.d.ts',
+    "<rootDir>/**/*.ts",
+    "<rootDir>/**/*.tsx",
+    "!<rootDir>/__tests__/**/*.ts",
+    "!<rootDir>/__tests__/**/*.tsx",
+    "!<rootDir>/**/*.d.ts",
   ],
 
   // The directory where Jest should output its coverage files
@@ -83,7 +83,7 @@ module.exports = {
 
   // A map from regular expressions to module names or to arrays of module names that allow to stub out resources with a single module
   moduleNameMapper: {
-    '^testing-utils$': '<rootDir>/../testing-utils',
+    "^testing-utils$": "<rootDir>/../testing-utils",
   },
 
   // An array of regexp pattern strings, matched against all module paths before considered 'visible' to the module loader
@@ -172,7 +172,11 @@ module.exports = {
   // timers: "real",
 
   // A map from regular expressions to paths to transformers
-  // transform: {},
+  transform: {
+    "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$":
+      "<rootDir>/../testing-utils/transformer/file.js",
+    "\\.(tsx?)": "babel-jest",
+  },
 
   // An array of regexp pattern strings that are matched against all source file paths, matched files will skip transformation
   // transformIgnorePatterns: [

@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`activity-feed/components/activity Activity #render should render correctly the given activity 1`] = `
+<div>
+  <section>
+    Pierre-Baptiste Béchu
+  </section>
+</div>
+`;
