@@ -1,8 +1,19 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`activity-detail ActivityDetail should render correctly 1`] = `
+exports[`activity-detail ActivityDetail #render should render correctly the activity 1`] = `
 <div>
-  Activity detail: 
-  42
+  Pierre-Baptiste Béchu
+</div>
+`;
+
+exports[`activity-detail ActivityDetail #render should render correctly when there's an error 1`] = `
+<div>
+  test_error
+</div>
+`;
+
+exports[`activity-detail ActivityDetail #render should render correctly while loading 1`] = `
+<div>
+  Loading...
 </div>
 `;

@@ -6,3 +6,8 @@ export const listState = atom<Activity[]>({
   key: "activityList",
   default: [],
 });
+
+export const detailState = atom<Activity | null>({
+  key: "activityDetail",
+  default: null,
+});
