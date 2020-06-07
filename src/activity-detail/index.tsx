@@ -1,13 +1,25 @@
-import React from "react";
-import { RouteComponentProps } from "react-router-dom";
+import React, { useCallback } from "react";
+import { RouteComponentProps, useHistory } from "react-router-dom";
 import { useRecoilState } from "recoil";
 
 import { detailState } from "../common/state/activity";
 import { useService } from "../common/hook/use-service";
-import { getActivityById, Activity } from "../common/service/activity";
+import {
+  getActivityById,
+  Activity,
+  archiveActivity,
+} from "../common/service/activity";
 import { Spinner } from "../common/styled-components";
 import { ActivitySummary } from "../common/components/activity-summary";
-import { InfoList, InfoLabel, InfoItem, InfoValue, Error } from "./styled-components";
+import {
+  InfoList,
+  InfoLabel,
+  InfoItem,
+  InfoValue,
+  Error,
+  ArchiveButton,
+  ArchiveIcon,
+} from "./styled-components";
 
 export type Props = RouteComponentProps<{ id: string }>;
 
@@ -25,12 +37,17 @@ function getDuration(duration: number) {
 
 export function ActivityDetail(props: Props) {
   const { id } = props.match.params;
+  const history = useHistory();
   const [activity, setActivity] = useRecoilState(detailState);
   const { isLoading, error } = useService<Activity>(
     () => getActivityById(parseInt(id, 10)),
     { onSuccess: (activity) => setActivity(activity) },
     [id]
   );
+  const handleArchiveButtonClick = useCallback(async () => {
+    await archiveActivity(activity as Activity);
+    history.push("/");
+  }, [activity]);
 
   return (
     <>
@@ -53,6 +70,13 @@ export function ActivityDetail(props: Props) {
               <InfoValue>{activity.via}</InfoValue>
             </InfoItem>
           </InfoList>
+          <ArchiveButton
+            data-testid="archive-button"
+            onClick={handleArchiveButtonClick}
+          >
+            <ArchiveIcon />
+            Archive
+          </ArchiveButton>
         </>
       )}
       {isLoading && <Spinner />}

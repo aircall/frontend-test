@@ -1,6 +1,12 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`activity-detail ActivityDetail #render should render correctly the activity 1`] = `
+.c5 {
+  display: inline-block;
+  vertical-align: middle;
+  overflow: hidden;
+}
+
 .c0 {
   list-style-type: none;
   margin: 1.25rem 0;
@@ -33,6 +39,31 @@ exports[`activity-detail ActivityDetail #render should render correctly the acti
 
 .c3 {
   text-transform: capitalize;
+}
+
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  border: none;
+  font-weight: bold;
+  padding: 0.75rem 1.25rem;
+  margin: 2rem auto;
+  color: #ffffff;
+  font-size: 1rem;
+  background-color: #e82300;
+  border-radius: 0.25rem;
+  cursor: pointer;
+}
+
+.c6 {
+  width: 1.25rem;
+  margin-right: 0.75rem;
 }
 
 <div>
@@ -97,6 +128,28 @@ exports[`activity-detail ActivityDetail #render should render correctly the acti
       </label>
     </li>
   </ul>
+  <button
+    class="c4"
+    data-testid="archive-button"
+  >
+    <svg
+      aria-hidden="true"
+      class="c5 c6"
+      fill="currentColor"
+      focusable="false"
+      viewBox="0 0 24 24"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M20.54 5.23l-1.39-1.68C18.88 3.21 18.47 3 18 3H6c-.47 0-.88.21-1.16.55L3.46 5.23C3.17 5.57 3 6.02 3 6.5V19c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V6.5c0-.48-.17-.93-.46-1.27zM12 17.5L6.5 12H10v-2h4v2h3.5L12 17.5zM5.12 5l.81-1h12l.94 1H5.12z"
+      />
+      <path
+        d="M0 0h24v24H0z"
+        fill="none"
+      />
+    </svg>
+    Archive
+  </button>
 </div>
 `;
 

@@ -1,13 +1,21 @@
 import React from "react";
 import { useRecoilState } from "recoil";
+import { useHistory } from "react-router-dom";
 
-import { render } from "testing-utils";
+import { render, fireEvent, wait } from "testing-utils";
 
 import { ActivityDetail, Props } from "..";
 import { useService } from "../../common/hook/use-service";
-import { getActivityById } from "../../common/service/activity";
+import {
+  getActivityById,
+  archiveActivity,
+} from "../../common/service/activity";
 
 jest.mock("recoil");
+jest.mock("react-router-dom", () => ({
+  ...(jest.requireActual("react-router-dom") as any),
+  useHistory: jest.fn(),
+}));
 jest.mock("../../common/hook/use-service");
 jest.mock("../../common/service/activity");
 jest.mock("../../common/components/activity-summary", () => ({
@@ -23,6 +31,8 @@ describe("activity-detail", () => {
     const useServiceMock = useService as jest.Mock;
     const useRecoilStateMock = useRecoilState as jest.Mock;
     const getActivityByIdMock = getActivityById as jest.Mock;
+    const archiveActivityMock = archiveActivity as jest.Mock;
+    const useHistoryMock = useHistory as jest.Mock;
 
     const fakeRecoilState = {
       id: 7834,
@@ -99,6 +109,30 @@ describe("activity-detail", () => {
 
         expect(getActivityByIdMock).toHaveBeenCalledWith(42);
         expect(setActivityMock).toHaveBeenCalledWith(fakeRecoilState);
+      });
+    });
+
+    describe("#handleArchiveButtonClick", () => {
+      it("should archive the activity and return to the list page", async () => {
+        useRecoilStateMock.mockReturnValueOnce([fakeRecoilState, () => {}]);
+        useServiceMock.mockReturnValueOnce({ isLoading: false, error: null });
+
+        const pushMock = jest.fn();
+        useHistoryMock.mockReturnValue({ push: pushMock });
+
+        archiveActivityMock.mockResolvedValue(null);
+
+        const props = {
+          match: { params: { id: "42" } },
+        } as Props;
+        const { getByTestId } = render(<ActivityDetail {...props} />);
+
+        fireEvent.click(getByTestId("archive-button"));
+
+        await wait();
+
+        expect(archiveActivityMock).toHaveBeenCalledWith(fakeRecoilState);
+        expect(pushMock).toHaveBeenCalledWith("/");
       });
     });
   });
