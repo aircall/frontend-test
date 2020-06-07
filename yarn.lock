@@ -882,7 +882,7 @@
     core-js-pure "^3.0.0"
     regenerator-runtime "^0.13.4"
 
-"@babel/runtime@^7.1.2", "@babel/runtime@^7.10.2", "@babel/runtime@^7.5.5", "@babel/runtime@^7.7.4", "@babel/runtime@^7.8.4":
+"@babel/runtime@^7.1.2", "@babel/runtime@^7.10.2", "@babel/runtime@^7.5.4", "@babel/runtime@^7.5.5", "@babel/runtime@^7.7.4", "@babel/runtime@^7.8.4":
   version "7.10.2"
   resolved "https://registry.npmjs.org/@babel/runtime/-/runtime-7.10.2.tgz#d103f21f2602497d38348a32e008637d506db839"
   integrity sha512-6sF3uQw2ivImfVIl62RZ7MXhO2tap69WeWK57vAaimT6AZbE4FbqjdEJIN1UqoD6wI6B+1n9UiagafH1sxjOtg==
@@ -1173,6 +1173,14 @@
     dom-accessibility-api "^0.4.5"
     pretty-format "^25.5.0"
 
+"@testing-library/react-hooks@^3.3.0":
+  version "3.3.0"
+  resolved "https://registry.npmjs.org/@testing-library/react-hooks/-/react-hooks-3.3.0.tgz#dc217bfce8e7c34a99c811d73d23feef957b7c1d"
+  integrity sha512-rE9geI1+HJ6jqXkzzJ6abREbeud6bLF8OmF+Vyc7gBoPwZAEVBYjbC1up5nNoVfYBhO5HUwdD4u9mTehAUeiyw==
+  dependencies:
+    "@babel/runtime" "^7.5.4"
+    "@types/testing-library__react-hooks" "^3.0.0"
+
 "@testing-library/react@^10.2.1":
   version "10.2.1"
   resolved "https://registry.npmjs.org/@testing-library/react/-/react-10.2.1.tgz#f0c5ac9072ad54c29672150943f35d6617263f26"
@@ -1323,6 +1331,13 @@
     "@types/history" "*"
     "@types/react" "*"
 
+"@types/react-test-renderer@*":
+  version "16.9.2"
+  resolved "https://registry.npmjs.org/@types/react-test-renderer/-/react-test-renderer-16.9.2.tgz#e1c408831e8183e5ad748fdece02214a7c2ab6c5"
+  integrity sha512-4eJr1JFLIAlWhzDkBCkhrOIWOvOxcCAfQh+jiKg7l/nNZcCIL2MHl2dZhogIFKyHzedVWHaVP1Yydq/Ruu4agw==
+  dependencies:
+    "@types/react" "*"
+
 "@types/react@*", "@types/react@^16.9.35":
   version "16.9.35"
   resolved "https://registry.npmjs.org/@types/react/-/react-16.9.35.tgz#a0830d172e8aadd9bd41709ba2281a3124bbd368"
@@ -1345,6 +1360,14 @@
     "@types/react" "*"
     "@types/react-native" "*"
     csstype "^2.2.0"
+
+"@types/testing-library__react-hooks@^3.0.0":
+  version "3.2.0"
+  resolved "https://registry.npmjs.org/@types/testing-library__react-hooks/-/testing-library__react-hooks-3.2.0.tgz#52f3a109bef06080e3b1e3ae7ea1c014ce859897"
+  integrity sha512-dE8iMTuR5lzB+MqnxlzORlXzXyCL0EKfzH0w/lau20OpkHD37EaWjZDz0iNG8b71iEtxT4XKGmSKAGVEqk46mw==
+  dependencies:
+    "@types/react" "*"
+    "@types/react-test-renderer" "*"
 
 "@types/yargs-parser@*":
   version "15.0.0"
