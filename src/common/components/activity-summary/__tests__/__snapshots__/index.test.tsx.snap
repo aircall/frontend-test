@@ -1,0 +1,731 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`common/components/activity-summary ActivitySummary #render should render a missed inbound call correctly 1`] = `
+.c2 {
+  display: inline-block;
+  vertical-align: middle;
+  overflow: hidden;
+}
+
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  padding: 0.75rem;
+}
+
+.c1 {
+  position: relative;
+}
+
+.c3 {
+  width: 2rem;
+  color: #e5e5e5;
+}
+
+.c4 {
+  position: absolute;
+  width: 1rem;
+  right: 0.2rem;
+  top: 0.25rem;
+  color: #e82300;
+}
+
+.c5 {
+  margin: 0 0.75rem;
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+}
+
+.c6 {
+  margin: 0;
+  font-size: 1rem;
+  margin-bottom: 0.25rem;
+  font-weight: bold;
+}
+
+.c7 {
+  margin: 0;
+  color: #b3b3b3;
+}
+
+<div>
+  <section
+    class="c0"
+  >
+    <span
+      class="c1"
+    >
+      <svg
+        aria-hidden="true"
+        class="c2 c3"
+        fill="currentColor"
+        focusable="false"
+        viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M0 0h24v24H0z"
+          fill="none"
+        />
+        <path
+          d="M20.01 15.38c-1.23 0-2.42-.2-3.53-.56a.977.977 0 00-1.01.24l-1.57 1.97c-2.83-1.35-5.48-3.9-6.89-6.83l1.95-1.66c.27-.28.35-.67.24-1.02-.37-1.11-.56-2.3-.56-3.53 0-.54-.45-.99-.99-.99H4.19C3.65 3 3 3.24 3 3.99 3 13.28 10.73 21 20.01 21c.71 0 .99-.63.99-1.18v-3.45c0-.54-.45-.99-.99-.99z"
+        />
+      </svg>
+      <svg
+        aria-hidden="true"
+        class="c2 c4"
+        fill="currentColor"
+        focusable="false"
+        viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M0 0h24v24H0z"
+          fill="none"
+        />
+        <path
+          d="M19.59 7L12 14.59 6.41 9H11V7H3v8h2v-4.59l7 7 9-9z"
+        />
+      </svg>
+    </span>
+    <section
+      class="c5"
+    >
+      <p
+        class="c6"
+      >
+        Pierre-Baptiste Béchu
+      </p>
+      <p
+        class="c7"
+      >
+        06 46 62 12 33
+      </p>
+    </section>
+    <span
+      class=""
+    >
+      11:38 AM
+    </span>
+  </section>
+</div>
+`;
+
+exports[`common/components/activity-summary ActivitySummary #render should render a missed inbound call with voicemail correctly 1`] = `
+.c2 {
+  display: inline-block;
+  vertical-align: middle;
+  overflow: hidden;
+}
+
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  padding: 0.75rem;
+}
+
+.c1 {
+  position: relative;
+}
+
+.c3 {
+  width: 2rem;
+  color: #e5e5e5;
+}
+
+.c4 {
+  position: absolute;
+  width: 1rem;
+  right: 0.2rem;
+  top: 0.25rem;
+  color: #05c1eb;
+}
+
+.c5 {
+  margin: 0 0.75rem;
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+}
+
+.c6 {
+  margin: 0;
+  font-size: 1rem;
+  margin-bottom: 0.25rem;
+  font-weight: bold;
+}
+
+.c7 {
+  margin: 0;
+  color: #b3b3b3;
+}
+
+<div>
+  <section
+    class="c0"
+  >
+    <span
+      class="c1"
+    >
+      <svg
+        aria-hidden="true"
+        class="c2 c3"
+        fill="currentColor"
+        focusable="false"
+        viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M0 0h24v24H0z"
+          fill="none"
+        />
+        <path
+          d="M20.01 15.38c-1.23 0-2.42-.2-3.53-.56a.977.977 0 00-1.01.24l-1.57 1.97c-2.83-1.35-5.48-3.9-6.89-6.83l1.95-1.66c.27-.28.35-.67.24-1.02-.37-1.11-.56-2.3-.56-3.53 0-.54-.45-.99-.99-.99H4.19C3.65 3 3 3.24 3 3.99 3 13.28 10.73 21 20.01 21c.71 0 .99-.63.99-1.18v-3.45c0-.54-.45-.99-.99-.99z"
+        />
+      </svg>
+      <svg
+        aria-hidden="true"
+        class="c2 c4"
+        fill="currentColor"
+        focusable="false"
+        viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M0 0h24v24H0z"
+          fill="none"
+        />
+        <path
+          d="M19.59 7L12 14.59 6.41 9H11V7H3v8h2v-4.59l7 7 9-9z"
+        />
+      </svg>
+    </span>
+    <section
+      class="c5"
+    >
+      <p
+        class="c6"
+      >
+        Pierre-Baptiste Béchu
+      </p>
+      <p
+        class="c7"
+      >
+        06 46 62 12 33
+      </p>
+    </section>
+    <span
+      class=""
+    >
+      11:38 AM
+    </span>
+  </section>
+</div>
+`;
+
+exports[`common/components/activity-summary ActivitySummary #render should render a missed outbound call correctly 1`] = `
+.c2 {
+  display: inline-block;
+  vertical-align: middle;
+  overflow: hidden;
+}
+
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  padding: 0.75rem;
+}
+
+.c1 {
+  position: relative;
+}
+
+.c3 {
+  width: 2rem;
+  color: #e5e5e5;
+}
+
+.c4 {
+  position: absolute;
+  width: 1rem;
+  right: 0.2rem;
+  top: 0.25rem;
+  color: #e82300;
+}
+
+.c5 {
+  margin: 0 0.75rem;
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+}
+
+.c6 {
+  margin: 0;
+  font-size: 1rem;
+  margin-bottom: 0.25rem;
+  font-weight: bold;
+}
+
+.c7 {
+  margin: 0;
+  color: #b3b3b3;
+}
+
+<div>
+  <section
+    class="c0"
+  >
+    <span
+      class="c1"
+    >
+      <svg
+        aria-hidden="true"
+        class="c2 c3"
+        fill="currentColor"
+        focusable="false"
+        viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M0 0h24v24H0z"
+          fill="none"
+        />
+        <path
+          d="M20.01 15.38c-1.23 0-2.42-.2-3.53-.56a.977.977 0 00-1.01.24l-1.57 1.97c-2.83-1.35-5.48-3.9-6.89-6.83l1.95-1.66c.27-.28.35-.67.24-1.02-.37-1.11-.56-2.3-.56-3.53 0-.54-.45-.99-.99-.99H4.19C3.65 3 3 3.24 3 3.99 3 13.28 10.73 21 20.01 21c.71 0 .99-.63.99-1.18v-3.45c0-.54-.45-.99-.99-.99z"
+        />
+      </svg>
+      <svg
+        aria-hidden="true"
+        class="c2 c4"
+        fill="currentColor"
+        focusable="false"
+        viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <defs>
+          <path
+            d="M24 24H0V0h24v24z"
+          />
+        </defs>
+        <clippath>
+          <use
+            overflow="visible"
+            xlink:href="#a"
+          />
+        </clippath>
+        <path
+          clip-path="url(#b)"
+          d="M3 8.41l9 9 7-7V15h2V7h-8v2h4.59L12 14.59 4.41 7 3 8.41z"
+        />
+      </svg>
+    </span>
+    <section
+      class="c5"
+    >
+      <p
+        class="c6"
+      >
+        06 46 62 12 33
+      </p>
+      <p
+        class="c7"
+      >
+        Pierre-Baptiste Béchu
+      </p>
+    </section>
+    <span
+      class=""
+    >
+      11:38 AM
+    </span>
+  </section>
+</div>
+`;
+
+exports[`common/components/activity-summary ActivitySummary #render should render a missed outbound call with voicemail correctly 1`] = `
+.c2 {
+  display: inline-block;
+  vertical-align: middle;
+  overflow: hidden;
+}
+
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  padding: 0.75rem;
+}
+
+.c1 {
+  position: relative;
+}
+
+.c3 {
+  width: 2rem;
+  color: #e5e5e5;
+}
+
+.c4 {
+  position: absolute;
+  width: 1rem;
+  right: 0.2rem;
+  top: 0.25rem;
+  color: #05c1eb;
+}
+
+.c5 {
+  margin: 0 0.75rem;
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+}
+
+.c6 {
+  margin: 0;
+  font-size: 1rem;
+  margin-bottom: 0.25rem;
+  font-weight: bold;
+}
+
+.c7 {
+  margin: 0;
+  color: #b3b3b3;
+}
+
+<div>
+  <section
+    class="c0"
+  >
+    <span
+      class="c1"
+    >
+      <svg
+        aria-hidden="true"
+        class="c2 c3"
+        fill="currentColor"
+        focusable="false"
+        viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M0 0h24v24H0z"
+          fill="none"
+        />
+        <path
+          d="M20.01 15.38c-1.23 0-2.42-.2-3.53-.56a.977.977 0 00-1.01.24l-1.57 1.97c-2.83-1.35-5.48-3.9-6.89-6.83l1.95-1.66c.27-.28.35-.67.24-1.02-.37-1.11-.56-2.3-.56-3.53 0-.54-.45-.99-.99-.99H4.19C3.65 3 3 3.24 3 3.99 3 13.28 10.73 21 20.01 21c.71 0 .99-.63.99-1.18v-3.45c0-.54-.45-.99-.99-.99z"
+        />
+      </svg>
+      <svg
+        aria-hidden="true"
+        class="c2 c4"
+        fill="currentColor"
+        focusable="false"
+        viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <defs>
+          <path
+            d="M24 24H0V0h24v24z"
+          />
+        </defs>
+        <clippath>
+          <use
+            overflow="visible"
+            xlink:href="#a"
+          />
+        </clippath>
+        <path
+          clip-path="url(#b)"
+          d="M3 8.41l9 9 7-7V15h2V7h-8v2h4.59L12 14.59 4.41 7 3 8.41z"
+        />
+      </svg>
+    </span>
+    <section
+      class="c5"
+    >
+      <p
+        class="c6"
+      >
+        06 46 62 12 33
+      </p>
+      <p
+        class="c7"
+      >
+        Pierre-Baptiste Béchu
+      </p>
+    </section>
+    <span
+      class=""
+    >
+      11:38 AM
+    </span>
+  </section>
+</div>
+`;
+
+exports[`common/components/activity-summary ActivitySummary #render should render an anwsered inbound call correctly 1`] = `
+.c2 {
+  display: inline-block;
+  vertical-align: middle;
+  overflow: hidden;
+}
+
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  padding: 0.75rem;
+}
+
+.c1 {
+  position: relative;
+}
+
+.c3 {
+  width: 2rem;
+  color: #e5e5e5;
+}
+
+.c4 {
+  position: absolute;
+  width: 1rem;
+  right: 0.2rem;
+  top: 0.25rem;
+  color: #02c91c;
+}
+
+.c5 {
+  margin: 0 0.75rem;
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+}
+
+.c6 {
+  margin: 0;
+  font-size: 1rem;
+  margin-bottom: 0.25rem;
+  font-weight: bold;
+}
+
+.c7 {
+  margin: 0;
+  color: #b3b3b3;
+}
+
+<div>
+  <section
+    class="c0"
+  >
+    <span
+      class="c1"
+    >
+      <svg
+        aria-hidden="true"
+        class="c2 c3"
+        fill="currentColor"
+        focusable="false"
+        viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M0 0h24v24H0z"
+          fill="none"
+        />
+        <path
+          d="M20.01 15.38c-1.23 0-2.42-.2-3.53-.56a.977.977 0 00-1.01.24l-1.57 1.97c-2.83-1.35-5.48-3.9-6.89-6.83l1.95-1.66c.27-.28.35-.67.24-1.02-.37-1.11-.56-2.3-.56-3.53 0-.54-.45-.99-.99-.99H4.19C3.65 3 3 3.24 3 3.99 3 13.28 10.73 21 20.01 21c.71 0 .99-.63.99-1.18v-3.45c0-.54-.45-.99-.99-.99z"
+        />
+      </svg>
+      <svg
+        aria-hidden="true"
+        class="c2 c4"
+        fill="currentColor"
+        focusable="false"
+        viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M0 0h24v24H0z"
+          fill="none"
+        />
+        <path
+          d="M20 5.41L18.59 4 7 15.59V9H5v10h10v-2H8.41z"
+        />
+      </svg>
+    </span>
+    <section
+      class="c5"
+    >
+      <p
+        class="c6"
+      >
+        Pierre-Baptiste Béchu
+      </p>
+      <p
+        class="c7"
+      >
+        06 46 62 12 33
+      </p>
+    </section>
+    <span
+      class=""
+    >
+      11:38 AM
+    </span>
+  </section>
+</div>
+`;
+
+exports[`common/components/activity-summary ActivitySummary #render should render an anwsered outbound call correctly 1`] = `
+.c2 {
+  display: inline-block;
+  vertical-align: middle;
+  overflow: hidden;
+}
+
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  padding: 0.75rem;
+}
+
+.c1 {
+  position: relative;
+}
+
+.c3 {
+  width: 2rem;
+  color: #e5e5e5;
+}
+
+.c4 {
+  position: absolute;
+  width: 1rem;
+  right: 0.2rem;
+  top: 0.25rem;
+  color: #02c91c;
+}
+
+.c5 {
+  margin: 0 0.75rem;
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+}
+
+.c6 {
+  margin: 0;
+  font-size: 1rem;
+  margin-bottom: 0.25rem;
+  font-weight: bold;
+}
+
+.c7 {
+  margin: 0;
+  color: #b3b3b3;
+}
+
+<div>
+  <section
+    class="c0"
+  >
+    <span
+      class="c1"
+    >
+      <svg
+        aria-hidden="true"
+        class="c2 c3"
+        fill="currentColor"
+        focusable="false"
+        viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M0 0h24v24H0z"
+          fill="none"
+        />
+        <path
+          d="M20.01 15.38c-1.23 0-2.42-.2-3.53-.56a.977.977 0 00-1.01.24l-1.57 1.97c-2.83-1.35-5.48-3.9-6.89-6.83l1.95-1.66c.27-.28.35-.67.24-1.02-.37-1.11-.56-2.3-.56-3.53 0-.54-.45-.99-.99-.99H4.19C3.65 3 3 3.24 3 3.99 3 13.28 10.73 21 20.01 21c.71 0 .99-.63.99-1.18v-3.45c0-.54-.45-.99-.99-.99z"
+        />
+      </svg>
+      <svg
+        aria-hidden="true"
+        class="c2 c4"
+        fill="currentColor"
+        focusable="false"
+        viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M0 0h24v24H0z"
+          fill="none"
+        />
+        <path
+          d="M9 5v2h6.59L4 18.59 5.41 20 17 8.41V15h2V5z"
+        />
+      </svg>
+    </span>
+    <section
+      class="c5"
+    >
+      <p
+        class="c6"
+      >
+        06 46 62 12 33
+      </p>
+      <p
+        class="c7"
+      >
+        Pierre-Baptiste Béchu
+      </p>
+    </section>
+    <span
+      class=""
+    >
+      11:38 AM
+    </span>
+  </section>
+</div>
+`;
