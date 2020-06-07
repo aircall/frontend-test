@@ -1,4 +1,4 @@
-import request, { AxiosPromise } from "axios";
+import request from "axios";
 
 export const API_URL = "https://aircall-job.herokuapp.com";
 
@@ -25,7 +25,19 @@ export type Activity = {
   call_type: CallType;
 };
 
+/**
+ * Returns a list of activities
+ */
 export async function getActivityList(): Promise<Activity[]> {
   const response = await request.get<Activity[]>(`${API_URL}/activities`);
+  return response.data;
+}
+
+/**
+ * Return an activity by its ID
+ * @param id ID of the activity we want to get
+ */
+export async function getActivityById(id: number): Promise<Activity> {
+  const response = await request.get<Activity>(`${API_URL}/activities/${id}`);
   return response.data;
 }
