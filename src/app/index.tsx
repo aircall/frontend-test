@@ -13,7 +13,7 @@ export function App() {
       <Main>
         <Container>
           <Header />
-          <View> Some activities should be here</View>
+          <View>Some activities should be here</View>
         </Container>
       </Main>
     </ThemeProvider>
