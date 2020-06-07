@@ -12,8 +12,9 @@
     "build": "webpack --mode production"
   },
   "dependencies": {
-    "react": "^16.3.1",
-    "react-dom": "^16.3.1"
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "styled-components": "^5.1.1"
   },
   "devDependencies": {
     "@babel/core": "^7.10.2",
@@ -22,6 +23,7 @@
     "@babel/preset-typescript": "^7.10.1",
     "@types/react": "^16.9.35",
     "@types/react-dom": "^16.9.8",
+    "@types/styled-components": "^5.1.0",
     "babel-loader": "^8.1.0",
     "css-loader": "2.1.*",
     "html-loader": "0.5.*",

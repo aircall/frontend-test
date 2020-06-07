@@ -1,9 +1,11 @@
-import React from 'react';
+import React from "react";
+
+import { HeaderContainer, Svg } from "./styled-components";
 
 export function Header() {
   return (
-    <header>
-      <svg
+    <HeaderContainer>
+      <Svg
         width="486px"
         height="168px"
         viewBox="0 0 486 168"
@@ -39,7 +41,7 @@ export function Header() {
             fill="#2AC420"
           />
         </g>
-      </svg>
-    </header>
+      </Svg>
+    </HeaderContainer>
   );
 }

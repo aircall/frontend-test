@@ -1,13 +1,21 @@
-import React from 'react';
+import React from "react";
+import { ThemeProvider } from "styled-components";
 
-import { Header } from './components/header';
+import { Header } from "./components/header";
+import { theme } from "../common/theme";
+import { GlobalStyles } from "./components/global-styles";
+import { Main, Container, View } from "./styled-components";
 
 export function App() {
   return (
-    <div className="container">
-      <Header />
-      <div className="container-view">Some activities should be here</div>
-    </div>
+    <ThemeProvider theme={theme}>
+      <GlobalStyles />
+      <Main>
+        <Container>
+          <Header />
+          <View> Some activities should be here</View>
+        </Container>
+      </Main>
+    </ThemeProvider>
   );
-};
-
+}

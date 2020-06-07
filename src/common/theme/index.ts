@@ -1,0 +1,48 @@
+const PRIMITIVE = {
+  COLORS: {
+    WHITE: "#ffffff",
+    FOREST_GREEN: "#2ac421",
+    TUNDORA: "#424242",
+    EBONY_CLAY: "#233142",
+    MINE_SHAFT: "#333333",
+  },
+  FONT_SIZES: {
+    M: "0.825rem",
+  },
+  SPACING: {
+    XS: "0.25rem",
+    S: "0.75rem",
+    M: "1.25rem",
+    L: "2rem",
+  },
+};
+
+const ABSTRACT = {
+  COLORS: {
+    DARK_TEXT: PRIMITIVE.COLORS.MINE_SHAFT,
+    LIGHT_BACKGROUND: PRIMITIVE.COLORS.WHITE,
+    DARK_BACKGROUND: PRIMITIVE.COLORS.EBONY_CLAY,
+  },
+  FONT_SIZES: {
+    REGULAR: PRIMITIVE.FONT_SIZES.M,
+  },
+};
+
+export const theme = {
+  GLOBAL: {
+    BACKGROUND_COLOR: ABSTRACT.COLORS.DARK_BACKGROUND,
+    FONT_COLOR: ABSTRACT.COLORS.DARK_TEXT,
+    FONT_SIZE: ABSTRACT.FONT_SIZES.REGULAR,
+  },
+  COMPONENTS: {
+    APP: {
+      BACKGROUND_COLOR: ABSTRACT.COLORS.LIGHT_BACKGROUND,
+      PADDING: PRIMITIVE.SPACING.M,
+      HEADER: {
+        PADDING: PRIMITIVE.SPACING.M,
+      },
+    },
+  },
+};
+
+export type Theme = typeof theme;
