@@ -1,0 +1,47 @@
+.activity-item {
+    margin: 16px 10px;
+    padding: 16px;
+    background-color: #FFFFFF;
+    border: solid 1px #E8E8E7;
+    border-radius: 8px;
+}
+
+.activity-item .left-align-number {
+    float: left;
+}
+
+.activity-item .right-align-number {
+    float: right;
+}
+
+.activity-item .created-date {
+    text-align: right;
+}
+
+.activity-item .activity-item-caller {
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+.activity-item .call-missed {
+    color: #e23c34;
+}
+
+.activity-item .activity-item-callee {
+    font-size: 11px;
+    color: #AFAFAF;
+    padding-top: 6px;
+}
+
+.activity-item .activity-item-callee-identifier {
+    font-weight: 700;
+}
+
+.activity-item .call-time {
+    font-size: 12px;
+    font-weight: 400;
+    color: #AFAFAF;
+    letter-spacing: 0.5px;
+    padding: 8px 0 8px 16px;
+    border-left: 1px dotted #E8E8E7;
+}
