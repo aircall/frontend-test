@@ -1,0 +1,59 @@
+.activity-card {
+    margin: 10px;
+    padding: 10px;
+    background-color: #FFFFFF;
+    border: solid 1px #E8E8E7;
+    border-radius: 8px;
+}
+
+.activity-card .title {
+    text-align: center;
+    font-size: 1.5em;
+    font-weight: 500;
+    margin: 32px 0;
+}
+
+.activity-card .data-line {
+    margin: 20px 0;
+}
+
+.activity-card .data-line .label {
+    text-transform: uppercase;
+    font-weight: bold;
+    text-align: center;
+    font-size: small;
+    padding-bottom: 8px;
+}
+
+.data-line .label {
+    text-transform: uppercase;
+    font-weight: bold;
+    text-align: center;
+}
+
+.activity-card .data-line .value {
+    font-size: 1.1em;
+    text-align: center;
+}
+
+.activity-card .archived {
+    color: #FC5624;
+    margin-top: 50px;
+    font-weight: 500;
+    text-align: center;
+    font-size: 1.1em;
+}
+
+.activity-card .button {
+    font-size: 1.1em;
+    font-weight: 700;
+    width: 100%;
+    height: 40px;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.activity-card .button:hover {
+    background-color: #bcbcbc;
+}
