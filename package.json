@@ -2,7 +2,6 @@
   "name": "frontend-test-react",
   "version": "1.0.0",
   "description": "Technical test for Frontend Engineer position at Aircall",
-  "main": "index.js",
   "repository": "https://github.com/aircall/frontend-test-react.git",
   "author": "Xavier Durand <jobs@aircall.io>",
   "license": "MIT",
@@ -16,6 +15,8 @@
     "react-dom": "^16.3.1"
   },
   "devDependencies": {
+    "@types/react": "^16.9.43",
+    "@types/react-dom": "^16.9.8",
     "babel-core": "6.26.*",
     "babel-loader": "7.1.*",
     "babel-preset-env": "1.7.0",
@@ -23,7 +24,10 @@
     "css-loader": "2.1.*",
     "html-loader": "0.5.*",
     "html-webpack-plugin": "3.2.*",
+    "source-map-loader": "^1.0.1",
     "style-loader": "0.23.*",
+    "ts-loader": "^8.0.0",
+    "typescript": "^3.9.6",
     "webpack": "4.29.*",
     "webpack-cli": "3.2.*",
     "webpack-dev-server": "3.1.*"
