@@ -1,14 +1,20 @@
 import React from 'react';
+import { BrowserRouter as Router } from 'react-router-dom';
 
-import Header from './Header';
-import { Container, ContainerView } from './styledComponents';
+import Header from './components/Header';
+import Routes from './components/Routes';
+import Nav from './components/Nav';
+import { Container } from './styledComponents';
 
 const App = () => {
   return (
-    <Container>
-      <Header />
-      <ContainerView>Some activities should be here</ContainerView>
-    </Container>
+    <Router>
+      <Container>
+        <Header />
+        <Routes />
+        <Nav />
+      </Container>
+    </Router>
   );
 };
 
