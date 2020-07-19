@@ -34,6 +34,11 @@ module.exports = {
           },
         ],
       },
+      {
+        test: /\.(png|jpg|jpeg|gif|svg|woff|woff2|ttf|eot)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
+        exclude: /\.component\.svg$/,
+        use: [{ loader: 'url-loader', options: { limit: 10000 } }],
+      },
     ],
   },
   resolve: {

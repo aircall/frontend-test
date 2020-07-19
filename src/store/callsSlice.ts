@@ -2,17 +2,28 @@ import {
   createSlice,
   PayloadAction,
   createEntityAdapter,
+  EntityState,
 } from '@reduxjs/toolkit';
 import { Call } from '../@types/call';
 
 const callsAdapter = createEntityAdapter<Call>();
 
-const initialState = callsAdapter.getInitialState({
-  status: 'idle',
+export enum FETCH_STATUS {
+  IDLE = 'idle',
+  FETCHING = 'fetching',
+  SUCCESS = 'success',
+  ERROR = 'error',
+}
+
+type CallsState = EntityState<Call> & {
+  status: FETCH_STATUS;
+  error: null | string;
+};
+
+const initialState: CallsState = callsAdapter.getInitialState({
+  status: FETCH_STATUS.IDLE,
   error: null,
 });
-
-type CallsState = typeof initialState;
 
 export type FetchOneRequestActionType = PayloadAction<string>;
 
@@ -26,25 +37,25 @@ export const callsSlice = createSlice({
   initialState,
   reducers: {
     fetchListRequest: (state: CallsState) => {
-      state.status = 'fetching';
+      state.status = FETCH_STATUS.FETCHING;
     },
     fetchListSuccess: (state: CallsState, action: PayloadAction<Call[]>) => {
-      state.status = 'success';
+      state.status = FETCH_STATUS.SUCCESS;
       callsAdapter.setAll(state, action.payload);
     },
     fetchListFailure: (state: CallsState, action: PayloadAction<string>) => {
-      state.status = 'error';
+      state.status = FETCH_STATUS.ERROR;
       state.error = action.payload;
     },
     fetchOneRequest: (state, _action: FetchOneRequestActionType) => {
-      state.status = 'fetching';
+      state.status = FETCH_STATUS.FETCHING;
     },
     fetchOneSuccess: (state, action: PayloadAction<Call>) => {
-      state.status = 'success';
+      state.status = FETCH_STATUS.SUCCESS;
       callsAdapter.addOne(state, action.payload);
     },
     fetchOneFailure: (state, action: PayloadAction<string>) => {
-      state.status = 'error';
+      state.status = FETCH_STATUS.ERROR;
       state.error = action.payload;
     },
   },
