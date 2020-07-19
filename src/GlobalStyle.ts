@@ -6,13 +6,12 @@ const GlobalStyle = createGlobalStyle`
     padding: 0;
     border: 0;
     font: inherit;
-    font-size: 100%;
+    font-size: 13px;
   }
-
+  
   body {
     background: #233142;
     font-family: helvetica, arial, -serif;
-    font-size: 13px;
     color: #333333;
     line-height: 1;
   }
@@ -26,6 +25,10 @@ const GlobalStyle = createGlobalStyle`
     top: 0;
     right: 0;
     bottom: 0;
+  }
+  a {
+    color: inherit; 
+    text-decoration: inherit;
   }
 `;
 
