@@ -22,10 +22,10 @@ function mapDispatchToProps(dispatch: Dispatch) {
 
 type Props = ReturnType<typeof mapStateToProps> & ReturnType<typeof mapDispatchToProps>;
 
-const Feed = ({ feed, status, error, fetchListRequest }: Props) => {
+export const Feed = ({ feed, status, error, fetchListRequest }: Props) => {
   useEffect(() => {
     fetchListRequest();
-  }, []);
+  }, [fetchListRequest]);
 
   if (status === FETCH_STATUS.FETCHING) {
     return <div>loading ...</div>;
@@ -33,6 +33,10 @@ const Feed = ({ feed, status, error, fetchListRequest }: Props) => {
 
   if (status === FETCH_STATUS.ERROR) {
     return <div>{error}</div>;
+  }
+
+  if (status === FETCH_STATUS.SUCCESS && Object.keys(feed).length === 0) {
+    return <div>All activities are archived</div>;
   }
 
   return (

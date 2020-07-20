@@ -11,7 +11,7 @@ export enum FETCH_STATUS {
   ERROR = 'error',
 }
 
-type CallsState = EntityState<Call> & {
+export type CallsState = EntityState<Call> & {
   status: FETCH_STATUS;
   error: null | string;
 };

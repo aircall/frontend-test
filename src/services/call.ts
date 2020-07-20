@@ -1,7 +1,7 @@
 import axios, { AxiosResponse } from 'axios';
 import { Call } from '../@types/call';
 
-const baseURL = 'https://aircall-job.herokuapp.com/activities';
+export const baseURL = 'https://aircall-job.herokuapp.com/activities';
 
 const request = axios.create({
   baseURL,

@@ -26,8 +26,8 @@ function mapDispatchtoProps(dispatch: Dispatch) {
 }
 
 type Props = ReturnType<typeof mapDispatchtoProps> & {
-  call: Call
-}
+  call: Call;
+};
 
 const DetailContent = ({ call, archiveCallReuqest }: Props) => {
   const [isSubmiting, setIsSubmmiting] = useState(false);
@@ -84,10 +84,10 @@ const DetailContent = ({ call, archiveCallReuqest }: Props) => {
         {call.is_archived ? (
           <ArchivedLabel>Archived</ArchivedLabel>
         ) : (
-            <Button disabled={isSubmiting} onClick={onArchive}>
-              {isSubmiting ? 'Archiving...' : 'Archive'}
-            </Button>
-          )}
+          <Button disabled={isSubmiting} onClick={onArchive}>
+            {isSubmiting ? 'Archiving...' : 'Archive'}
+          </Button>
+        )}
         {hasError && <label>Fail to archive, please try again later</label>}
       </DetailWrapper>
     </>

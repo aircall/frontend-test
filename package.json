@@ -11,7 +11,8 @@
     "build": "webpack --mode production",
     "lint:fix": "yarn lint --fix",
     "lint": "eslint . --ext .js --ext .ts --ext .tsx",
-    "prettier": "prettier --write 'src/**/*.ts' 'src/**/*.tsx'"
+    "prettier": "prettier --write 'src/**/*.ts' 'src/**/*.tsx'",
+    "test": "jest"
   },
   "dependencies": {
     "@reduxjs/toolkit": "^1.4.0",
@@ -25,9 +26,13 @@
     "redux-devtools-extension": "^2.13.8",
     "redux-saga": "^1.1.3",
     "styled-components": "^5.1.1",
+    "ts-jest": "^26.1.3",
     "url-loader": "^4.1.0"
   },
   "devDependencies": {
+    "@testing-library/jest-dom": "^5.11.1",
+    "@testing-library/react": "^10.4.7",
+    "@types/jest": "^26.0.5",
     "@types/react": "^16.9.43",
     "@types/react-dom": "^16.9.8",
     "@types/react-redux": "^7.1.9",
@@ -35,6 +40,7 @@
     "@types/styled-components": "^5.1.1",
     "@typescript-eslint/eslint-plugin": "^3.6.1",
     "@typescript-eslint/parser": "^3.6.1",
+    "axios-mock-adapter": "^1.18.2",
     "babel-core": "6.26.*",
     "babel-eslint": "^10.1.0",
     "babel-loader": "7.1.*",
@@ -47,6 +53,9 @@
     "eslint-plugin-react-hooks": "^4.0.8",
     "html-loader": "0.5.*",
     "html-webpack-plugin": "3.2.*",
+    "jest": "^26.1.0",
+    "jest-environment-jsdom-sixteen": "^1.0.3",
+    "jest-styled-components": "^7.0.2",
     "prettier": "^2.0.5",
     "source-map-loader": "^1.0.1",
     "style-loader": "0.23.*",
