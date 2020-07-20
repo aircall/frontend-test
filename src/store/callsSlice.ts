@@ -5,6 +5,7 @@ import {
   EntityState,
 } from '@reduxjs/toolkit';
 import { Call } from '../@types/call';
+import { updateArchivedCallById } from '../detail/action';
 
 const callsAdapter = createEntityAdapter<Call>();
 
@@ -59,6 +60,11 @@ export const callsSlice = createSlice({
       state.error = action.payload;
     },
   },
+  extraReducers: (builder) =>
+    builder.addCase(updateArchivedCallById, (state, action) => {
+      const id = action.payload;
+      callsAdapter.updateOne(state, { id, changes: { is_archived: true } });
+    }),
 });
 
 // reducers of calls
