@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { fetchListRequest, FETCH_STATUS } from '../store/callsSlice';
 import { bindActionCreators, Dispatch } from 'redux';
 
-import { getFeed, getStatus, getError } from './selectors';
+import { getFeed, getStatus, getError } from '../store/selectors';
 import CallItem from './components/CallItem';
 import { DateLabel, DateWrapper, FeedWrapper } from './styledComponents';
 import { State } from '../store/reducer';

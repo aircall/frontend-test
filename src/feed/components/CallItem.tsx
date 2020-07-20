@@ -13,7 +13,7 @@ import {
   InfoWrapper,
 } from './styledComponents';
 import { DirectionIcon } from '../../common/styledComponent';
-import { getCallById } from '../selectors';
+import { getCallById } from '../../store/selectors';
 
 interface OwnProps {
   id: string;
