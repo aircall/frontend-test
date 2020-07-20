@@ -1,9 +1,4 @@
-import {
-  createSlice,
-  PayloadAction,
-  createEntityAdapter,
-  EntityState,
-} from '@reduxjs/toolkit';
+import { createSlice, PayloadAction, createEntityAdapter, EntityState } from '@reduxjs/toolkit';
 import { Call } from '../@types/call';
 import { updateArchivedCallById } from '../detail/action';
 

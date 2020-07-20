@@ -1,9 +1,9 @@
 import React from 'react';
-import { Header } from './styledComponents';
+import { HeaderWrapper } from './styledComponents';
 
-export default () => {
+export const Header = () => {
   return (
-    <Header>
+    <HeaderWrapper>
       <svg
         width="486px"
         height="168px"
@@ -41,6 +41,8 @@ export default () => {
           />
         </g>
       </svg>
-    </Header>
+    </HeaderWrapper>
   );
 };
+
+export default Header;

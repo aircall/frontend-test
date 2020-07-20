@@ -3,7 +3,7 @@ import { composeWithDevTools } from 'redux-devtools-extension/developmentOnly';
 import { rootReducer } from './reducer';
 import { sagaMiddleware, rootSaga } from './saga';
 
-export function configureStore(preloadedState: {} = {}): Store {
+export function configureStore(preloadedState: any = {}): Store {
   const middlewares = [sagaMiddleware];
   const middlewareEnhancer = applyMiddleware(...middlewares);
 

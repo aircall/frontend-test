@@ -20,8 +20,7 @@ function mapDispatchToProps(dispatch: Dispatch) {
   return bindActionCreators({ fetchListRequest }, dispatch);
 }
 
-type Props = ReturnType<typeof mapStateToProps> &
-  ReturnType<typeof mapDispatchToProps>;
+type Props = ReturnType<typeof mapStateToProps> & ReturnType<typeof mapDispatchToProps>;
 
 const Feed = ({ feed, status, error, fetchListRequest }: Props) => {
   useEffect(() => {

@@ -12,20 +12,19 @@ import { createAction } from '@reduxjs/toolkit';
  *   }
  * }
  */
-export const archiveCallReuqest = createAction(
-  'calls/archiveOneRequest',
-  function prepare(id: string, onSuccess: () => void, onFailure: () => void) {
-    return {
-      payload: {
-        id,
-        onSuccess,
-        onFailure,
-      },
-    };
-  }
-);
+export const archiveCallReuqest = createAction('calls/archiveOneRequest', function prepare(
+  id: string,
+  onSuccess: () => void,
+  onFailure: () => void,
+) {
+  return {
+    payload: {
+      id,
+      onSuccess,
+      onFailure,
+    },
+  };
+});
 export type ArchiveCallActionType = ReturnType<typeof archiveCallReuqest>;
 
-export const updateArchivedCallById = createAction<string>(
-  'calls/archiveOneSuccess'
-);
+export const updateArchivedCallById = createAction<string>('calls/archiveOneSuccess');

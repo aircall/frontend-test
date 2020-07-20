@@ -73,9 +73,7 @@ const DetailContent = ({ call, archiveCallReuqest }: Props) => {
           </p>
           <FlexContainer>
             <DirectionIcon direction={call.direction} />
-            <p>
-              {call.direction === 'inbound' ? 'Incoming call' : 'Outgoing call'}
-            </p>
+            <p>{call.direction === 'inbound' ? 'Incoming call' : 'Outgoing call'}</p>
           </FlexContainer>
           <FlexContainer>
             <CallTypeIcon type={call.call_type} />
