@@ -34,9 +34,9 @@ const CallItem = ({ call, id }: Props) => {
       <ItemWrapper>
         <DirectionIcon direction={call.direction} />
         <InfoWrapper>
-          <FromLabel>{call.from}</FromLabel>
+          <FromLabel>{call.from || 'Unknown'}</FromLabel>
           <Description>
-            to call on <ToLabel>{call.to}</ToLabel>
+            to call on <ToLabel>{call.to || 'Unknown'}</ToLabel>
           </Description>
         </InfoWrapper>
         <TimeLabel>

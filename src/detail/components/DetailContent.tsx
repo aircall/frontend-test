@@ -55,7 +55,7 @@ const DetailContent = ({ call, archiveCallReuqest }: Props) => {
         <UserWrapper>
           <UserImg src={avatar} alt="avatar" />
           <UserName>
-            From: <strong>{call.from}</strong>
+            From: <strong>{call.from || 'Unknown'}</strong>
           </UserName>
         </UserWrapper>
         <ArrowWrapper>
@@ -64,7 +64,7 @@ const DetailContent = ({ call, archiveCallReuqest }: Props) => {
         <UserWrapper>
           <UserImg src={avatar} alt="avatar" />
           <UserName>
-            To: <strong>{call.to}</strong>
+            To: <strong>{call.to || 'Unknown'}</strong>
           </UserName>
         </UserWrapper>
         <InfoWrapper>
