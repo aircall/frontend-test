@@ -11,7 +11,9 @@
 
 #app .container {
   width: 376px;
-  height: 666px;
+  min-height: 666px;
+  max-height: 666px;
+  overflow: scroll;
   z-index: 100;
 
   background: white;
