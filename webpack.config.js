@@ -25,6 +25,11 @@ module.exports = {
       }
     ]
   },
+  devServer: {
+    historyApiFallback: true,
+    contentBase: './',
+    hot: false
+  },
   plugins: [
     new HtmlWebPackPlugin({
       template: "./public/index.html",
