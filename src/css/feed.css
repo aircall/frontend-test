@@ -1,0 +1,48 @@
+.header {
+  margin: 10px 20px 0;
+  cursor: pointer;
+}
+
+.list {
+  padding: 0 20px;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  scroll-behavior: smooth;
+  scroll-snap-type: y proximity;
+}
+
+.list > * {
+  scroll-snap-align: start;
+}
+
+.list::-webkit-scrollbar {
+  width: 10px;
+}
+
+.list::-webkit-scrollbar-track {
+  background: white;
+}
+
+.list::-webkit-scrollbar-thumb {
+  background: #eee;
+}
+
+.list::-webkit-scrollbar-thumb:hover {
+  background: #ddd;
+}
+
+:global .event {
+  position: relative;
+}
+
+:global .event .label a:before {
+  position: absolute;
+  content: '';
+  width: 100%;
+  height: 100%;
+}
+
+:global .ui.feed > .event > .content .date {
+  /* avoid accessibility warning in Chrome audit*/
+  color: rgba(0, 0, 0, 0.6);
+}

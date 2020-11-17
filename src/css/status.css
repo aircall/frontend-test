@@ -1,0 +1,20 @@
+.icon {
+  width: 40px !important;
+}
+
+.icon svg {
+  margin: 6px 12px;
+  width: 24px;
+}
+
+.missed .icon svg {
+  fill: red;
+}
+
+.answered .icon svg {
+  fill: green;
+}
+
+.voicemail .icon svg {
+  fill: lightgreen;
+}

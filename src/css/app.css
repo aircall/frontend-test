@@ -1,25 +1,17 @@
-#app {
-  position: absolute;
+:global #app {
   display: flex;
+  height: 100vh;
   align-items: center;
   justify-content: center;
-  left: 0;
-  top: 0;
-  right: 0;
-  bottom: 0;
 }
 
-#app .container {
+.container {
   width: 376px;
   height: 666px;
-  z-index: 100;
-
   background: white;
+  color: #333333;
   border-radius: 3px;
-  box-shadow: 0 0 5px 0 rgba(0, 0, 0, .9);
+  box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.9);
+  display: grid;
+  grid-template-rows: auto auto 1fr;
 }
-
-#app .container-view {
-  padding: 20px;
-}
-

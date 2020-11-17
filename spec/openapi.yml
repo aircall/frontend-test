@@ -1,0 +1,250 @@
+
+openapi: 3.0.2
+
+info:
+  title: Aircall activities
+  version: 1.0.0
+  description: An API to list & archive inbound & outbound call activities.
+  contact:
+    email: api@aricall.io
+
+servers:
+  - url: https://aircall-job.herokuapp.com
+    description: Test free heroku instance
+  - url: http://127.0.0.1:4010
+    description: Local Prism mock
+
+tags:
+  - name: Activity
+  - name: Archive
+
+paths:
+  /activities:
+    get:
+      summary: Activities
+      description: List inbound & outbound call activities.
+      operationId: getActivities
+      tags:
+        - Activity
+      responses:
+        '200':
+          description: Activities list.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Activities'
+              examples:
+                Activity:
+                  $ref: '#/components/examples/Activities'
+  /activities/{id}:
+    parameters:
+      - $ref: '#/components/parameters/ActivityId'
+    get:
+      summary: Activity
+      description: Get a call activity by Id.
+      operationId: getActivity
+      tags:
+        - Activity
+      responses:
+        '200':
+          description: An activity.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Activity'
+              examples:
+                Activity:
+                  $ref: '#/components/examples/Activity'
+    post:
+      summary: Archive activity
+      description: Set call activity archived status.
+      operationId: archiveActivity
+      tags:
+        - Activity
+        - Archive
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Activity'
+            examples:
+              Activity:
+                $ref: '#/components/examples/ArchiveActivity'
+      responses:
+        '200':
+          description: An activity.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Activity'
+              examples:
+                Activity:
+                  $ref: '#/components/examples/ArchivedActivity'
+  /reset:
+    get:
+      summary: Reset archives
+      description: Reset archived status of all call activities.
+      operationId: reset
+      tags:
+        - Activity
+        - Archive
+      responses:
+        '200':
+          description: Done.
+          content:
+            application/json:
+              schema:
+                type: object
+                required:
+                  - message
+                properties:
+                  message:
+                    type: string
+                    enum:
+                      - done
+              examples:
+                Done:
+                  value: {
+                    "message": "done"
+                  }
+
+components:
+
+  parameters:
+
+    ActivityId:
+      name: id
+      description: Activity Id.
+      in: path
+      required: true
+      schema:
+        $ref: '#/components/schemas/ActivityId'
+
+  schemas:
+
+    ActivityId: 
+        type: number
+        format: int64
+        minimum: 1
+        description: An activity Identifier.
+        example: 7834
+        x-faker: random.number
+        readOnly: true
+
+    ActivityIsArchived: 
+      description: Is this activity archived.
+      type: boolean
+      default: false
+
+    Activity:
+      type: object
+      description: An inbound or outbound call activity.
+      required: 
+        - id
+        - created_at
+        - direction
+        - from
+        - to
+        - via
+        - duration
+        - is_archived
+        - call_type
+      properties: 
+        id:
+          $ref: '#/components/schemas/ActivityId'
+        created_at:
+          description: Creation date of the activity in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format.
+          type: string
+          format: date-time
+          x-faker: date.recent
+          readOnly: true
+        direction:
+          description: Inbound or Outbound call activity.
+          type: string
+          enum:
+            - inbound
+            - outbound
+          readOnly: true
+        from:
+          description: Person who called, name or phone number.
+          x-faker: phone.phoneNumber
+          type: string
+          readOnly: true
+        to:
+          description: Person who was called, name or phone number.
+          x-faker: name.findName
+          type: string
+          readOnly: true
+        via:
+          description: Name of the phoning plateform used.
+          type: string
+          x-faker: company.companyName
+          readOnly: true
+        duration:
+          description: Activity duration in seconds.
+          type: string
+          x-faker: random.number
+          readOnly: true
+        is_archived:
+          $ref: '#/components/schemas/ActivityIsArchived'
+        call_type:
+          description: Type of call activity.
+          type: string
+          enum:
+            - answered
+            - missed
+            - voicemail
+          readOnly: true
+
+    Activities:
+      type: array
+      uniqueItems: true
+      items:
+        $ref: '#/components/schemas/Activity'
+
+  examples:
+
+    Activity:
+      value: {
+        "id": 7834,
+        "created_at": "2018-04-19T09:38:41.000Z",
+        "direction": "outbound",
+        "from": "Pierre-Baptiste Béchu",
+        "to": "06 46 62 12 33",
+        "via": "NYC Office",
+        "duration": "120",
+        "is_archived": false,
+        "call_type": "missed"
+      }
+  
+    ArchivedActivity:
+      value: {
+        "id": 7834,
+        "created_at": "2018-04-19T09:38:41.000Z",
+        "direction": "outbound",
+        "from": "Pierre-Baptiste Béchu",
+        "to": "06 46 62 12 33",
+        "via": "NYC Office",
+        "duration": "120",
+        "is_archived": true,
+        "call_type": "missed"
+      }
+
+    Activities:
+      value: [{
+        "id": 7834,
+        "created_at": "2018-04-19T09:38:41.000Z",
+        "direction": "outbound",
+        "from": "Pierre-Baptiste Béchu",
+        "to": "06 46 62 12 33",
+        "via": "NYC Office",
+        "duration": "120",
+        "is_archived": false,
+        "call_type": "missed"
+      }]
+
+    ArchiveActivity:
+      value: {
+        "is_archived": true
+      }
