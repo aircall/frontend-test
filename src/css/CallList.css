@@ -1,0 +1,42 @@
+.listContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.callList {
+    height: 500px;
+    width: 95%;
+    overflow: scroll;
+}
+
+.buttons {
+    padding: 10px;
+}
+
+.item {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between !important;
+
+}
+
+.itemSection {
+    display: flex;
+    flex-direction: column;
+}
+
+.item:hover {
+    background-color: lightgray;
+    opacity: 0.4;
+    cursor: pointer;
+}
+
+.footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 95%;
+    height: 30px;
+}

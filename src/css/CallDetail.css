@@ -1,0 +1,24 @@
+.detailContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    height: 100%;
+}
+
+.detail {
+    display: flex;
+    flex-direction: column;
+    width: 90%
+}
+
+.button {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    margin-bottom: 30% !important;
+}
+
+.itemSection {
+    padding: 10px;
+}
