@@ -1,4 +1,10 @@
-html, body, h1, h2, h3, ul, li {
+html,
+body,
+h1,
+h2,
+h3,
+ul,
+li {
   margin: 0;
   padding: 0;
   border: 0;
@@ -12,4 +18,8 @@ body {
   font-size: 13px;
   color: #333333;
   line-height: 1;
+}
+
+* {
+  box-sizing: border-box;
 }

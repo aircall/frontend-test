@@ -1,12 +1,55 @@
 header {
-  height: 40px;
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 20px;
   margin: 0 auto;
-  padding: 20px 0;
   text-align: center;
   box-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);
 }
 
 header svg {
   display: block;
-  width: 100%; height: 100%;
+  height: 40px;
+  width: 112px;
+}
+
+.header__btn-group {
+  display: flex;
+  align-items: center;
+  background: rgba(1, 1, 1, 0.025);
+  border: 1px solid rgba(1, 1, 1, 0.1);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.header__btn {
+  width: 35px;
+  height: 35px;
+  background: transparent;
+  border: 0;
+  border-right: 1px solid rgba(1, 1, 1, 0.1);
+  outline: 0;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.header__btn:last-of-type {
+  border-right: 0;
+}
+
+.header__btn:hover {
+  background: white;
+}
+
+.header__btn[data-active="true"] {
+  background: lightslategrey;
+  color: white;
+}
+
+.header__btn-icon {
+  width: 90%;
+  height: 90%;
 }

@@ -9,18 +9,22 @@
   "private": false,
   "scripts": {
     "start": "webpack-dev-server --mode development --open",
-    "build": "webpack --mode production"
+    "build": "webpack --mode production",
+    "deploy": "gh-pages -d dist"
   },
+  "homepage": "https://samrith-s.github.io/frontend-test",
   "dependencies": {
-    "react": "^16.3.1",
-    "react-dom": "^16.3.1"
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0"
   },
   "devDependencies": {
-    "babel-core": "6.26.*",
-    "babel-loader": "7.1.*",
-    "babel-preset-env": "1.7.0",
-    "babel-preset-react": "6.24.*",
+    "@babel/core": "^7.7.2",
+    "@babel/polyfill": "^7.7.0",
+    "@babel/preset-env": "^7.7.1",
+    "@babel/preset-react": "^7.7.0",
+    "babel-loader": "^8.0.6",
     "css-loader": "2.1.*",
+    "gh-pages": "^2.1.1",
     "html-loader": "0.5.*",
     "html-webpack-plugin": "3.2.*",
     "style-loader": "0.23.*",

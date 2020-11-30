@@ -1,0 +1,190 @@
+.call-card {
+  position: relative;
+  display: flex;
+  flex-flow: column;
+  align-items: stretch;
+  width: 100%;
+  height: 65px;
+  margin: 0 auto 10px;
+  padding: 10px;
+  background: white;
+  border: 1px solid rgba(1, 1, 1, 0.05);
+  border-radius: 10px;
+  transition: all 0.25s ease;
+  cursor: pointer;
+  user-select: none;
+}
+
+.call-card:last-of-type {
+  margin: 0 auto;
+}
+
+.call-card:hover {
+  box-shadow: 0 0 7px 0 rgba(1, 1, 1, 0.05);
+  transform: scale(1.03);
+}
+
+.call-card__compact,
+.call-card__detail {
+  display: flex;
+}
+
+.call-card__compact {
+  align-items: center;
+  height: 100%;
+  max-height: 50px;
+}
+
+.call-card__detail {
+  flex-flow: column;
+  align-items: flex-start;
+  height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: all 0.25s ease;
+}
+
+.call-card__detail-block {
+  display: inherit;
+  align-items: inherit;
+  width: 100%;
+  min-height: 50px;
+}
+
+.call-card[data-active="true"] {
+  height: 160px;
+  box-shadow: 0 0 7px 0 rgba(1, 1, 1, 0.05);
+  transform: scale(1.03);
+}
+
+.call-card[data-archiving="true"] {
+  opacity: 0.5;
+  cursor: progress;
+}
+
+.call-card[data-archived="true"]:after {
+  content: "";
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  height: 10px;
+  width: 10px;
+  background: lightgray;
+  border-radius: 50%;
+}
+
+.call-card[data-active="true"] .call-card__detail {
+  height: 100%;
+  opacity: 1;
+}
+
+.call-card__icon,
+.call-card__archive {
+  flex-shrink: 0;
+  width: 30px;
+  height: 30px;
+  margin: 0 10px 0 0;
+}
+
+.call-card__archive-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  color: white;
+  font-size: 0.7rem;
+  background: lightcoral;
+  border: 2px solid transparent;
+  border-radius: 50%;
+  cursor: pointer;
+  outline: none;
+  transition: all 0.25s ease;
+}
+
+.call-card__archive-btn:hover {
+  border: 2px solid rgba(1, 1, 1, 0.1);
+}
+
+.call-card__archive-btn:active {
+  transition: scale(0.9);
+}
+
+.call-card__archive-btn > svg {
+  width: 15px;
+  height: 15px;
+}
+
+.call-card__icon--outbound {
+  color: lightgreen;
+}
+
+.call-card__icon--inbound.call-card__icon--answered {
+  color: lightskyblue;
+}
+
+.call-card__icon--inbound.call-card__icon--missed {
+  color: lightsalmon;
+}
+
+.call-card__icon--inbound.call-card__icon--voicemail {
+  color: grey;
+}
+
+.call-card__group-title {
+  margin: 20px 0;
+  color: #bbb;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.call-card__group:first-of-type > .call-card__group-title:first-of-type {
+  margin: 0 0 20px;
+}
+
+.call-card__info {
+  display: flex;
+  flex-shrink: 1;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.call-card__info-number {
+  margin: 0 0 5px;
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+.call-card__info-via,
+.call-card__info-duration {
+  color: #aaa;
+}
+
+.call-card__info-time {
+  color: #aaa;
+  font-size: 0.7rem;
+  font-weight: bold;
+}
+
+.call-card__info-duration {
+  display: flex;
+  align-items: center;
+  font-size: 0.7rem;
+}
+
+.call-card__info-duration-icon {
+  width: 12px;
+  height: 12px;
+  margin: -2px 3px 0 0;
+}
+
+.call-card__detail-line {
+  position: relative;
+  flex-shrink: 0;
+  height: 30px;
+  margin: 0 0 10px 45px;
+  font-size: 1.5rem;
+  color: lightgray;
+}

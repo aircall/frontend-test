@@ -10,16 +10,44 @@
 }
 
 #app .container {
-  width: 376px;
-  height: 666px;
+  display: flex;
+  flex-flow: column;
+  width: 100%;
+  height: 100%;
+  max-width: 376px;
+  max-height: 666px;
   z-index: 100;
 
-  background: white;
+  background: #efefef;
   border-radius: 3px;
-  box-shadow: 0 0 5px 0 rgba(0, 0, 0, .9);
+  box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.9);
 }
 
 #app .container-view {
+  height: 100%;
   padding: 20px;
+  overflow-y: auto;
+  overflow-x: hidden;
 }
 
+.feed__loader {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
+.feed__loader > svg {
+  width: 50%;
+  height: auto;
+}
+
+.feed_error {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
