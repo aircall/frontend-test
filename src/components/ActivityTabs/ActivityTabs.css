@@ -1,0 +1,25 @@
+.tabs {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin-top: 1px;
+}
+
+.tabs__link {
+  text-align: center;
+  padding: 1rem 0;
+  width: 100%;
+  color: var(--primary-text);
+  transition: all ease 0.3s;
+}
+
+.tabs__link:hover {
+  color: var(--primary);
+  background-color: var(--primary-light);
+  box-shadow: inset 0 -2px 0 0 var(--primary);
+}
+
+.tabs__link-active {
+  box-shadow: inset 0 -2px 0 0 var(--primary);
+  color: var(--primary);
+}

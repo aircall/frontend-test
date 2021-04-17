@@ -1,0 +1,40 @@
+.nav {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 3.5rem;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  box-shadow: 0 -1px 0 rgba(0, 0, 0, 0.1);
+}
+
+.nav__button .icon {
+  transition: fill 0.3s ease;
+}
+
+.nav__button:hover .icon {
+  fill: var(--primary);
+}
+
+.nav__button-primary {
+  position: relative;
+  top: -1.2rem;
+  background-color: var(--primary);
+  border-radius: 50%;
+  width: 3.5rem;
+  height: 3.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--box-shadow);
+  transition: background-color 0.3s ease;
+}
+
+.nav__button-primary:hover {
+  background-color: var(--primary-dark);
+}
+
+.nav__button-primary:hover .icon {
+  fill: var(--white);
+}

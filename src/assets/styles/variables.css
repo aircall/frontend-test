@@ -1,0 +1,17 @@
+:root {
+  --primary: rgb(0, 179, 136);
+  --primary-dark: #009571;
+  --primary-light: rgb(241, 250, 249);
+  --primary-text: rgba(16, 24, 32);
+  --secondary-text: rgba(16, 24, 32, 0.72);
+  --bg-light: rgb(251, 251, 251);
+  --dark-gray: #233142;
+  --gray: #8d9094;
+  --light-gray: rgba(0, 0, 0, 0.1);
+  --error: #ff5c3a;
+  --success: #00b388;
+  --white: #fff;
+  --black: #000;
+
+  --box-shadow: 0 1px 4px 0 rgba(0, 108, 91, 0.24);
+}
