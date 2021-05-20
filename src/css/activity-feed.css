@@ -1,0 +1,14 @@
+.activity-feed {
+    padding: 16px;
+    overflow-y: auto;
+    height: 534px; /* container size (666px) - header height (100px) - top & bottom padding (32px) */
+}
+
+.list-calls-date {
+    font-size: 10px;
+    font-weight: 900;
+    color: #afafaf;
+    letter-spacing: 1.75px;
+    text-align: center;
+    text-transform: uppercase;
+}
