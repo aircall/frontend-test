@@ -1,0 +1,1 @@
+export { ActivityDetailScreen } from "./ActivityDetailScreen";
