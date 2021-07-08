@@ -1,17 +1,28 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-
-import Header from './Header.jsx';
+import React from 'react'
+import ReactDOM from 'react-dom'
+import { Provider } from 'react-redux'
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
+import store from './store'
+import Header from './components/Header/index.jsx'
+import Activities from './pages/Activities/index.jsx'
+import Activity from './pages/Activity/index.jsx'
 
 const App = () => {
   return (
-    <div className='container'>
-      <Header/>
-      <div className="container-view">Some activities should be here</div>
-    </div>
-  );
-};
+    <Provider store={store}>
+      <Router>
+        <div className='container'>
+          <Header />
+          <Switch>
+            <Route path='/:id' component={Activity} />
+            <Route path='/' component={Activities} />
+          </Switch>
+        </div>
+      </Router>
+    </Provider>
+  )
+}
 
-ReactDOM.render(<App/>, document.getElementById('app'));
+ReactDOM.render(<App />, document.getElementById('app'))
 
-export default App;
+export default App
