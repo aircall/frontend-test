@@ -1,4 +1,10 @@
-html, body, h1, h2, h3, ul, li {
+html,
+body,
+h1,
+h2,
+h3,
+ul,
+li {
   margin: 0;
   padding: 0;
   border: 0;
@@ -12,4 +18,59 @@ body {
   font-size: 13px;
   color: #333333;
   line-height: 1;
+  flex: auto;
+}
+
+.page {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.page-title {
+  font-weight: 600;
+}
+
+.activity-feed-item {
+  border: 1px solid lightgray;
+  border-radius: 5px;
+  margin: 15px 5px 15px 5px;
+  display: flex;
+  align-items: center;
+}
+
+.activity-feed-item-number {
+  font-weight: bold;
+  margin: 5px;
+}
+
+.activity-feed-item-info {
+  color: grey;
+  margin: 5px;
+}
+
+.item-center {
+  flex: 1;
+}
+
+.item-left,
+.item-right {
+  margin: 5px;
+}
+
+.item-right {
+  cursor: pointer;
+}
+
+.call-detail ul {
+  list-style-type: none;
+}
+
+.call-detail li {
+  margin: 10px;
+}
+
+.call-detail .label {
+  font-weight: bold;
+  display: block;
 }
